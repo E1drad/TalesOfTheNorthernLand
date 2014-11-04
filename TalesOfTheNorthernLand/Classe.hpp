@@ -10,6 +10,7 @@
 
 #include "string"
 #include "Technique.cpp"
+#include <vector>
 
 class Classe {
 private :

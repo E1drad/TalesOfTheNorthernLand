@@ -10,130 +10,135 @@
 class Personnage {
 private :
 
-	void modificateurRace(){
-		for(int i = 0; i< this->statistique.getStatistique().size; i++){
-			this->statistique.modStatistiqueReel(this->race.getmodificateurStatistique().at(i),i);
-		}
-	}
+	/* int pointDexp;		0 | int pointDeVie;		1
+	 * int pointDeVieMax;	2 | int force;			3
+	 * int intelligence;	4 | int dexterite;		5
+	 * int agilite;			6 | int chance;			7
+	 * int armure;			8 | int sagesse;		9
+	 *///statistique
 
-	void modificateurClasse(){
-		for(int i = 0; i< this->statistique.getStatistique().size; i++){
-			this->statistique.modStatistiqueReel(this->classe.getmodificateurStatistique().at(i),i);
+	/* int degat;		0 |	int precision;		1
+	 * int esquive;		2 |	int critique;		3
+	 *///statistiqueDerive
+
+	void modificateurRace(){
+		for(int i = 0; i < this->statistique.size(); ++i){
+			this->statistique.at(i) = this->statistique.at(i) + this->race.getmodificateurStatistique().at(i);
 		}
 	}
-	//TODO need udpate
-	void equiperPremierArme(){
-		int i = 0;
-		Item item;
-		Arme a = null;
-		while(a == null && i < this->inventaire.size){
-			item = this->inventaire.at(i);
-			if(typeid(item)==typeid(a)){
-				a = item;
-			}
-			i++;
+	void modificateurClasse(){
+		for(int i = 0; i < this->statistique.size(); ++i){
+			this->statistique.at(i) = this->statistique.at(i) + this->classe.getmodificateurStatistique().at(i);
 		}
 	}
 
 public :
 
+	Personnage(std::vector<int> s, std::string n, ClasseHeroique c, Race r, bool estFemme)
+	: nom(n), classeHeroique(c), race(r), estFemme(estFemme), statistique(s){
+		this->classeParagon = null;
+		this->classeDivine = null;
+		this->modificateurRace();
+		this->modificateurClasse();
+		this->updateStatistique();
+		this->armeEquiper = null;
+	}
 
 	void attaquer(Personnage &cible){
-		this->statistique.updateStatistique();
-		cible.getStatistique().getStatistique();
+		int jetDe;
+		this->updateStatistique();
+		cible.updateStatistique();
+		jetDe = rand() % 100 + 1;// entre 1 et 100
+		if(jetDe <= this->statistiqueDerive.at(1) - cible.getStatistiqueDerive().at(2)){
+			cible.prendreDegat(this->statistiqueDerive.at(0));
+		}
 	}
-
-	void seFaireAttaquer(int degat, Personnage &attaquant){
-		this->statistique.updateStatistique();
-		attaquant.getStatistique().getStatistique();
-	}
-
-	void setArmeEquiper(Arme a){
+	void setArmeEquiper(Arme a){//TODO need update controle classe
 		this->armeEquiper = a;
 	}
 
-	Personnage::Personnage(Statistique s, std::string n, ClasseHeroique c, Race r, bool estFemme, Item i[5], Technique t[5])
-	: statistique(s), nom(n),classeHeroique(c), race(r), estFemme(estFemme), inventaire(i), technique(t){
-		this->armeEquiper = null;
-		this->classeDivine = null;
-		this->classeParagon = null;
-		this->zoneDeDeplacement = null;
-		this->zoneAction = null;
-		this->equiperPremierArme();
+	int updateDegat(){
+		int valeur;
+		if(this->armeEquiper == null){//rien ie 0
+			valeur = 0;
+		}else if(this->armeEquiper.estMagique()){//intelligence + degat
+			valeur = this->statistique.at(4) + this->armeEquiper.getDegat() + this->statistique.at(10);
+		}else{//force + degat
+			valeur = this->statistique.at(3) + this->armeEquiper.getDegat() + this->statistique.at(10);
+		}
+		return valeur;
 	}
 
-	Personnage::Personnage(Statistique s, std::string n, ClasseHeroique c, Race r, bool estFemme)
-	: statistique(s), nom(n),classeHeroique(c), race(r), estFemme(estFemme){
-		this->armeEquiper = null;
-		this->inventaire = null;
-		this->classeDivine = null;
-		this->classeParagon = null;
-		this->zoneDeDeplacement = null;
-		this->zoneAction = null;
-		this->technique = null;
-		this->equiperPremierArme();
+	int updatePrecision(){
+		int valeur = 2*this->statistique.at(5);
+		if(!this->armeEquiper == null){//si diff de null
+			valeur = 2*this->statistique.at(5) + this->armeEquiper.getPrecision();
+		}
+		return valeur;
 	}
 
-
-
-	ClasseHeroique Personnage::getClasseHeroique() {
-		return this->classe;
+	int updateCritique(){
+		int valeur = 2*this->statistique.at(7);
+		if(!this->armeEquiper == null){//si diff de null
+			valeur = 2*this->statistique.at(7) + this->armeEquiper.getCritique();
+		}
+		return valeur;
 	}
 
-	ClasseParagon Personnage::getClasseParagon() {
-		return this->classe;
+	void prendreDegat(int degat){
+		if(degat >= 0){
+			this->modStat(1, degat);
+			cout << this->nom << " a perdu " << degat << "point de vie." << endl;
+			if(this->statistique.at(1) <= 0){
+				this->estMort();
+			}
+		}
 	}
 
-	ClasseDivine Personnage::getClasseDivine() {
-		return this->classe;
+	void estMort(){
+		cout << this->nom << " est mort tragique !" << endl;
+		//TODO need update!
 	}
 
-	bool Personnage::getEstFemme() {
-		return this->estFemme;
-	}
+	void modStat(int stat, int modificateur);
 
-	Item Personnage::getInventaire() {
-		return this->inventaire;
-	}
-
-	Arme Personnage::getArmeEquiper() {
-		return this->armeEquiper;
-	}
-
-	std::string Personnage::getNom() {
-		return this->nom;
-	}
-
-	Race Personnage::getRace() {
+	Race getRace(){
 		return this->race;
 	}
 
-	Statistique Personnage::getStatistique() {
+	std::string getNom(){
+		return this->nom;
+	}
+
+	Classe getClasseActuelle(){
+		Classe c;
+		if( !(this->classeDivine == null) ){
+			c = this->classeDivine;
+		}else if( !(this->classeParagon == null) ){
+			c = this->classeParagon;
+		}else{
+			c = this->classeHeroique;
+		}
+		return c;
+	}
+
+	bool getEstFemme(){
+		return this->estFemme;
+	}
+
+	void updateStatistique(){
+		this->updateCritique();
+		this->updateDegat();
+		this->updatePrecision();
+		this->statistiqueDerive.at(2) = this->statistique.at(6) * 2;
+	}
+
+	std::vector<int> getStatistique(){
 		return this->statistique;
 	}
 
-	Technique Personnage::getTechnique() {
-		return this->technique;
+	std::vector<int>  getStatistiqueDerive(){
+		return this->statistiqueDerive;
 	}
 
-	ZoneAction Personnage::getZoneAction() {
-		return zoneAction;
-	}
-
-	ZoneDeDeplacement Personnage::getZoneDeDeplacement() {
-		return this->zoneDeDeplacement;
-	}
-
-
-	/* sert a rien enfin je crois que sa sert a rien.
-	Classe getClasse();
-	bool getEstFemme();
-	Item getInventaire();
-	string getNom();
-	Race getRace();
-	Statistique getStatistique();
-	Technique getTechnique();
-	ZoneAction getZoneAction();
-	ZoneDeDeplacement getZoneDeDeplacement();
-	*/
 };

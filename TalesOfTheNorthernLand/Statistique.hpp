@@ -13,32 +13,29 @@
 
 class Statistique{
 private:
-
+	/* int pointDexp;		0 | int pointDeVie;		1
+	 * int pointDeVieMax;	2 | int force;			3
+	 * int intelligence;	4 | int dexterite;		5
+	 * int agilite;			6 | int chance;			7
+	 * int armure;			8 | int sagesse;		9
+	 */
 	std::vector<int> statistique;
-	std::vector<int> statistiqueReel;
-	std::vector<int> statistiqueTemporaire;
-	std::vector<int> statistiqueDerive;
-	std::vector<int> statistiqueArme;
 
-	void statistiqueArmeAtZero();
+	/* int degat;		0 |	int precision;		1
+	 * int esquive;		2 |	int critique;		3
+	 */
+	std::vector<int> statistiqueDerive;
 
 public:
 
-	Statistique(std::vector<int> sR, std::vector<int> sT, std::vector<int> sA);
-	Statistique(std::vector<int> sR, std::vector<int> sA, bool bonusTemp);
-	Statistique(std::vector<int> sR);
+	Statistique(std::vector<int> s);
 	void updateStatistique();
-	void resetBonus();
 	std::vector<int> getStatistique();
-	std::vector<int> getStatistiqueTemporaire();
-	std::vector<int> getStatistiqueReel();
-	std::vector<int> getStatistiqueDerive();
-	void modStatistiqueReel(int mod, int statModifier);
-	void modStatistiqueTemporaire(int mod, int statModifier);
+	std::vector<int>  getStatistiqueDerive();
 	int updateDegat(Arme arme);
 	int updatePrecision(Arme arme);
 	int updateCritique(Arme arme);
-	void prendreDegat(int degat);
-
+	void prendreDegat(int degat, Personnage p);
+	void modStat(int stat, int modificateur);
 };
 #endif /* STATISTIQUE_HPP_ */
