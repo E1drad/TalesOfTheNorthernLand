@@ -8,7 +8,7 @@
 #ifndef TECHNIQUE_HPP_
 #define TECHNIQUE_HPP_
 
-#include "string"
+#include <string>
 
 class Technique {
 protected:

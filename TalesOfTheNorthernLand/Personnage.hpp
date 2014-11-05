@@ -8,7 +8,7 @@
 #ifndef PERSONNAGE_HPP_
 #define PERSONNAGE_HPP_
 
-#include "string"
+#include <string>
 //#include "Statistique.hpp"
 #include "Classe.hpp"
 #include "Race.hpp"

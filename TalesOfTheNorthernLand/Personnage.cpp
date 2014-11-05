@@ -6,10 +6,6 @@
  */
 
 #include "Personnage.hpp"
-
-class Personnage {
-private :
-
 	/* int pointDexp;		0 | int pointDeVie;		1
 	 * int pointDeVieMax;	2 | int force;			3
 	 * int intelligence;	4 | int dexterite;		5
@@ -32,9 +28,8 @@ private :
 		}
 	}
 
-public :
 
-	Personnage(std::vector<int> s, std::string n, ClasseHeroique c, Race r, bool estFemme)
+	Personnage::Personnage(std::vector<int> s, std::string n, ClasseHeroique c, Race r, bool estFemme)
 	: nom(n), classeHeroique(c), race(r), estFemme(estFemme), statistique(s){
 		this->classeParagon = null;
 		this->classeDivine = null;
@@ -140,5 +135,3 @@ public :
 	std::vector<int>  getStatistiqueDerive(){
 		return this->statistiqueDerive;
 	}
-
-};

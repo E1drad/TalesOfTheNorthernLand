@@ -5,12 +5,7 @@
  *      Author: Charles BEGAUDEAU
  */
 
-class ZoneDeDeplacement{
-private:
-public:
-};
+//class ZoneDeDeplacement
 
-class ZoneAction{
-private:
-public:
-};
+
+//class ZoneAction

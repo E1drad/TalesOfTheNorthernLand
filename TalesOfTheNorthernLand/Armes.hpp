@@ -8,8 +8,7 @@
 #ifndef ARME_HPP_
 #define ARME_HPP_
 
-#include "string"
-#include "Personnage.hpp"
+#include <string>
 #include "Item.hpp"
 
 class Arme : public Item {

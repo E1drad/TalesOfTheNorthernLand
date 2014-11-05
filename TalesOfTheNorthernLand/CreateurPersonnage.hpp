@@ -7,6 +7,9 @@
 
 #ifndef CREATEURPERSONNAGE_HPP_
 #define CREATEURPERSONNAGE_HPP_
+
+#include "Personnage.hpp"
+
 class CreateurPersonnage{
 private:
 

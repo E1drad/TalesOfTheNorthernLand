@@ -8,11 +8,4 @@
 #include "Item.cpp"
 #include "Potion.hpp"
 
-class Potion : public Item {
-private :
-	int valeur;
-	int nombre;
-	int statistique;
-public :
-
-};
+//class Potion : public Item

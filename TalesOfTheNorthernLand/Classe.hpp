@@ -8,8 +8,8 @@
 #ifndef CLASSE_HPP_
 #define CLASSE_HPP_
 
-#include "string"
-#include "Technique.cpp"
+#include <string>
+#include "Technique.hpp"
 #include <vector>
 
 class Classe {

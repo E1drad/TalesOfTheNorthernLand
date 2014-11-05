@@ -7,25 +7,18 @@
 
 #include "Statistique.hpp"
 
-class Statistique {
-private:
-
 	/* int pointDexp;		0 | int pointDeVie;		1
 	 * int pointDeVieMax;	2 | int force;			3
 	 * int intelligence;	4 | int dexterite;		5
 	 * int agilite;			6 | int chance;			7
 	 * int armure;			8 | int sagesse;		9
-	 */
-	std::vector<int> statistique;
+	 *///std::vector<int> statistique;
 
 	/* int degat;		0 |	int precision;		1
 	 * int esquive;		2 |	int critique;		3
-	 */
-	std::vector<int> statistiqueDerive;
+	 *///std::vector<int> statistiqueDerive;
 
-public:
-
-	Statistique(std::vector<int> s): statistique(s){
+	Statistique::Statistique(std::vector<int> s): statistique(s){
 		this->updateStatistique();//va initialiser statistiqueDerivé
 	}
 
@@ -88,4 +81,3 @@ public:
 		this->updateStatistique();
 	}
 
-};

@@ -7,10 +7,7 @@
 #include "Personnage.hpp"
 //#include ".hpp"
 
-class CreateurPersonnage{
-private:
-
-public:
+//class CreateurPersonnage
 	Personnage CreateurPersonnage::creationPersonnage(){
 		string nom = "";
 		string classe = "";

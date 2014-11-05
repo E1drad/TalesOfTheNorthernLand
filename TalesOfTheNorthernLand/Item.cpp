@@ -6,14 +6,8 @@
  */
 
 #include "Item.hpp"
-
-class Item {
-private:
-	std::string nomItem;
-public :
 	std::string getNomItem(){
 		return this->nomItem;
 	}
 
-};
 

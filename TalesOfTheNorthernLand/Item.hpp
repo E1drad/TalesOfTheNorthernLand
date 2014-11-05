@@ -8,14 +8,13 @@
 #ifndef ITEM_HPP_
 #define ITEM_HPP_
 
-#include "string"
+#include <string>
 
 class Item {
 private:
 	std::string nomItem;
 public :
 	std::string getNomItem();
-
 };
 
 #endif /* ITEM_HPP_ */

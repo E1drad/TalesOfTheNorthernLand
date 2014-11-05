@@ -8,7 +8,8 @@
 #ifndef RACE_HPP_
 #define RACE_HPP_
 
-#include "string"
+#include <string>
+#include <vector>
 
 class Race{
 

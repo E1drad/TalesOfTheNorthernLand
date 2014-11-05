@@ -6,12 +6,6 @@
  */
 
 #include "Race.hpp"
-class Race{
-
-private :
-	std::string nomRace;
-	std::vector<int> modificateurStatistique;
-public :
 
 	Race::Race(std::string nR, std::vector<int> mS){
 		this->nomRace = nR;
@@ -21,4 +15,3 @@ public :
 	std::vector<int> Race::getmodificateurStatistique(){
 		return this->modificateurStatistique;
 	}
-};
