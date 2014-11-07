@@ -5,23 +5,22 @@
  *      Author: BEGAUDEAU Charles
  */
 
-#include "Classe.hpp"
-#include "Race.hpp"
-#include "Personnage.hpp"
+//#include "Classe.hpp"
+//#include "Race.hpp"
+//#include "Personnage.hpp"*/
 #include "Armes.hpp"
+#include "Item.hpp"
 #include <vector>
 #include <string>
-using namespace std;
-
 
 int main(void){
 
 
 	Arme epee("Epee batarde", 0, 8, 75, 5, false);
-	/*
-	//int d[] = {0,-2,-2,-1, 1,3,3,1,0,1,0,0};
 
-	vector<int> sStatElfe; //(d, d + sizeof(d) / sizeof(int));
+	//int d[] = {0,-2,-2,-1, 1,3,3,1,0,1,0,0};
+/*
+	std::vector<int> sStatElfe; //(d, d + sizeof(d) / sizeof(int));
 	sStatElfe.push_back(0);
 	sStatElfe.push_back(-2);
 	sStatElfe.push_back(-2);
@@ -34,8 +33,8 @@ int main(void){
 	sStatElfe.push_back(1);
 	sStatElfe.push_back(0);
 	sStatElfe.push_back(0);
-	string nomRace = "elfe";
-	//Race race(nomRace , sStatElfe);
+	std::string nomRace = "elfe";
+	Race race(nomRace , sStatElfe);
 
 	//int e[] = {0, 1, 1,-1,-1,0,0,1,4,4,0,0};
 	vector<int> sStatPrincesse; //(e, e + sizeof(e) / sizeof(int));

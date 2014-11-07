@@ -17,7 +17,7 @@ private :
 	std::string nomRace;
 	std::vector<int> modificateurStatistique;
 public :
-
+	~Race();
 	Race(std::string nR, std::vector<int> mS);
 	std::vector<int> getmodificateurStatistique();
 };

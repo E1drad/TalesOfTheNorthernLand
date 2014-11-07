@@ -11,10 +11,13 @@
 #include <string>
 
 class Item {
-private:
+protected:
 	std::string nomItem;
 public :
+	Item(std::string nomItem);
+	~Item();
 	std::string getNomItem();
+	virtual void doNothing() = 0;
 };
 
 #endif /* ITEM_HPP_ */

@@ -6,7 +6,11 @@
  */
 
 #include "Item.hpp"
-	std::string getNomItem(){
+	Item::Item(std::string nomItem){
+		this->nomItem = nomItem;
+	}
+	Item::~Item(){}
+	std::string Item::getNomItem(){
 		return this->nomItem;
 	}
 

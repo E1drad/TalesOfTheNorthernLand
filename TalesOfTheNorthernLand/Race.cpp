@@ -12,6 +12,9 @@
 		this->modificateurStatistique = mS;
 	}
 
+	Race::~Race(){
+
+	}
 	std::vector<int> Race::getmodificateurStatistique(){
 		return this->modificateurStatistique;
 	}
