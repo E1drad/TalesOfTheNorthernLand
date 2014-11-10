@@ -15,7 +15,7 @@ protected:
 	std::string nomItem;
 public :
 	Item(std::string nomItem);
-	~Item();
+	virtual ~Item() = 0;
 	std::string getNomItem();
 	virtual void doNothing() = 0;
 };

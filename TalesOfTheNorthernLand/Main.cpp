@@ -12,11 +12,14 @@
 #include "Item.hpp"
 #include <vector>
 #include <string>
+#include <iostream>
 
 int main(void){
 
 
 	Arme epee("Epee batarde", 0, 8, 75, 5, false);
+
+	std::cout << epee.getNomItem() << " " << epee.getType() << " " << epee.getDegat() << " " << epee.getPrecision() << " " << epee.getCritique() << " " << epee.getEstMagique() << std::endl;
 
 	//int d[] = {0,-2,-2,-1, 1,3,3,1,0,1,0,0};
 /*

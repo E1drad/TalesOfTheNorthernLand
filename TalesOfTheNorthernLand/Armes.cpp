@@ -8,11 +8,9 @@
 
 //class Arme : public Item
 
-	Arme::Arme(std::string nomArme, int type, int puissance, int precision, int critique, bool estMagique){
-		Item::Item(nomArme);
+	Arme::Arme(std::string nomArme, int type, int puissance, int precision, int critique, bool estMagique): Item::Item(nomArme){
 		this->critique = critique;
 		this->type = type;
-		//this->nomItem = nomArme;
 		this->precision = precision;
 		this->puissance = puissance;
 		this->estMagique = estMagique;
@@ -20,6 +18,10 @@
 
 	Arme::~Arme(){
 
+	}
+
+	int Arme::getType(){
+		return this->type;
 	}
 
 	int Arme::getDegat(){
@@ -37,5 +39,5 @@
 	bool Arme::getEstMagique(){
 		return this->estMagique;
 	}
-	void doNothing(){}
+	void Arme::doNothing(){}
 

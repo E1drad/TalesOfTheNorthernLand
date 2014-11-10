@@ -21,6 +21,7 @@ private:
 public:
 	Arme(std::string nomArme, int type, int puissance, int precision, int critique, bool estMagique);
 	~Arme();
+	int getType();
 	int getDegat();
 	int getPrecision();
 	int getCritique();
