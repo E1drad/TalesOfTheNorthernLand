@@ -17,7 +17,6 @@ public :
 	Item(std::string nomItem);
 	virtual ~Item() = 0;
 	std::string getNomItem();
-	virtual void doNothing() = 0;
 };
 
 #endif /* ITEM_HPP_ */

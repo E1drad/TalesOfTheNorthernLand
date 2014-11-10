@@ -26,7 +26,6 @@ public:
 	int getPrecision();
 	int getCritique();
 	bool getEstMagique();
-	void doNothing();
 
 };
 

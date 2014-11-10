@@ -39,5 +39,4 @@
 	bool Arme::getEstMagique(){
 		return this->estMagique;
 	}
-	void Arme::doNothing(){}
 
