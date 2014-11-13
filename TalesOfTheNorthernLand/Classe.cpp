@@ -74,18 +74,18 @@
 /********************************************************************************************************/
 /********************************************************************************************************/
 //class ClasseParagon
-/*	ClasseParangon::ClasseParangon(std::string nc, std::vector<int> ms, std::string b, Technique t1, Technique t2, int nT1, int nT2):Classe::Classe(nc,ms,b){
+	ClasseParangon::ClasseParangon(std::string nc, std::vector<int> ms, std::string b, Technique* t1, Technique* t2, int nT1, int nT2):Classe::Classe(nc,ms,b){
 		this->technique1 = t1;
 		this->technique2 = t2;
 		this->niveauTechnique1 = nT1;
 		this->niveauTechnique2 = nT2;
 	}
 
-	Technique ClasseParangon::getTechnique1() {
+	Technique* ClasseParangon::getTechnique1() {
 		return this->technique1;
 	}
 
-	Technique ClasseParangon::getTechnique2() {
+	Technique* ClasseParangon::getTechnique2() {
 		return this->technique2;
 	}
 
@@ -100,17 +100,17 @@
 	ClasseParangon::~ClasseParangon(){
 
 	}
-*/
+
 /********************************************************************************************************/
 /********************************************************************************************************/
 /********************************************************************************************************/
 //class ClasseDivine
-/*	ClasseDivine::ClasseDivine(std::string nc, std::vector<int> ms, std::string b, Technique t1, int nT1):Classe::Classe(nc,ms,b){
+	ClasseDivine::ClasseDivine(std::string nc, std::vector<int> ms, std::string b, Technique* t1, int nT1):Classe::Classe(nc,ms,b){
 		this->technique1 = t1;
 		this->niveauTechnique1 = nT1;
 	}
 
-	Technique ClasseDivine::getTechnique1() {
+	Technique* ClasseDivine::getTechnique1() {
 		return this->technique1;
 	}
 	int ClasseDivine::getniveauTechnique1() {
@@ -120,4 +120,4 @@
 	ClasseDivine::~ClasseDivine(){
 
 	}
-*/
+
