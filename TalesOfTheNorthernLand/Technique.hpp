@@ -16,16 +16,22 @@ protected:
 public:
 	Technique(std::string nomT);
 	std::string getNomTechnique();
+	virtual ~Technique() = 0;
 };
 
-class TechniqueStatistiqueUn : Technique {
+//un up de 15
+class TechniqueStatistique : public Technique {
 private:
-
+	int statToUp;
 public:
-
+	TechniqueStatistique(std::string nomT, int s);
+	~TechniqueStatistique();
+	int getStatToUp();
 };
+/*
+//PATTERNS STATE a implementer
 
-class TechniqueStatistiqueDeux : Technique {
+class TechniqueActitivableAttaque : public Technique {
 private:
 
 public:
@@ -34,21 +40,12 @@ public:
 
 //PATTERNS STATE a implementer
 
-class TechniqueActitivableAttaque : Technique {
+class TechniqueActitivableDefense : public Technique {
 private:
 
 public:
 
 };
-
-//PATTERNS STATE a implementer
-
-class TechniqueActitivableDefense : Technique {
-private:
-
-public:
-
-};
-
+*/
 
 #endif /* TECHNIQUE_HPP_ */

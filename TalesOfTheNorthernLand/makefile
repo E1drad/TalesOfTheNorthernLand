@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall -Wextra -std=c++11
 LDFLAGS=
-SOURCES=Item.cpp Armes.cpp Main.cpp
+SOURCES=Item.cpp Armes.cpp Main.cpp Race.cpp Technique.cpp Classe.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=TalesOfTheNorthernLand
 all: $(SOURCES) $(EXECUTABLE)

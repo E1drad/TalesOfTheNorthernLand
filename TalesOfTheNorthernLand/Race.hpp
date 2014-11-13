@@ -20,6 +20,8 @@ public :
 	~Race();
 	Race(std::string nR, std::vector<int> mS);
 	std::vector<int> getmodificateurStatistique();
+	std::string getmodificateurStatistiqueString();
+	std::string getNomRace();
 };
 
 #endif /* RACE_HPP_ */

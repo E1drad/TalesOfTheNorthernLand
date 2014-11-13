@@ -4,9 +4,9 @@
  *  Created on: 26 sept. 2014
  *      Author: BEGAUDEAU Charles
  */
-
-//#include "Classe.hpp"
-//#include "Race.hpp"
+#include "Technique.hpp"
+#include "Classe.hpp"
+#include "Race.hpp"
 //#include "Personnage.hpp"*/
 #include "Armes.hpp"
 #include "Item.hpp"
@@ -19,11 +19,12 @@ int main(void){
 
 	Arme epee("Epee batarde", 0, 8, 75, 5, false);
 
-	std::cout << epee.getNomItem() << " " << epee.getType() << " " << epee.getDegat() << " " << epee.getPrecision() << " " << epee.getCritique() << " " << epee.getEstMagique() << std::endl;
+	std::cout << epee.getNomItem() << " " << epee.getType() << " " << epee.getDegat() << " " << epee.getPrecision() <<
+			" " << epee.getCritique() << " " << epee.getEstMagique() << std::endl;
 
 	//int d[] = {0,-2,-2,-1, 1,3,3,1,0,1,0,0};
-/*
-	std::vector<int> sStatElfe; //(d, d + sizeof(d) / sizeof(int));
+
+	std::vector<int> sStatElfe;
 	sStatElfe.push_back(0);
 	sStatElfe.push_back(-2);
 	sStatElfe.push_back(-2);
@@ -38,9 +39,11 @@ int main(void){
 	sStatElfe.push_back(0);
 	std::string nomRace = "elfe";
 	Race race(nomRace , sStatElfe);
+	std::cout << race.getNomRace() << " " << race.getmodificateurStatistiqueString() << std::endl;
+
 
 	//int e[] = {0, 1, 1,-1,-1,0,0,1,4,4,0,0};
-	vector<int> sStatPrincesse; //(e, e + sizeof(e) / sizeof(int));
+	std::vector<int> sStatPrincesse; //(e, e + sizeof(e) / sizeof(int));
 	sStatPrincesse.push_back(0);
 	sStatPrincesse.push_back(1);
 	sStatPrincesse.push_back(1);
@@ -53,8 +56,12 @@ int main(void){
 	sStatPrincesse.push_back(4);
 	sStatPrincesse.push_back(0);
 	sStatPrincesse.push_back(0);
-	//ClasseHeroique classe(string("Princesse"), sStatPrincesse, string("Clerger"), Technique(string("zele")), Technique(string("celeste")), 5, 15);
+	TechniqueStatistique* zele = new TechniqueStatistique(std::string("zele"), 2);
+	TechniqueStatistique* celeste = new TechniqueStatistique(std::string("celeste"), 1);
+	ClasseHeroique classe(std::string("Princesse"), sStatPrincesse, std::string("Clerger"), zele, celeste, 5, 15);
 
+	std::cout << classe.getNomClasse() << " " << classe.getBranche() << " " << classe.getTechnique1()->getNomTechnique() << " " << classe.getTechnique2()->getNomTechnique() << " " << classe.getmodificateurStatistiqueString() << std::endl;
+/*
 	//int a[] = {0,20,20, 5, 5,5,5,5,5,5,0,0};
 	vector<int> stat;// (a, a + sizeof(a) / sizeof(int));
 	stat.push_back(0);

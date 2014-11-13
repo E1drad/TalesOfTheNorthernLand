@@ -18,3 +18,15 @@
 	std::vector<int> Race::getmodificateurStatistique(){
 		return this->modificateurStatistique;
 	}
+	std::string Race::getNomRace(){
+		return this->nomRace;
+	}
+	std::string Race::getmodificateurStatistiqueString(){
+		std::string s;
+		s = "";
+		for(unsigned int i = 0; i < this->modificateurStatistique.size(); ++i ){
+			s = s + " " + std::to_string(this->modificateurStatistique.at(i));
+		}
+		return s;
+	}
+
