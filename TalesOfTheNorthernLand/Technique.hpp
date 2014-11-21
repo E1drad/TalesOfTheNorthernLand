@@ -9,14 +9,15 @@
 #define TECHNIQUE_HPP_
 
 #include <string>
+#include <iostream>
 
 class Technique {
 protected:
 	std::string nomTechnique;
 public:
 	Technique(std::string nomT);
-	std::string getNomTechnique();
 	virtual ~Technique() = 0;
+	std::string getNomTechnique();
 };
 
 //un up de 15

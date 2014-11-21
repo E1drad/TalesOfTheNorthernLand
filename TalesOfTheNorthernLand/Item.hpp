@@ -8,6 +8,7 @@
 #ifndef ITEM_HPP_
 #define ITEM_HPP_
 
+#include <iostream>
 #include <string>
 
 class Item {
@@ -15,7 +16,7 @@ protected:
 	std::string nomItem;
 public :
 	Item(std::string nomItem);
-	virtual ~Item() = 0;
+	virtual ~Item();
 	std::string getNomItem();
 };
 

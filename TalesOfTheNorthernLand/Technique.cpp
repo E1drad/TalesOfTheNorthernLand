@@ -15,7 +15,7 @@
 	}
 
 	Technique::~Technique(){
-
+		std::cout << "Technique is being delete " << std::endl;
 	}
 
 
@@ -28,8 +28,10 @@
 	}
 
 	TechniqueStatistique::~TechniqueStatistique(){
+		std::cout << "TechniqueStatistique is being delete " << std::endl;
 
 	}
+
 	int TechniqueStatistique::getStatToUp(){
 		return this->statToUp;
 	}

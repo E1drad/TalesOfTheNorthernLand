@@ -13,14 +13,17 @@
 	}
 
 	Race::~Race(){
-
+		std::cout << "Race is being deleted " << std::endl;
 	}
+
 	std::vector<int> Race::getmodificateurStatistique(){
 		return this->modificateurStatistique;
 	}
+
 	std::string Race::getNomRace(){
 		return this->nomRace;
 	}
+
 	std::string Race::getmodificateurStatistiqueString(){
 		std::string s;
 		s = "";

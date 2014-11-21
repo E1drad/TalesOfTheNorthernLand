@@ -17,17 +17,29 @@
 //#include "ZoneDeDeplacement.hpp"
 #include <vector>
 #include <iostream>
+#include <random>
+#include <cstdlib>
+#include "Posture.hpp"
+//#include <unistd.h>
+//unsigned int microseconds = 1500;
+//usleep(microseconds);
+#include <chrono>
+#include <thread>
 
 class Personnage {
 private :
 
+	int niveau;
+	int argent;
 	std::string nom;
-	ClasseHeroique classeHeroique;
-	ClasseParagon classeParagon;
-	ClasseDivine classeDivine;
-	Race race;
+	ClasseHeroique* classeHeroique;
+	ClasseParangon* classeParangon;
+	ClasseDivine* classeDivine;
+	Classe* classeActuelle;
+	Race* race;
 	bool estFemme;
-	Arme armeEquiper;
+	Arme* armeEquiper;
+	Posture* posture;
 	/* int pointDexp;		0 | int pointDeVie;		1
 	 * int pointDeVieMax;	2 | int force;			3
 	 * int intelligence;	4 | int dexterite;		5
@@ -50,28 +62,48 @@ private :
 	 */
 
 	void modificateurRace();
-	void modificateurClasse();
-	//void equiperPremierArme();
+	void modificateurClasse(Classe* classe);
+	void modificateurClasseDecheance(Classe* classe);
 
 public :
 
-	Personnage(std::vector<int> s, std::string n, ClasseHeroique c, Race r, bool estFemme);
-	void attaquer(Personnage &cible);
-	void seFaireAttaquer(int degat, Personnage &attaquant);
-	void setArmeEquiper(Arme a);
-	Race getRace();
-	std::string getNom();
-	Classe getClasseActuelle();
-	bool getEstFemme();
-
-	void updateStatistique();
-	std::vector<int> getStatistique();
-	std::vector<int>  getStatistiqueDerive();
+	Personnage(std::vector<int> s, std::string n, ClasseHeroique* c, Race* r, bool estFemme, int niveau);
+	~Personnage();
+	void actionCombat(Personnage *cible);
+	void changePosture();
+	bool seSoigner();
+	void setArmeEquiper(Arme* a);
+	void setClasseActuelle(Classe* classe);
+	void monterNiveau();
 	int updateDegat();
 	int updatePrecision();
 	int updateCritique();
+	int updateEsquive();
+	void updateNiveau();
+	void updatePV();
+	void prendreDegat(int degat);
+	void attaquer(Personnage *cible);
+	void mourant();
 	void modStat(int stat, int modificateur);
-	void estMort(); // TODO need update
+	Race* getRace();
+	std::string getNom();
+	Classe* getClasseActuelle();
+	bool getEstFemme();
+	void updateStatistique();
+	std::vector<int> getStatistique();
+	std::vector<int> getStatistiqueDerive();
+	ClasseHeroique* getClasseHeroique();
+	ClasseParangon* getClasseParangon();
+	ClasseDivine* getClasseDivine();
+	void afficherStat();
+	void promotion(Classe* classe);
+	void decheance();
+	int critique(int degat);
+	bool estMort();
+	bool modArgent(int argent);
+	int getArgent();
+	Arme* getArmeActuelle();
+
 	/*
 	 * Item getInventaire();
 	 * Arme getArmeEquiper();

@@ -10,6 +10,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Race{
 
@@ -17,8 +18,8 @@ private :
 	std::string nomRace;
 	std::vector<int> modificateurStatistique;
 public :
-	~Race();
 	Race(std::string nR, std::vector<int> mS);
+	~Race();
 	std::vector<int> getmodificateurStatistique();
 	std::string getmodificateurStatistiqueString();
 	std::string getNomRace();

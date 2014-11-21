@@ -15,5 +15,5 @@
 	}
 
 	Item::~Item(){
-
+		std::cout << "Item is being deleted" << std::endl;
 	}
