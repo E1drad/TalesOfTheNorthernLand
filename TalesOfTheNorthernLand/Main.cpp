@@ -18,10 +18,10 @@
 #include <cstdlib>
 #include "Afficheur.hpp"
 #include "Instancieur.hpp"
-//#include <ctime> ancein methode
-//#include <random>//nouvelle methode !
+//#include <ctime> ancien methode
 //srand(time(0));//ancien methode !
 
+//#include <random>//nouvelle methode !
 //std::random_device rd;//nouvelle methode !
 //std::mt19937 rng(rd());//nouvelle methode !
 //rng();//nouvelle methode !
@@ -37,7 +37,6 @@ void combat(Personnage *persoJoueur, Personnage *persoIA){
 	Afficheur afficheur;
 	while(!persoJoueur->estMort() && !persoIA->estMort() ){
 		std::system("clear");
-		//afficherPersos(persoJoueur, persoIA);
 		afficheur.afficherPersos(persoJoueur,persoIA);
 		if(!persoJoueur->estMort()){
 			//lucina.attaquer(&raven);
@@ -45,7 +44,6 @@ void combat(Personnage *persoJoueur, Personnage *persoIA){
 		}
 		std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 		std::system("clear");
-		//afficherPersos(persoJoueur, persoIA);
 		afficheur.afficherPersos(persoJoueur,persoIA);
 		if(!persoIA->estMort()){
 			persoIA->attaquer(persoJoueur);
@@ -120,10 +118,10 @@ int main(void){
 	if(!lucina.estMort()){
 		marchand->afficherMenu(&lucina);
 		afficheur.afficherPerso(&lucina);
-		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		std::this_thread::sleep_for(std::chrono::milliseconds(4000));
 		lucina.promotion(&reine);
 		afficheur.afficherPerso(&lucina);
-		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		std::this_thread::sleep_for(std::chrono::milliseconds(4000));
 		combat(&lucina,&malak);
 	}
 

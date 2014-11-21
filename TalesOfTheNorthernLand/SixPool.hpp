@@ -18,7 +18,6 @@ public:
 	ObjetDePool(std::string nom);
 	~ObjetDePool();
 	std::string getNom();
-
 };
 
 class Pool {

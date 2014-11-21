@@ -22,7 +22,7 @@
 		Sort *ruine2 = new Sort("Graviter", 12, 85, 5, true, 500);
 		Lance *lance2 = new Lance("Lance de la veriter", 9, 75, 5, false, 400);
 		Epee *epee3 = new Epee("Epee deux à main", 13, 65, 5, false, 800);
-		Sort *ruine3 = new Sort("Inferno", 15, 85, 5, true, 1000);
+		Sort *ruine3 = new Sort("Inferno", 15, 85, 9001, true, 1000);
 		Lance *lance3 = new Lance("Lance de la justice", 12, 75, 5, false, 700);
 		this->armes.push_back(lance1);
 		this->armes.push_back(lance2);
@@ -46,37 +46,42 @@
 
 
 	void Marchand::afficherMenu(Personnage *perso){
+		Afficheur *aff = new Afficheur();
 		std::string cmd1;
 		cmd1 = "000";
 		bool test = false;
 		while((!test) || (cmd1.length() != 1)){
-			std::cout << "\t1/ Pour acheter une arme \n\t"
-					" 2/ Pour ameliorer votre arme" << std::endl;
+			std::system("clear");
+			aff->afficherPerso(perso);
+			std::cout << "\t 1/ Pour acheter une arme \n\t"
+					" 2/ Pour ameliorer votre arme\n\t"
+					" 3/ Pour quitter" << std::endl;
 			std::cin >> cmd1;
 			try{
 				int cmd = std::stoi(cmd1);
 				switch (cmd){
 				case 1:
 					this->achat(perso);
-					test = true;
 					break;
 				case 2:
 					this->ameliorer(perso->getArmeActuelle());
+					break;
+				case 3:
 					test = true;
 					break;
 				default :
-					std::cout << "entrer 1 et 2 merci !" << std::endl;
+					std::cout << "entrer 1 et 3 merci !" << std::endl;
 				}
 			}catch (std::invalid_argument){
 				cmd1 = "000";
-				std::cout << "Veuiller enter un nombre compris entre 1 et 2" << std::endl;
+				std::cout << "Veuiller enter un nombre compris entre 1 et 3" << std::endl;
 			}
 		}//while
 	}
 
 
 	void Marchand::achat(Personnage *perso){
-
+		std::cout << "Fermer pour le moment désolé :(" << std::endl;
 	}
 
 	Arme* Marchand::getArme(std::string nomArme){
@@ -98,9 +103,9 @@
 		cmd1 = "000";
 		bool test = false;
 		while((!test) || (cmd1.length() != 1)){
-			std::cout << "\t1/ Pour ameliorer les degats  \n\t"
+			std::cout << "\t 1/ Pour ameliorer les degats  \n\t"
 					" 2/ Pour ameliorer la prescision \n\t"
-					" 3/ Pour ameliorer sa capacité a faire des coups critiques"
+					" 3/ Pour ameliorer sa capacité a faire des coups critiques\n\t"
 					" 4/ Pour quitter" << std::endl;
 			std::cin >> cmd1;
 			try{
@@ -108,12 +113,15 @@
 				switch (cmd){
 				case 1:
 					arme = new AmeliorationDegat(arme);
+					test = true;
 					break;
 				case 2:
 					arme = new AmeliorationPrecision(arme);
+					test = true;
 					break;
 				case 3:
-					arme = new AmeliorationCritique(arme);;
+					arme = new AmeliorationCritique(arme);
+					test = true;
 					break;
 				case 4:
 					test = true;

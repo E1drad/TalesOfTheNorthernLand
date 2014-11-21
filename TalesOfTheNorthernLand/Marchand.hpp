@@ -4,15 +4,17 @@
  *  Created on: 21 nov. 2014
  *      Author: Charles BEGAUDEAU
  */
+#ifndef MARCHAND_HPP_
+#define MARCHAND_HPP_
+
 #include "Personnage.hpp"
 #include "Armes.hpp"
 #include <string>
 #include <iostream>
 #include "SixPool.hpp"
 #include <vector>
+#include "Afficheur.hpp"
 
-#ifndef MARCHAND_HPP_
-#define MARCHAND_HPP_
 
 class Marchand {
 private:

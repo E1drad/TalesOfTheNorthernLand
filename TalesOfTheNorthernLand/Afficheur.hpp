@@ -13,6 +13,7 @@
 #include <string>
 #include "Personnage.hpp"
 #include "Marchand.hpp"
+#include <cstdlib>
 
 class Afficheur {
 private :

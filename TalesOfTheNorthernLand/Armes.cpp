@@ -118,6 +118,7 @@
 		this->arme->modDegat(1);
 		//this->nomItem = this->arme->nomItem + " de puissance";
 		this->arme->modNomItem(" de puissance");
+		this->afficher();
 	}
 
 	AmeliorationDegat::~AmeliorationDegat(){
@@ -129,6 +130,7 @@
 		this->arme->modPrecision( 5);
 		//this->nomItem = this->arme->nomItem + " de prescision";
 		this->arme->modNomItem( " de precision");
+		this->afficher();
 	}
 	AmeliorationPrecision::~AmeliorationPrecision(){
 
@@ -140,6 +142,7 @@
 		this->arme->modCritique(3);
 		//this->nomItem = this->arme->nomItem + " de fureur";
 		this->arme->modNomItem(" de critique");
+		this->afficher();
 	}
 
 	AmeliorationCritique::~AmeliorationCritique(){

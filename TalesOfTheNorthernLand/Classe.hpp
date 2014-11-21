@@ -16,7 +16,7 @@
 #include <cmath>
 #include <random>
 
-class Personnage;
+class Personnage;//a cause des includes circulaires
 
 /*
  * ATTENTION les attributs de type Technique sont des pointeurs

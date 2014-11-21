@@ -98,7 +98,7 @@ public :
 	void afficherStat();
 	void promotion(Classe* classe);
 	void decheance();
-	int critique(int degat);
+	int critique(int degat, Personnage *cible);
 	bool estMort();
 	bool modArgent(int argent);
 	int getArgent();

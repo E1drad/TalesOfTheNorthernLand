@@ -50,7 +50,7 @@
 		this->classeHeroique = c;
 		this->niveau = niveau;
 		this->classeActuelle = this->classeHeroique;
-		this->posture = new Defenseur();;
+		this->posture = new Defenseur();
 		this->classeParangon = nullptr;
 		this->classeDivine = nullptr;
 		this->armeEquiper = nullptr;
@@ -210,13 +210,13 @@
 		return this->statistique.at(6) + this->statistique.at(6);
 	}
 
-	void Personnage::updateNiveau(){
+	void Personnage::updatePV(){
 		if ( this->statistique.at(1) > this->statistique.at(2) ){
 			this->statistique.at(1) = this->statistique.at(2);
 		}
 	}
 
-	void Personnage::updatePV(){
+	void Personnage::updateNiveau(){
 		if ( (this->statistique.at(0) > 99 ) && (this->niveau < 20) ){
 			this->statistique.at(0) = this->statistique.at(0) - 99;
 			this->niveau = this->niveau + 1;
@@ -256,7 +256,7 @@
 			degat = this->classeActuelle->attaquer(this->statistiqueDerive.at(0), this->statistique.at(statAttaque) );
 			degat = degat - cible->getStatistique().at(statDefense);
 			degat = this->posture->attaquer(degat);
-			degat = this->critique(degat);
+			degat = this->critique(degat, cible);
 			std::cout << degat << " degats !" << std::endl;
 			std::cout << cible->getNom() << " subit " << degat << " degats" << std::endl;
 			cible->prendreDegat(degat);
@@ -348,6 +348,7 @@
 			this->classeActuelle->promotion(this);
 			this->classeActuelle = classe;
 			this->updateStatistique();
+			std::cout << "Vous avez été promut a la classe de " << this->classeActuelle->getNomClasse()  << std::endl;
 		}else{
 			std::cout << "Vous êtes déjà une divinité que desirez-vous de plus ?" << std::endl;
 		}
@@ -363,10 +364,10 @@
 		}
 	}
 
-	int Personnage::critique(int degat){
+	int Personnage::critique(int degat, Personnage *cible){
 		int jetDe;
 		jetDe = (rng1() % 100) + 1;
-		if(jetDe <= this->statistique.at(7)){
+		if(jetDe <= (this->statistiqueDerive.at(3)  - cible->statistique.at(7)) ){
 			degat = degat * 2;
 			std::cout << " COUUUUUP CRIIITIIIIQUEE !!!" << std::endl;
 		}
