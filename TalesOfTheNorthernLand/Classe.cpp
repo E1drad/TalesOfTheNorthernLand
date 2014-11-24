@@ -105,7 +105,8 @@
 		return regain;
 	}
 
-	void ClasseHeroique::promotion(Personnage *p){
+	void ClasseHeroique::promotion(Personnage *p, Classe* c){
+		p->setClasseParangon(c);
 		p->setClasseActuelle(p->getClasseParangon());
 	}
 
@@ -178,7 +179,8 @@
 		return regain;
 	}
 
-	void ClasseParangon::promotion(Personnage* p){
+	void ClasseParangon::promotion(Personnage* p, Classe* c){
+		p->setClasseDivine(c);
 		p->setClasseActuelle(p->getClasseDivine());
 	}
 
@@ -237,7 +239,7 @@
 		return regain;
 	}
 
-	void ClasseDivine::promotion(Personnage* p){
+	void ClasseDivine::promotion(Personnage* p, Classe* c){
 		std::cout << "LOLWUT ? I know someone who will be find dead S00N !" << std::endl;//ne doit pas être utiliser
 	}
 

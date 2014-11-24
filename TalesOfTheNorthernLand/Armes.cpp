@@ -115,9 +115,9 @@
 
 //class AmeliorationDegat : public Decorator
 	AmeliorationDegat::AmeliorationDegat(Arme* arme): Decorator::Decorator(arme){
-		this->arme->modDegat(1);
+		this->modDegat(1);
 		//this->nomItem = this->arme->nomItem + " de puissance";
-		this->arme->modNomItem(" de puissance");
+		this->modNomItem(" de puissance");
 		this->afficher();
 	}
 
@@ -127,9 +127,9 @@
 
 //class AmeliorationPrecision : public Decorator
 	AmeliorationPrecision::AmeliorationPrecision(Arme* arme): Decorator::Decorator(arme){
-		this->arme->modPrecision( 5);
+		this->modPrecision( 5);
 		//this->nomItem = this->arme->nomItem + " de prescision";
-		this->arme->modNomItem( " de precision");
+		this->modNomItem( " de precision");
 		this->afficher();
 	}
 	AmeliorationPrecision::~AmeliorationPrecision(){
@@ -139,9 +139,9 @@
 //class AmeliorationCritique : public Decorator
 
 	AmeliorationCritique::AmeliorationCritique(Arme* arme): Decorator::Decorator(arme){
-		this->arme->modCritique(3);
+		this->modCritique(3);
 		//this->nomItem = this->arme->nomItem + " de fureur";
-		this->arme->modNomItem(" de critique");
+		this->modNomItem(" de critique");
 		this->afficher();
 	}
 

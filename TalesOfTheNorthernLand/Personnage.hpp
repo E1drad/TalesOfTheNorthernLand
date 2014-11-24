@@ -32,9 +32,9 @@ private :
 	int niveau;
 	int argent;
 	std::string nom;
-	ClasseHeroique* classeHeroique;
-	ClasseParangon* classeParangon;
-	ClasseDivine* classeDivine;
+	Classe* classeHeroique;
+	Classe* classeParangon;
+	Classe* classeDivine;
 	Classe* classeActuelle;
 	Race* race;
 	bool estFemme;
@@ -74,6 +74,8 @@ public :
 	bool seSoigner();
 	void setArmeEquiper(Arme* a);
 	void setClasseActuelle(Classe* classe);
+	void setClasseParangon(Classe* classe);
+	void setClasseDivine(Classe* classe);
 	void monterNiveau();
 	int updateDegat();
 	int updatePrecision();
@@ -92,9 +94,9 @@ public :
 	void updateStatistique();
 	std::vector<int> getStatistique();
 	std::vector<int> getStatistiqueDerive();
-	ClasseHeroique* getClasseHeroique();
-	ClasseParangon* getClasseParangon();
-	ClasseDivine* getClasseDivine();
+	Classe* getClasseHeroique();
+	Classe* getClasseParangon();
+	Classe* getClasseDivine();
 	void afficherStat();
 	void promotion(Classe* classe);
 	void decheance();
