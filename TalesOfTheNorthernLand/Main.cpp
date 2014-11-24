@@ -75,7 +75,7 @@ int main(void){
 	Race elfe(nomElfe , sStatElfe);
 
 	std::vector<int> sStatGenasi;
-	vectorAdd10Int(sStatGenasi,0,3,3,2,-1,1,-1,-1,3,3);
+	vectorAdd10Int(sStatGenasi,0,-5,-5,2,-1,1,-1,-1,3,3);
 	std::string nomGenasi = "genasi";
 	Race genasi(nomGenasi,sStatGenasi);
 
@@ -96,6 +96,16 @@ int main(void){
 	TechniqueStatistique* volonter = new TechniqueStatistique(std::string("volonter"), 8);
 	TechniqueStatistique* demiDieu = new TechniqueStatistique(std::string("demi dieu"), 2);;
 	ClasseParangon reine(std::string("Reine"), sStatReine, &clerger, volonter, demiDieu, 5, 15);
+
+	std::vector<int> sStatSainteReine;
+	vectorAdd10Int(sStatSainteReine,0,15,15,8,8,6,7,15,8,8);
+	ClasseDivine sainteReine(std::string("Sainte Reine"), sStatSainteReine, &clerger, demiDieu, 5);
+
+
+	std::vector<int> sStatSainte;
+	vectorAdd10Int(sStatSainte,0,25,25,4,4,6,5,12,10,10);
+	ClasseDivine sainte(std::string("Sainte"), sStatSainte, &clerger, volonter, 5);
+
 
 	std::vector<int> stat;
 	vectorAdd10Int(stat,0,20,20,5,5,5,5,5,5,5);
@@ -122,6 +132,8 @@ int main(void){
 		lucina.promotion(&reine);
 		afficheur.afficherPerso(&lucina);
 		std::this_thread::sleep_for(std::chrono::milliseconds(4000));
+		std::system("clear");
+
 		combat(&lucina,&malak);
 	}
 
