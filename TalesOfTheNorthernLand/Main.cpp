@@ -94,7 +94,7 @@ int main(void){
 	std::vector<int> sStatReine;
 	vectorAdd10Int(sStatReine,0,10,10,4,2,4,2,8,6,6);
 	TechniqueStatistique* volonter = new TechniqueStatistique(std::string("volonter"), 8);
-	TechniqueStatistique* demiDieu = new TechniqueStatistique(std::string("demi dieu"), 2);;
+	TechniqueStatistique* demiDieu = new TechniqueStatistique(std::string("demi dieu"), 2);
 	ClasseParangon reine(std::string("Reine"), sStatReine, &clerger, volonter, demiDieu, 5, 15);
 
 	std::vector<int> stat;
@@ -115,6 +115,7 @@ int main(void){
 	malak.setArmeEquiper(marchand->getArme("Epee longue"));
 
 	combat(&lucina,&raven);
+
 	if(!lucina.estMort()){
 		marchand->afficherMenu(&lucina);
 		afficheur.afficherPerso(&lucina);
