@@ -101,6 +101,8 @@
 		std::cout << " Regain ? " << jetDe << std::endl;
 		if(jetDe == 1){
 			regain = ceil(pvMax * 0.10);
+		}else if(jetDe <= ceil(statChance/5) ) {
+			regain = ceil(pvMax * 0.05);
 		}
 		return regain;
 	}
@@ -173,7 +175,7 @@
 		std::cout << " Regain ? " << jetDe << std::endl;
 		if(jetDe == 1){
 			regain = ceil(pvMax * 0.25);
-		}else if(jetDe <= floor(statChance/5) ) {
+		}else if(jetDe <= ceil(statChance/4) ) {
 			regain = ceil(pvMax * 0.15);
 		}
 		return regain;
@@ -233,7 +235,7 @@
 		std::cout << " Regain ? " << jetDe << std::endl;
 		if(jetDe == 1){
 			regain = ceil(pvMax * 0.25);
-		}else if(jetDe <= floor(statChance/5) ) {
+		}else if(jetDe <= ceil(statChance/3) ) {
 			regain = ceil(pvMax * 0.15);
 		}
 		return regain;
