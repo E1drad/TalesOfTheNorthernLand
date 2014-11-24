@@ -351,16 +351,12 @@
 //TODO make a setter for classeP and classeD and classeH
 	void Personnage::promotion(Classe* classe){
 		std::cout << "Vous avez peut-être être promut !" << std::endl;
-		std::cout << "this->classeActuelle = " << this->classeActuelle << " this->classeDivine = " << this->classeDivine << std::endl;
-		std::cout << "this->classePar = " << this->classeParangon << " this->classeHer = " << this->classeHeroique << std::endl;
 		if(this->classeActuelle != this->classeDivine){
 			this->modificateurClasse(classe);
 			this->classeActuelle->promotion(this, classe);
 			//this->classeActuelle = classe;
 			this->updateStatistique();
 			std::cout << "Vous avez été promut a la classe de " << this->classeActuelle->getNomClasse()  << std::endl;
-			std::cout << "this->classeActuelle = " << this->classeActuelle << " this->classeDivine = " << this->classeDivine << std::endl;
-			std::cout << "this->classePar = " << this->classeParangon << " this->classeHer = " << this->classeHeroique << std::endl;
 		}else{
 			std::cout << "Vous êtes déjà une divinité que desirez-vous de plus ?" << std::endl;
 		}

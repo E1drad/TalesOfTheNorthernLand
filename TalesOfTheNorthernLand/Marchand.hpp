@@ -26,7 +26,7 @@ public:
 	void marcher(Personnage *perso);
 	void afficherMenu(Personnage *perso);
 	void achat(Personnage *perso);
-	void ameliorer(Arme *arme);
+	void ameliorer(Personnage *perso);
 	Arme* getArme(std::string nomArme);
 
 };

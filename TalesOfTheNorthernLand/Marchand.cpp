@@ -64,7 +64,7 @@
 					this->achat(perso);
 					break;
 				case 2:
-					this->ameliorer(perso->getArmeActuelle());
+					this->ameliorer(perso);
 					break;
 				case 3:
 					test = true;
@@ -98,7 +98,7 @@
 		return arme;
 	}
 
-	void Marchand::ameliorer(Arme *arme){
+	void Marchand::ameliorer(Personnage *perso){
 		std::string cmd1;
 		cmd1 = "000";
 		bool test = false;
@@ -112,15 +112,15 @@
 				int cmd = std::stoi(cmd1);
 				switch (cmd){
 				case 1:
-					arme = new AmeliorationDegat(arme);
+					perso->setArmeEquiper(new AmeliorationDegat(perso->getArmeActuelle()));
 					test = true;
 					break;
 				case 2:
-					arme = new AmeliorationPrecision(arme);
+					perso->setArmeEquiper(new AmeliorationPrecision(perso->getArmeActuelle()));
 					test = true;
 					break;
 				case 3:
-					arme = new AmeliorationCritique(arme);
+					perso->setArmeEquiper(new AmeliorationCritique(perso->getArmeActuelle()));
 					test = true;
 					break;
 				case 4:
