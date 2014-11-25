@@ -72,9 +72,11 @@
 
 	}
 	int Soigneur::soigner(int soin){
-		std::cout << "\tNon "<< ceil((1.25 + 0.05*this->niveau)*soin) << " point de vie !" << std::endl;
+		int newSoin = 0;
+		newSoin = (soin > 0 ) ? ceil((1.25 + 0.05*this->niveau)*soin) :  abs((0.5 + 0.05*this->niveau)*soin);
+		std::cout << "\tNon "<< newSoin << " point de vie !" << std::endl;
 		std::this_thread::sleep_for(std::chrono::milliseconds(750));
-		return ceil(1.25*soin);
+		return newSoin;
 	}
 //class Tacticien : public Posture {
 

@@ -99,7 +99,8 @@ public :
 	void decheance();
 	int critique(int degat, Personnage *cible);
 	bool estMort();
-	bool modArgent(int argent);
+	void modArgent(int argent);
+	bool possedeAssezArgent(int argent);
 	int getArgent();
 	Arme* getArmeActuelle();
 

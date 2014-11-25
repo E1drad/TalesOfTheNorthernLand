@@ -21,7 +21,8 @@ private:
 	std::vector<Arme*> armes;
 public:
 	//Marchand(Pool poolArme);
-	Marchand();
+	//Marchand();
+	Marchand(std::vector<Arme*> vecInsatancieur);
 	~Marchand();
 	void marcher(Personnage *perso);
 	void afficherMenu(Personnage *perso);

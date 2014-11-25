@@ -39,7 +39,6 @@ void whaitForKey(){
 		std::cin.clear();
     	std::cin.ignore(999,'\n');
 	}
-
 }
 
 void vectorAdd10Int(std::vector<int> &Vec, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j){
@@ -70,7 +69,7 @@ void combat(Personnage *persoJoueur, Personnage *persoIA){
 int main(void){
 	Afficheur afficheur;
 	Instancieur* instancieur = new Instancieur();
-	Marchand* marchand = new Marchand();
+	Marchand* marchand = new Marchand(instancieur->getArmes());
 /*
 	std::vector<int> sStatSainteReine;
 	vectorAdd10Int(sStatSainteReine,0,15,15,8,8,6,7,15,8,8);
@@ -109,9 +108,6 @@ int main(void){
 		//TODO boucle de jeu + narration ?
 		//TODO marchand random
 		//TODO upgrade IA
-
-		//std::system("clear");
-		//std::this_thread::sleep_for(std::chrono::milliseconds(4000));
 		whaitForKey();
 		combat(&lucina,&malak);
 	}

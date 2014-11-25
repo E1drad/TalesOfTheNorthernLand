@@ -46,9 +46,11 @@
 	}
 
 	void Arme::afficher(){
+		std::string mag;
+		mag = (this->estMagique)?" Oui" : "Non" ;
 		std::cout << "NOM " << this->nomItem << " TYPE " << this->type << " DEGAT " << this->puissance
 				<< " PRE " << this->precision << " CRIT " << this->critique << " MAG? "
-				<< this->estMagique << " Prix "	<< this->prix << std::endl;
+				<< mag << " Prix "	<< this->prix << std::endl;
 	}
 
 

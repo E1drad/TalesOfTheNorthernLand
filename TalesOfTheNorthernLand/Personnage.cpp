@@ -106,7 +106,7 @@
 					test = false;
 					break;
 				default :
-					std::cout << "entre 1 et 3 merci !" << std::endl;
+					std::cout << "entre un nombre 1 et 3 merci !" << std::endl;
 				}
 			}catch (std::invalid_argument){
 				cmd1 = "000";
@@ -175,7 +175,7 @@
 					test = true;
 					break;
 				default :
-					std::cout << "entre 1 et 4 merci !" << std::endl;
+					std::cout << "entre un nombre 1 et 4 merci !" << std::endl;
 				}
 			}catch (std::invalid_argument){
 				cmd1 = "000";
@@ -187,7 +187,7 @@
 
 	bool Personnage::seSoigner(){
 		if(this->statistique.at(1) < this->statistique.at(2)){
-			int soin = ceil(this->statistique.at(2) * 0.25);
+			int soin = ceil( this->statistique.at(2) * (sin(rng1())/5 + 0.15 ) );//TODO A MODIFIER
 			std::cout << this->nom << " se soin de " << soin << " points "<< std::endl;
 			soin = this->posture->soigner(soin);
 			if( (this->statistique.at(1) + soin) <= this->statistique.at(2)){
@@ -203,7 +203,13 @@
 	void Personnage::setArmeEquiper(Arme* a){//TODO need update controle classe
 		this->armeEquiper = a;
 		std::cout << this->nom << " viens de s'équiper avec " << a->getNomItem() << std::endl;
+		int deg = this->getStatistiqueDerive().at(0);
+		int pre = this->getStatistiqueDerive().at(1);
+		int cri = this->getStatistiqueDerive().at(3);
 		this->updateStatistique();
+		std::cout << deg << "\t DEG  >> " <<this->getStatistiqueDerive().at(0) << std::endl;
+		std::cout << pre << "\t PRE  >> " <<this->getStatistiqueDerive().at(1) << std::endl;
+		std::cout << cri << "\t CRI  >> " <<this->getStatistiqueDerive().at(3) << std::endl;
 	}
 
 	void Personnage::setClasseActuelle(Classe* classe){
@@ -428,7 +434,11 @@
 		return this->statistique.at(1) <= 0;
 	}
 
-	bool Personnage::modArgent(int argent){
+	void Personnage::modArgent(int argent){
+		this->argent = this->argent + argent;
+	}
+
+	bool Personnage::possedeAssezArgent(int argent){
 		bool test = false;
 		if(this->argent >= argent){
 			test = true;

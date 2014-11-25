@@ -29,12 +29,12 @@
     void Instancieur::makeArmes(){
         Lance *lance1 = new Lance("Lance", 7, 75, 5, false, 80);
 		Epee *epee1 = new Epee("Epee longue", 6, 65, 5, false, 100);
-		Sort *ruine1 = new Sort("Ruine", 8, 85, 5, true, 120);
+		Sort *sort1 = new Sort("Ruine", 8, 85, 5, true, 120);
 		Epee *epee2 = new Epee("Epee batarde", 10, 65, 5, false, 600);
-		Sort *ruine2 = new Sort("Graviter", 12, 85, 5, true, 500);
+		Sort *sort2 = new Sort("Graviter", 12, 85, 5, true, 500);
 		Lance *lance2 = new Lance("Lance de la veriter", 9, 75, 5, false, 400);
 		Epee *epee3 = new Epee("Epee deux à main", 13, 65, 5, false, 800);
-		Sort *ruine3 = new Sort("Inferno", 15, 85, 5, true, 1000);
+		Sort *sort3 = new Sort("Inferno", 15, 85, 5, true, 1000);
 		Lance *lance3 = new Lance("Lance de la justice", 12, 75, 5, false, 700);
 		this->armes.push_back(lance1);
 		this->armes.push_back(lance2);
@@ -42,9 +42,9 @@
 		this->armes.push_back(epee1);
 		this->armes.push_back(epee2);
 		this->armes.push_back(epee3);
-		this->armes.push_back(ruine1);
-		this->armes.push_back(ruine2);
-		this->armes.push_back(ruine3);
+		this->armes.push_back(sort1);
+		this->armes.push_back(sort2);
+		this->armes.push_back(sort3);
     }
 
     void Instancieur::makeBranches(){

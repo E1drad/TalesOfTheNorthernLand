@@ -6,35 +6,18 @@
  */
 #include "Marchand.hpp"
 
-	/*Marchand::Marchand(Pool poolArme){
-		for(unsigned int i = 0 ; i < poolArme.getPool().size(); ++i){
-			if(typeid(poolArme.getPool().at(i)) == typeid(Arme())){
-				this->Armes.push_back(poolArme.getPool().at(i));
-			}
-		}
-	}*/
 
-	Marchand::Marchand(){
-		Lance *lance1 = new Lance("Lance", 7, 75, 5, false, 80);
-		Epee *epee1 = new Epee("Epee longue", 6, 65, 5, false, 100);
-		Sort *ruine1 = new Sort("Ruine", 8, 85, 5, true, 120);
-		Epee *epee2 = new Epee("Epee batarde", 10, 65, 5, false, 600);
-		Sort *ruine2 = new Sort("Graviter", 12, 85, 5, true, 500);
-		Lance *lance2 = new Lance("Lance de la veriter", 9, 75, 5, false, 400);
-		Epee *epee3 = new Epee("Epee deux à main", 13, 65, 5, false, 800);
-		Sort *ruine3 = new Sort("Inferno", 15, 85, 15, true, 1000);
-		Lance *lance3 = new Lance("Lance de la justice", 12, 75, 5, false, 700);
-		Sort *ruine4 = new Sort("Apocalypse", 10, 85, 9001, true, 10000);
-		this->armes.push_back(lance1);
-		this->armes.push_back(lance2);
-		this->armes.push_back(lance3);
-		this->armes.push_back(epee1);
-		this->armes.push_back(epee2);
-		this->armes.push_back(epee3);
-		this->armes.push_back(ruine1);
-		this->armes.push_back(ruine2);
-		this->armes.push_back(ruine3);
-		this->armes.push_back(ruine4);
+	void waitForKey(){
+		std::cout << "Press the ENTER key\n";
+		if (std::cin.get() == '\n'){
+		}else{
+			std::cin.clear();
+			std::cin.ignore(999,'\n');
+		}
+	}
+
+	Marchand::Marchand(std::vector<Arme*> vecInsatancieur){
+		this->armes = vecInsatancieur;
 	}
 
 
@@ -83,7 +66,47 @@
 
 
 	void Marchand::achat(Personnage *perso){
-		std::cout << "Fermer pour le moment désolé :(" << std::endl;
+		std::string cmd1;
+		cmd1 = "000";
+		bool test = false;
+		std::system("clear");
+		for(unsigned int i = 0; i < this->armes.size(); ++i){
+			std::cout << i+1 << "/ "; this->armes.at(i)->afficher();
+		}
+		std::cout << "-1/ Pour quitter" << std::endl;
+		std::cout << perso->getArgent() << " Iverios" << std::endl;
+		while((!test) || (cmd1.length() != 1)){
+			std::cin >> cmd1;
+			try{
+				int cmd = std::stoi(cmd1);
+				cmd = cmd -1;//compensation de l'affichage
+				if(cmd > 0 && cmd < this->armes.size()){
+					if(perso->possedeAssezArgent(this->armes.at(cmd)->getPrix())){
+						perso->modArgent( -this->armes.at(cmd)->getPrix());
+						perso->setArmeEquiper(this->armes.at(cmd));
+						std::cout << "Merci pour l'achat et bon voyage !" << std::endl;
+						waitForKey();
+						test = true;
+					}else{
+						std::cout << "Desole mais il semblerait que votre bourse ne pas assez remplit !" << std::endl;
+						waitForKey();
+					}
+				}else if(cmd == -2){
+					std::cout << "Revenez bientôt et avec plus d'Iverios !" << std::endl;
+					waitForKey();
+					test = true;
+				}else{
+					std::cout << "entrer un nombre 1 et " << this->armes.size() << " merci !" << std::endl;
+				}
+			}catch (std::invalid_argument){
+				cmd1 = "000";
+				std::system("clear");
+				std::cout << "Veuiller enter un nombre compris entre 1 et et " << this->armes.size() << std::endl;
+				for(unsigned int i = 0; i < this->armes.size(); ++i){
+					std::cout << i+1; this->armes.at(i)->afficher();
+				}
+			}
+		}//while
 	}
 
 	Arme* Marchand::getArme(std::string nomArme){
