@@ -95,7 +95,6 @@
 				int cmd = std::stoi(cmd1);
 				switch (cmd){
 				case 1:
-					std::system("clear");
 					this->attaquer(cible);
 					test = true;
 					break;
@@ -120,7 +119,12 @@
 	}
 
 	void Personnage::combatAutomatique(Personnage *cible){
-		std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		std::cout << "...";
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		std::cout << " ...";
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		std::cout << " ..." << std::endl;
 		if( this->statistique.at(1) < floor(0.3*this->statistique.at(2)) ){
 			if((this->statistique.at(1) < ceil(cible->getStatistiqueDerive().at(0)))){
 				this->posture = new Defenseur(this->statistiqueDerive.at(5)-1);
@@ -129,7 +133,7 @@
 			}
 			this->seSoigner();
 		}else{
-			if(this->posture->toucher(this->statistiqueDerive.at(1)) - cible->getStatistiqueDerive().at(2)){
+			if(this->statistiqueDerive.at(1) - cible->getStatistiqueDerive().at(2)){
 				this->posture = new Tacticien(this->statistiqueDerive.at(7)-1);
 			}else if((this->statistique.at(1) < ceil(cible->getStatistiqueDerive().at(0)))){
 				this->posture = new Defenseur(this->statistiqueDerive.at(5)-1);
@@ -284,7 +288,7 @@
 		cible->updateStatistique();
 		jetDe = (rng1() % 100) + 1;
 		std::string genre = (this->estFemme)? "elle" : "il";
-		std::cout << this->nom << " attaque " << cible->getNom() << ", " << genre << " fait un " << jetDe << " ";
+		std::cout << this->nom << " attaque " << cible->getNom() << ", " << genre << " fait un " << jetDe << std::endl;;
 		touche = this->posture->toucher(this->statistiqueDerive.at(1));
 		std::this_thread::sleep_for(std::chrono::milliseconds(750));
 		if(jetDe <= touche - cible->getStatistiqueDerive().at(2)){
@@ -444,9 +448,9 @@
 	void Personnage::whaitForKey(){
 		std::cout << "Press the ENTER key\n";
 		if (std::cin.get() == '\n'){
-	    	std::cout << "Good job.\n";
+	    	//std::cout << "Good job.\n";
 		}else{
-	    	std::cout << "I meant ONLY the ENTER key... Oh well.\n";
+	    	//std::cout << "I meant ONLY the ENTER key... Oh well.\n";
 			std::cin.clear();
     		std::cin.ignore(999,'\n');
 		}

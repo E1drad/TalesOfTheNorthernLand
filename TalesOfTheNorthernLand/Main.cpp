@@ -28,13 +28,14 @@
 //rng();//nouvelle methode !
 
 
-
+//Joachim on ecrit sa WAIT PAS WHAIT mais j'ai trop la flemme de changé sa partout :(
+//Signé Charles
 void whaitForKey(){
 	std::cout << "Press the ENTER key\n";
 	if (std::cin.get() == '\n'){
-	    std::cout << "Good job.\n";
+	   // std::cout << "Good job.\n";
 	}else{
-	    std::cout << "I meant ONLY the ENTER key... Oh well.\n";
+	   // std::cout << "I meant ONLY the ENTER key... Oh well.\n";
 		std::cin.clear();
     	std::cin.ignore(999,'\n');
 	}
@@ -52,12 +53,12 @@ void combat(Personnage *persoJoueur, Personnage *persoIA){
 		std::system("clear");
 		afficheur.afficherPersos(persoJoueur,persoIA);
 		if(!persoJoueur->estMort()){
-			//lucina.attaquer(&raven);
 			persoJoueur->actionCombat(persoIA);
 		}
 		//std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 		std::system("clear");
 		afficheur.afficherPersos(persoJoueur,persoIA);
+		//whaitForKey();
 		if(!persoIA->estMort()){
 			persoIA->combatAutomatique(persoJoueur);
 		}
@@ -70,35 +71,30 @@ int main(void){
 	Afficheur afficheur;
 	Instancieur* instancieur = new Instancieur();
 	Marchand* marchand = new Marchand();
-
+/*
 	std::vector<int> sStatSainteReine;
 	vectorAdd10Int(sStatSainteReine,0,15,15,8,8,6,7,15,8,8);
 	ClasseDivine sainteReine(std::string("Sainte Reine"), sStatSainteReine, &clerger, demiDieu, 5);
 
-
 	std::vector<int> sStatSainte;
 	vectorAdd10Int(sStatSainte,0,25,25,4,4,6,5,12,10,10);
 	ClasseDivine sainte(std::string("Sainte"), sStatSainte, &clerger, volonter, 5);
-
+*/
 
 	std::vector<int> stat;
 	vectorAdd10Int(stat,0,40,40,6,6,7,7,7,9,9);
 
 	Personnage lucina(stat, std::string("Lucina"), instancieur->getClasseH("Pretresse"),  instancieur->getRace("elfe"), true, 1);
-	//afficherStat(&lucina);
 	afficheur.afficherPerso(&lucina);
 	lucina.setArmeEquiper(marchand->getArme("Graviter"));
 	whaitForKey();
-	//std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-	//lucina.setArmeEquiper(marchand->getArme("Inferno"));
-	//afficherStat(&lucina);
 	afficheur.afficherPerso(&lucina);
 
 	Personnage raven(stat, std::string("Raven"), instancieur->getClasseH("Archer"),  instancieur->getRace("genasi"), false, 2);
 	raven.setArmeEquiper(marchand->getArme("Lance"));
 	Personnage malak(stat, std::string("Malak"), instancieur->getClasseH("Archer"),  instancieur->getRace("genasi"), false, 2);
 	malak.setArmeEquiper(marchand->getArme("Epee longue"));
-	whaitForKey();
+	std::system("clear");
 
 	combat(&lucina,&raven);
 
@@ -113,6 +109,7 @@ int main(void){
 		//TODO boucle de jeu + narration ?
 		//TODO marchand random
 		//TODO upgrade IA
+
 		//std::system("clear");
 		//std::this_thread::sleep_for(std::chrono::milliseconds(4000));
 		whaitForKey();

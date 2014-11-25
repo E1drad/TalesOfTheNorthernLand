@@ -19,8 +19,14 @@
 
 	void Afficheur::afficherPersos(Personnage *perso1,Personnage *perso2){
 		std::system("clear");
-		std::cout << perso1->getNom() << "\t <<  Nom  >> \t"<< perso2->getNom() << std::endl;
-		std::cout << perso1->getClasseActuelle()->getNomClasse() << "\t << Classe>> \t"<< perso2->getClasseActuelle()->getNomClasse() << std::endl;
+		int i = 0;
+		if(perso1->getClasseActuelle()->getNomClasse().length() > 7){
+			i = 7;
+		}else{
+			i= perso1->getClasseActuelle()->getNomClasse().length() - 1;
+		}
+		std::cout << perso1->getNom().substr(0,i) << "\t <<  Nom  >> \t"<< perso2->getNom() << std::endl;
+		std::cout << perso1->getClasseActuelle()->getNomClasse().substr(0,i) << "\t << Classe>> \t"<< perso2->getClasseActuelle()->getNomClasse() << std::endl;
 		std::cout << perso1->getStatistique().at(1) << "\t <<  PV   >> \t" << perso2->getStatistique().at(1) << std::endl;
 		std::cout << perso1->getStatistique().at(2) << "\t << PVMAX >> \t" << perso2->getStatistique().at(2) << std::endl;
 		std::cout << perso1->getStatistique().at(3) << "\t <<  FOR  >> \t" << perso2->getStatistique().at(3) << std::endl;
@@ -33,13 +39,19 @@
 		std::cout << perso1->getStatistiqueDerive().at(0) << "\t <<  DEG  >> \t" << perso2->getStatistiqueDerive().at(0) << std::endl;
 		std::cout << perso1->getStatistiqueDerive().at(1) << "\t <<  PRE  >> \t" << perso2->getStatistiqueDerive().at(1) << std::endl;
 		std::cout << perso1->getStatistiqueDerive().at(2) << "\t <<  ESQ  >> \t" << perso2->getStatistiqueDerive().at(2) << std::endl;
-		std::cout << perso1->getStatistiqueDerive().at(3) << "\t <<  CRIT >> \t" << perso2->getStatistiqueDerive().at(3) << std::endl;
+		std::cout << perso1->getStatistiqueDerive().at(3) << "\t<<  CRIT >> \t" << perso2->getStatistiqueDerive().at(3) << std::endl;
 	}
 
 	void Afficheur::afficherPerso(Personnage *perso1){
 		//std::system("clear");
-		std::cout << perso1->getNom() << "\t <<  Nom  >> "<< std::endl;
-		std::cout << perso1->getClasseActuelle()->getNomClasse() << "\t << Classe>> \t" << std::endl;
+		int i = 0;
+		if(perso1->getClasseActuelle()->getNomClasse().length() > 7){
+			i = 7;
+		}else{
+			i= perso1->getClasseActuelle()->getNomClasse().length() - 1;
+		}
+		std::cout << perso1->getNom().substr(0,i) << "\t <<  Nom  >> "<< std::endl;
+		std::cout << perso1->getClasseActuelle()->getNomClasse().substr(0,i) << "\t << Classe>> " << std::endl;
 		std::cout << perso1->getStatistique().at(1) << "\t <<  PV   >> " << std::endl;
 		std::cout << perso1->getStatistique().at(2) << "\t << PVMAX >> " << std::endl;
 		std::cout << perso1->getStatistique().at(3) << "\t <<  FOR  >> " << std::endl;

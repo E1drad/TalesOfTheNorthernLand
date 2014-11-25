@@ -81,14 +81,10 @@
         races.push_back(genasi);
     }
 
+    /*
+     * WARNING LES NOMS DE BRANCHE COMMENCE PAR UN MAJUSCULE ie getBranche("clerger") => std::out_of_range !!!
+     */
     void Instancieur::makeClasses(){
-        std::vector<int> sStatPretresse;
-        vectorAdd10Int(sStatPretresse,0,1,1,-1,-1,0,0,1,4,4);
-        TechniqueStatistique* zele = new TechniqueStatistique(std::string("zele"), 9);
-        TechniqueStatistique* celeste = new TechniqueStatistique(std::string("celeste"), 7);
-        ClasseHeroique *pretresse = new ClasseHeroique(std::string("Pretresse"), sStatPretresse, getBranche("Clerger"), zele, celeste, 5, 15);
-        classesH.push_back(pretresse);
-
         std::vector<int> sStatArcher;
         vectorAdd10Int(sStatArcher,0,1,1,2,-2,4,2,1,1,-2);
         TechniqueStatistique* adresse = new TechniqueStatistique(std::string("adresse"), 6);
@@ -96,12 +92,37 @@
         ClasseHeroique *archer = new ClasseHeroique(std::string("Archer"), sStatArcher, getBranche("Guerrier"), adresse, colosse, 5, 15);
         classesH.push_back(archer);
 
+        std::vector<int> sStatArcaniste;
+        vectorAdd10Int(sStatArcaniste,0,10,10,4,2,4,2,8,6,6);
+        TechniqueStatistique* erudit = new TechniqueStatistique(std::string("erudit"), 8);
+        TechniqueStatistique* concentration = new TechniqueStatistique(std::string("concentration"), 2);
+        ClasseHeroique *arcaniste = new ClasseHeroique(std::string("Arcaniste"), sStatArcaniste, getBranche("Mage"), erudit, concentration, 5, 15);
+        classesH.push_back(arcaniste);
+
+        std::vector<int> sStatPretresse;
+        vectorAdd10Int(sStatPretresse,0,1,1,-1,-1,0,0,1,4,4);
+        TechniqueStatistique* zele = new TechniqueStatistique(std::string("zele"), 9);
+        TechniqueStatistique* celeste = new TechniqueStatistique(std::string("celeste"), 7);
+        ClasseHeroique *pretresse = new ClasseHeroique(std::string("Pretresse"), sStatPretresse, getBranche("Clerger"), zele, celeste, 5, 15);
+        classesH.push_back(pretresse);
+
         std::vector<int> sStatReine;
         vectorAdd10Int(sStatReine,0,10,10,4,2,4,2,8,6,6);
         TechniqueStatistique* volonter = new TechniqueStatistique(std::string("volonter"), 8);
         TechniqueStatistique* demiDieu = new TechniqueStatistique(std::string("demi dieu"), 2);
-        ClasseParangon *reine = new ClasseParangon(std::string("Reine"), sStatReine, getBranche("Mage"), volonter, demiDieu, 5, 15);
+        ClasseParangon *reine = new ClasseParangon(std::string("Reine"), sStatReine, getBranche("Clerger"), volonter, demiDieu, 5, 15);
         classesP.push_back(reine);
+
+        std::vector<int> sStatSainteReine;
+        vectorAdd10Int(sStatSainteReine,0,18,18,8,8,6,7,15,8,8);
+        ClasseDivine *sainteReine = new ClasseDivine(std::string("Sainte Reine"), sStatSainteReine, getBranche("Clerger"), demiDieu, 5);
+        this->classesD.push_back(sainteReine);
+
+        std::vector<int> sStatSainte;
+        vectorAdd10Int(sStatSainte,0,25,25,4,4,6,5,12,10,10);
+        ClasseDivine *sainte = new ClasseDivine(std::string("Sainte"), sStatSainte, getBranche("Clerger"), volonter, 5);
+        this->classesD.push_back(sainte);
+
     }
 
     Arme* Instancieur::getArme(std::string nomArme){
