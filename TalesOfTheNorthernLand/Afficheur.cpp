@@ -20,6 +20,7 @@
 	void Afficheur::afficherPersos(Personnage *perso1,Personnage *perso2){
 		std::system("clear");
 		std::cout << perso1->getNom() << "\t <<  Nom  >> \t"<< perso2->getNom() << std::endl;
+		std::cout << perso1->getClasseActuelle()->getNomClasse() << "\t << Classe>> \t"<< perso2->getClasseActuelle()->getNomClasse() << std::endl;
 		std::cout << perso1->getStatistique().at(1) << "\t <<  PV   >> \t" << perso2->getStatistique().at(1) << std::endl;
 		std::cout << perso1->getStatistique().at(2) << "\t << PVMAX >> \t" << perso2->getStatistique().at(2) << std::endl;
 		std::cout << perso1->getStatistique().at(3) << "\t <<  FOR  >> \t" << perso2->getStatistique().at(3) << std::endl;
@@ -36,8 +37,9 @@
 	}
 
 	void Afficheur::afficherPerso(Personnage *perso1){
-		std::system("clear");
+		//std::system("clear");
 		std::cout << perso1->getNom() << "\t <<  Nom  >> "<< std::endl;
+		std::cout << perso1->getClasseActuelle()->getNomClasse() << "\t << Classe>> \t" << std::endl;
 		std::cout << perso1->getStatistique().at(1) << "\t <<  PV   >> " << std::endl;
 		std::cout << perso1->getStatistique().at(2) << "\t << PVMAX >> " << std::endl;
 		std::cout << perso1->getStatistique().at(3) << "\t <<  FOR  >> " << std::endl;

@@ -16,9 +16,10 @@
 
 class Posture {
 protected :
+	int niveau;
 	std::string nomPosture;
 public:
-	Posture(std::string nomPosture);
+	Posture(std::string nomPosture, int niveau);
 	virtual ~Posture() = 0;
 	virtual int attaquer(int degat);
 	virtual int soigner(int soin);
@@ -29,7 +30,7 @@ public:
 class Attaquant : public Posture {
 private:
 public:
-	Attaquant();
+	Attaquant(int niveau);
 	~Attaquant();
 	int attaquer(int degat);
 
@@ -37,7 +38,7 @@ public:
 class Defenseur : public Posture {
 private:
 public:
-	Defenseur();
+	Defenseur(int niveau);
 	~Defenseur();
 	int subirDegat(int degat);
 
@@ -46,7 +47,7 @@ public:
 class Soigneur : public Posture {
 private:
 public:
-	Soigneur();
+	Soigneur(int niveau);
 	~Soigneur();
 	int soigner(int soin);
 };
@@ -54,7 +55,7 @@ public:
 class Tacticien : public Posture {
 private:
 public:
-	Tacticien();
+	Tacticien(int niveau);
 	~Tacticien();
 	int toucher(int toucher);
 };

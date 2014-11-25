@@ -7,8 +7,9 @@
 
 #include "Posture.hpp"
 //class Posture {
-	Posture::Posture(std::string nomPosture){
+	Posture::Posture(std::string nomPosture, int niveau){
 		this->nomPosture = nomPosture;
+		this->niveau = niveau;
 	}
 
 	Posture::~Posture(){
@@ -32,7 +33,7 @@
 	}
 
 //class Attaquant : public Posture {
-	Attaquant::Attaquant() : Posture::Posture("Attaquant"){
+	Attaquant::Attaquant(int niveau) : Posture::Posture("Attaquant", niveau){
 		std::cout << "Time for a real fight!" << std::endl;
 	}
 
@@ -41,13 +42,13 @@
 	}
 
 	int Attaquant::attaquer(int degat){
-		std::cout << " Non "<< ceil(1.25*degat) << " degats !" << std::endl;
+		std::cout << "\tNon "<< ceil((1.25 + 0.05*this->niveau)*degat) << " degats !" << std::endl;
 		std::this_thread::sleep_for(std::chrono::milliseconds(750));
 		return ceil(1.25*degat);
 	}
 
 //class Defenseur : public Posture {
-	Defenseur::Defenseur() : Posture::Posture("Defenseur"){
+	Defenseur::Defenseur(int niveau) : Posture::Posture("Defenseur", niveau){
 		std::cout << "Warrior goddess, I will stand guard over your legacy" << std::endl;
 	}
 
@@ -56,14 +57,14 @@
 	}
 
 	int Defenseur::subirDegat(int degat){
-		std::cout << " Non "<< floor(0.75*degat) << " degats !" << std::endl;
+		std::cout << "\tNon "<< floor( (0.75 + 0.025*this->niveau)*degat) << " degats !" << std::endl;
 		std::this_thread::sleep_for(std::chrono::milliseconds(750));
-		return floor(0.75*degat);
+		return floor((0.75 + 0.025*this->niveau)*degat);
 	}
 
 //class Soigneur : public Posture {
 
-	Soigneur::Soigneur() : Posture::Posture("Soigneur"){
+	Soigneur::Soigneur(int niveau) : Posture::Posture("Soigneur", niveau){
 		std::cout << "Savior's got a job." << std::endl;
 	}
 
@@ -71,13 +72,13 @@
 
 	}
 	int Soigneur::soigner(int soin){
-		std::cout << " Non "<< ceil(1.25*soin) << " point de vie !" << std::endl;
+		std::cout << "\tNon "<< ceil((1.25 + 0.05*this->niveau)*soin) << " point de vie !" << std::endl;
 		std::this_thread::sleep_for(std::chrono::milliseconds(750));
 		return ceil(1.25*soin);
 	}
 //class Tacticien : public Posture {
 
-	Tacticien::Tacticien(): Posture::Posture("Tacticien"){
+	Tacticien::Tacticien(int niveau): Posture::Posture("Tacticien", niveau){
 		std::cout << "Did you really think you can beat me" << std::endl;
 	}
 
@@ -85,7 +86,7 @@
 	}
 
 	int Tacticien::toucher(int toucher){
-		std::cout << ". Non il feinte pour mieux contre-attaquer " << std::endl;
+		std::cout << "\tUn coup aussi rapide que la foudre. " << std::endl;
 		std::this_thread::sleep_for(std::chrono::milliseconds(750));
-		return ceil(1.25*toucher);
+		return ceil((1.25 + 0.05*this->niveau)*toucher);
 	}

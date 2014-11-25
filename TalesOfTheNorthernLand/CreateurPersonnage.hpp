@@ -9,12 +9,17 @@
 #define CREATEURPERSONNAGE_HPP_
 
 #include "Personnage.hpp"
+#include "Branche.hpp"
+#include "Classe.hpp"
+#include <iostream>
+#include <string>
+#include <vector>
 
 class CreateurPersonnage{
 private:
 
 public:
-	Personnage CreateurPersonnage::creationPersonnage();
-	void CreateurPersonnage::texteBranche();
+	Personnage creationPersonnage();
+	void texteBranche(std::string nom);
 };
 #endif /* CREATEURPERSONNAGE_HPP_ */

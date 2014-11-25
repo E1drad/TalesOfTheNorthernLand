@@ -46,7 +46,7 @@ void combat(Personnage *persoJoueur, Personnage *persoIA){
 		std::system("clear");
 		afficheur.afficherPersos(persoJoueur,persoIA);
 		if(!persoIA->estMort()){
-			persoIA->attaquer(persoJoueur);
+			persoIA->combatAutomatique(persoJoueur);
 		}
 		std::this_thread::sleep_for(std::chrono::milliseconds(2500));
 	}
@@ -108,13 +108,13 @@ int main(void){
 
 
 	std::vector<int> stat;
-	vectorAdd10Int(stat,0,20,20,5,5,5,5,5,5,5);
+	vectorAdd10Int(stat,0,40,40,6,6,7,7,7,9,9);
 
 	Personnage lucina(stat, std::string("Lucina"), &pretresse, &elfe, true, 1);
 	//afficherStat(&lucina);
 	afficheur.afficherPerso(&lucina);
 	std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-	lucina.setArmeEquiper(marchand->getArme("Inferno"));
+	lucina.setArmeEquiper(marchand->getArme("Graviter"));
 	//afficherStat(&lucina);
 	afficheur.afficherPerso(&lucina);
 	std::this_thread::sleep_for(std::chrono::milliseconds(3000));
@@ -134,7 +134,9 @@ int main(void){
 		afficheur.afficherPerso(&lucina);
 		std::this_thread::sleep_for(std::chrono::milliseconds(4000));
 		std::system("clear");
-
+//TODO boucle de jeu + narration ?
+//TODO marchand random
+//TODO upgrade IA
 		combat(&lucina,&malak);
 	}
 

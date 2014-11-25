@@ -50,6 +50,8 @@ private :
 
 	/* int degat;		0 |	int precision;		1
 	 * int esquive;		2 |	int critique;		3
+	 * int attaquant	4 | int	defenseur		5
+	 * int soigneur		6 | int	tacticien		7
 	 */
 	std::vector<int> statistiqueDerive;
 
@@ -70,6 +72,7 @@ public :
 	Personnage(std::vector<int> s, std::string n, ClasseHeroique* c, Race* r, bool estFemme, int niveau);
 	~Personnage();
 	void actionCombat(Personnage *cible);
+	void combatAutomatique(Personnage *cible);
 	void changePosture();
 	bool seSoigner();
 	void setArmeEquiper(Arme* a);

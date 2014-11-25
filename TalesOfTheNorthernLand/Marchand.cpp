@@ -22,8 +22,9 @@
 		Sort *ruine2 = new Sort("Graviter", 12, 85, 5, true, 500);
 		Lance *lance2 = new Lance("Lance de la veriter", 9, 75, 5, false, 400);
 		Epee *epee3 = new Epee("Epee deux à main", 13, 65, 5, false, 800);
-		Sort *ruine3 = new Sort("Inferno", 15, 85, 9001, true, 1000);
+		Sort *ruine3 = new Sort("Inferno", 15, 85, 15, true, 1000);
 		Lance *lance3 = new Lance("Lance de la justice", 12, 75, 5, false, 700);
+		Sort *ruine4 = new Sort("Apocalypse", 10, 85, 9001, true, 10000);
 		this->armes.push_back(lance1);
 		this->armes.push_back(lance2);
 		this->armes.push_back(lance3);
@@ -33,6 +34,7 @@
 		this->armes.push_back(ruine1);
 		this->armes.push_back(ruine2);
 		this->armes.push_back(ruine3);
+		this->armes.push_back(ruine4);
 	}
 
 

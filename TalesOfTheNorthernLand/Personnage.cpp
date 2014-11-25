@@ -43,14 +43,18 @@
 		this->race = r;
 		this->estFemme = estFemme;
 		this->statistique = s;
-		this->statistiqueDerive.push_back(0);
-		this->statistiqueDerive.push_back(0);
-		this->statistiqueDerive.push_back(0);
-		this->statistiqueDerive.push_back(0);
+		this->statistiqueDerive.push_back(0);//degat
+		this->statistiqueDerive.push_back(0);//esq
+		this->statistiqueDerive.push_back(0);//pre
+		this->statistiqueDerive.push_back(0);//crit
+		this->statistiqueDerive.push_back(0);//lvl attanquant
+		this->statistiqueDerive.push_back(0);//lvl defenseur
+		this->statistiqueDerive.push_back(0);//lvl soigneur
+		this->statistiqueDerive.push_back(0);//lvl tacticien
 		this->classeHeroique = c;
 		this->niveau = niveau;
 		this->classeActuelle = this->classeHeroique;
-		this->posture = new Defenseur();
+		this->posture = new Defenseur(this->statistiqueDerive.at(5));
 		this->classeParangon = nullptr;
 		this->classeDivine = nullptr;
 		this->armeEquiper = nullptr;
@@ -111,6 +115,28 @@
 		std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 	}
 
+	void Personnage::combatAutomatique(Personnage *cible){
+		std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+		if( this->statistique.at(1) < floor(0.3*this->statistique.at(2)) ){
+			if((this->statistique.at(1) < ceil(cible->getStatistiqueDerive().at(0)))){
+				this->posture = new Defenseur(this->statistiqueDerive.at(5)-1);
+			}else{
+				this->posture = new Soigneur(this->statistiqueDerive.at(6)-1);
+			}
+			this->seSoigner();
+		}else{
+			if(this->posture->toucher(this->statistiqueDerive.at(1)) - cible->getStatistiqueDerive().at(2)){
+				this->posture = new Tacticien(this->statistiqueDerive.at(7)-1);
+			}else if((this->statistique.at(1) < ceil(cible->getStatistiqueDerive().at(0)))){
+				this->posture = new Defenseur(this->statistiqueDerive.at(5)-1);
+			}else{
+				this->posture = new Attaquant(this->statistiqueDerive.at(4)-1);
+			}
+			this->attaquer(cible);
+		}
+	}
+
+
 	void Personnage::changePosture(){
 		std::cout << "Qu'elle posture " << this->nom << " va prendre ?" << std::endl;
 		std::string cmd1;
@@ -123,19 +149,19 @@
 				int cmd = std::stoi(cmd1);
 				switch (cmd){
 				case 1:
-					this->posture = new Attaquant();
+					this->posture = new Attaquant(this->statistiqueDerive.at(4));
 					test = true;
 					break;
 				case 2:
-					this->posture = new Defenseur();
+					this->posture = new Defenseur(this->statistiqueDerive.at(5));
 					test = true;
 					break;
 				case  3:
-					this->posture = new Soigneur();
+					this->posture = new Soigneur(this->statistiqueDerive.at(6));
 					test = true;
 					break;
 				case  4:
-					this->posture = new Tacticien();
+					this->posture = new Tacticien(this->statistiqueDerive.at(7));
 					test = true;
 					break;
 				default :
