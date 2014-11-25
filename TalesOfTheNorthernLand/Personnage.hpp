@@ -14,6 +14,7 @@
 #include "Race.hpp"
 #include "Item.hpp"
 #include "Armes.hpp"
+ #include "Afficheur.hpp"
 //#include "ZoneDeDeplacement.hpp"
 #include <vector>
 #include <iostream>
@@ -64,6 +65,7 @@ private :
 	void modificateurRace();
 	void modificateurClasse(Classe* classe);
 	void modificateurClasseDecheance(Classe* classe);
+	void whaitForKey();
 
 public :
 

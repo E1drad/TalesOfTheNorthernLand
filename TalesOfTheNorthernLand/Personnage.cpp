@@ -85,10 +85,13 @@
 			std::cout << "Qu'est que " << this->nom << " va faire ?\n\t 1/ Pour attaquer\n\t"
 							" 2/ Pour se soigner\n\t 3/ Pour changer de posture" << std::endl;
 			std::cin >> cmd1;
+			std::cin.clear();
+    		std::cin.ignore(999,'\n');
 			try{
 				int cmd = std::stoi(cmd1);
 				switch (cmd){
 				case 1:
+					std::system("clear");
 					this->attaquer(cible);
 					test = true;
 					break;
@@ -108,7 +111,8 @@
 			}
 		}
 		std::cout << "Fin de votre tour !" << std::endl;
-		std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+		//std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+		whaitForKey();
 	}
 
 	void Personnage::changePosture(){
@@ -119,6 +123,8 @@
 		while((!test) || (cmd1.length() != 1)){
 			std::cout << "\t 1/ Pour attaquant\n\t 2/ Pour defenseur \n\t 3/ Pour soigneur \n\t 4/ Pour tacticien" << std::endl;
 			std::cin >> cmd1;
+			std::cin.clear();
+    		std::cin.ignore(999,'\n');
 			try{
 				int cmd = std::stoi(cmd1);
 				switch (cmd){
@@ -276,7 +282,12 @@
 	void Personnage::mourant(){
 		std::string genre = (this->estFemme)? "t'elle" : "t'il";
 		std::cout << this->nom << " est agonisant ! Va " << genre << " mourir ?" << std::endl;
-		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		std::this_thread::sleep_for(std::chrono::milliseconds(333));
+		std::cout << ".";
+		std::this_thread::sleep_for(std::chrono::milliseconds(333));
+		std::cout << ".";
+		std::this_thread::sleep_for(std::chrono::milliseconds(333));
+		std::cout << "."  << std::endl;
 		this->statistique.at(1) = this->classeActuelle->mort(this->statistique.at(7), this->statistique.at(2));
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 		if(this->statistique.at(1) <= 0){
@@ -403,3 +414,15 @@
 	Arme* Personnage::getArmeActuelle(){
 		return this->armeEquiper;
 	}
+
+	void Personnage::whaitForKey(){
+		std::cout << "Press the ENTER key\n";
+		if (std::cin.get() == '\n'){
+	    	std::cout << "Good job.\n";
+		}else{
+	    	std::cout << "I meant ONLY the ENTER key... Oh well.\n";
+			std::cin.clear();
+    		std::cin.ignore(999,'\n');
+		}
+	}
+	

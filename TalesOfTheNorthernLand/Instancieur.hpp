@@ -14,13 +14,16 @@
 #include "Item.hpp"
 #include "Branche.hpp"
 #include "Classe.hpp"
+ #include "Race.hpp"
 
 class Instancieur {
 private:
 	std::vector<Arme*> armes;
 	std::vector<Branche*> branches;
 	std::vector<Race*> races;
-	std::vector<Classe*> classes;
+	std::vector<ClasseHeroique*> classesH;
+	std::vector<ClasseParangon *> classesP;
+	std::vector<ClasseDivine*> classesD;
 public:
 	Instancieur();
 	~Instancieur();
@@ -33,7 +36,9 @@ public:
 	Arme* getArme(std::string nomArme);
 	Branche* getBranche(std::string nomBranche);
 	Race* getRace(std::string nomRace);
-	Classe* getClasse(std::string nomClasse);
+	ClasseHeroique* getClasseH(std::string nomClasse);
+	ClasseParangon* getClasseP(std::string nomClasse);
+	ClasseDivine* getClasseD(std::string nomClasse);
 };
 
 #endif /* INSTANCIEUR_HPP_ */

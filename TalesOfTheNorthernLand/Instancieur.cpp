@@ -11,6 +11,7 @@
         makeArmes();
         makeBranches();
         makeRaces();
+        makeClasses();
 	}
 
 	Instancieur::~Instancieur(){
@@ -81,26 +82,26 @@
     }
 
     void Instancieur::makeClasses(){
-        std::vector<int> sStatPrincesse;
-        vectorAdd10Int(sStatPrincesse,0,1,1,-1,-1,0,0,1,4,4);
+        std::vector<int> sStatPretresse;
+        vectorAdd10Int(sStatPretresse,0,1,1,-1,-1,0,0,1,4,4);
         TechniqueStatistique* zele = new TechniqueStatistique(std::string("zele"), 9);
         TechniqueStatistique* celeste = new TechniqueStatistique(std::string("celeste"), 7);
-        ClasseHeroique *pretresse = new ClasseHeroique(std::string("Pretresse"), sStatPrincesse, &clerger, zele, celeste, 5, 15);
-        classes.push_back(pretresse);
+        ClasseHeroique *pretresse = new ClasseHeroique(std::string("Pretresse"), sStatPretresse, getBranche("Clerger"), zele, celeste, 5, 15);
+        classesH.push_back(pretresse);
 
         std::vector<int> sStatArcher;
         vectorAdd10Int(sStatArcher,0,1,1,2,-2,4,2,1,1,-2);
         TechniqueStatistique* adresse = new TechniqueStatistique(std::string("adresse"), 6);
         TechniqueStatistique* colosse = new TechniqueStatistique(std::string("colosse"), 3);
-        ClasseHeroique *archer = new ClasseHeroique(std::string("Archer"), sStatArcher, &guerrier, adresse, colosse, 5, 15);
-        classes.push_back(archer);
+        ClasseHeroique *archer = new ClasseHeroique(std::string("Archer"), sStatArcher, getBranche("Guerrier"), adresse, colosse, 5, 15);
+        classesH.push_back(archer);
 
         std::vector<int> sStatReine;
         vectorAdd10Int(sStatReine,0,10,10,4,2,4,2,8,6,6);
         TechniqueStatistique* volonter = new TechniqueStatistique(std::string("volonter"), 8);
         TechniqueStatistique* demiDieu = new TechniqueStatistique(std::string("demi dieu"), 2);
-        ClasseParangon *reine = new ClasseHeroique(std::string("Reine"), sStatReine, &clerger, volonter, demiDieu, 5, 15);
-        classes.push_back(reine);
+        ClasseParangon *reine = new ClasseParangon(std::string("Reine"), sStatReine, getBranche("Mage"), volonter, demiDieu, 5, 15);
+        classesP.push_back(reine);
     }
 
     Arme* Instancieur::getArme(std::string nomArme){
@@ -138,11 +139,53 @@
 		while(i <races.size() || !test){
 			if(races.at(i)->getNomRace() == nomRace){
 				test = true;
-				arme = races.at(i);
+				race = races.at(i);
 			}
 			i = i +1;
 		}
 		return race;
+	}
+
+	ClasseHeroique* Instancieur::getClasseH(std::string nomClasse){
+		unsigned int i = 0;
+		bool test = false;
+		ClasseHeroique* classe = nullptr;
+		while(i <classesH.size() || !test){
+			if(classesH.at(i)->getNomClasse() == nomClasse){
+				test = true;
+				classe = classesH.at(i);
+			}
+			i = i +1;
+		}
+		return classe;
+	}
+
+	ClasseParangon* Instancieur::getClasseP(std::string nomClasse){
+		unsigned int i = 0;
+		bool test = false;
+		ClasseParangon* classe = nullptr;
+		while(i <classesP.size() || !test){
+			if(classesP.at(i)->getNomClasse() == nomClasse){
+				test = true;
+				classe = classesP.at(i);
+			}
+			i = i +1;
+		}
+		return classe;
+	}
+
+	ClasseDivine* Instancieur::getClasseD(std::string nomClasse){
+		unsigned int i = 0;
+		bool test = false;
+		ClasseDivine* classe = nullptr;
+		while(i <classesD.size() || !test){
+			if(classesD.at(i)->getNomClasse() == nomClasse){
+				test = true;
+				classe = classesD.at(i);
+			}
+			i = i +1;
+		}
+		return classe;
 	}
 
 
