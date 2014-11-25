@@ -14,6 +14,7 @@
 #include "Race.hpp"
 #include "Item.hpp"
 #include "Armes.hpp"
+ #include "Afficheur.hpp"
 //#include "ZoneDeDeplacement.hpp"
 #include <vector>
 #include <iostream>
@@ -55,17 +56,10 @@ private :
 	 */
 	std::vector<int> statistiqueDerive;
 
-	/* TODO finir le personnage de base puis ajouter UN PAR UN les elements suivants
-	 * Statistique statistique;
-	 * Item inventaire[5];
-	 * ZoneDeDeplacement zoneDeDeplacement;
-	 * ZoneAction zoneAction;
-	 * Technique technique[5];
-	 */
-
 	void modificateurRace();
 	void modificateurClasse(Classe* classe);
 	void modificateurClasseDecheance(Classe* classe);
+	void whaitForKey();
 
 public :
 
@@ -109,13 +103,6 @@ public :
 	int getArgent();
 	Arme* getArmeActuelle();
 
-	/*
-	 * Item getInventaire();
-	 * Arme getArmeEquiper();
-	 * Technique getTechnique();
-	 * ZoneAction getZoneAction();
-	 * ZoneDeDeplacement getZoneDeDeplacement();
-	 */
 };
 
 
