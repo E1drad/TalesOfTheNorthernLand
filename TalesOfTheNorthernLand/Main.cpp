@@ -92,30 +92,50 @@ int main(void){
 	malak.setArmeEquiper(marchand->getArme("Epee longue"));
 	std::system("clear");
 
-	lucina.decheance();//N
-	waitForKey();
-	lucina.promotion(instancieur->getClasseP("Reine"));
-	waitForKey();
-	lucina.decheance();
-	waitForKey();
-	lucina.decheance();//N
-	waitForKey();
-	lucina.promotion(instancieur->getClasseP("Reine"));
-	waitForKey();
-	lucina.promotion(instancieur->getClasseD("Sainte Reine"));
-	waitForKey();
-	lucina.promotion(instancieur->getClasseD("Sainte Reine"));//N
-	waitForKey();
-	lucina.decheance();
-	waitForKey();
-	lucina.decheance();
-	waitForKey();
-	lucina.decheance();//N
+	afficheur.afficherPerso(&lucina);
 	waitForKey();
 
+	lucina.decheance();//N
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.promotion(instancieur->getClasseP("Reine"));
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.decheance();
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.decheance();//N
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.promotion(instancieur->getClasseP("Reine"));
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.promotion(instancieur->getClasseD("Sainte Reine"));
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.promotion(instancieur->getClasseD("Sainte Reine"));//N
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.decheance();
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.decheance();
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
+
+	lucina.decheance();//N
+	afficheur.afficherPerso(&lucina);
+	waitForKey();
 
 	combat(&lucina,&raven);
-
 	
 	if(!lucina.estMort()){
 		marchand->afficherMenu(&lucina);
