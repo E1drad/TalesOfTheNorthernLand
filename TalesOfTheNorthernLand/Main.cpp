@@ -27,10 +27,7 @@
 //std::mt19937 rng(rd());//nouvelle methode !
 //rng();//nouvelle methode !
 
-
-//Joachim on ecrit sa WAIT PAS WHAIT mais j'ai trop la flemme de changé sa partout :(
-//Signé Charles
-void whaitForKey(){
+void waitForKey(){
 	std::cout << "Press the ENTER key\n";
 	if (std::cin.get() == '\n'){
 	   // std::cout << "Good job.\n";
@@ -62,7 +59,7 @@ void combat(Personnage *persoJoueur, Personnage *persoIA){
 			persoIA->combatAutomatique(persoJoueur);
 		}
 		//std::this_thread::sleep_for(std::chrono::milliseconds(2500));
-		whaitForKey();
+		waitForKey();
 	}
 }
 
@@ -86,7 +83,7 @@ int main(void){
 	Personnage lucina(stat, std::string("Lucina"), instancieur->getClasseH("Pretresse"),  instancieur->getRace("elfe"), true, 1);
 	afficheur.afficherPerso(&lucina);
 	lucina.setArmeEquiper(marchand->getArme("Graviter"));
-	whaitForKey();
+	waitForKey();
 	afficheur.afficherPerso(&lucina);
 
 	Personnage raven(stat, std::string("Raven"), instancieur->getClasseH("Archer"),  instancieur->getRace("genasi"), false, 2);
@@ -95,6 +92,28 @@ int main(void){
 	malak.setArmeEquiper(marchand->getArme("Epee longue"));
 	std::system("clear");
 
+	lucina.decheance();//N
+	waitForKey();
+	lucina.promotion(instancieur->getClasseP("Reine"));
+	waitForKey();
+	lucina.decheance();
+	waitForKey();
+	lucina.decheance();//N
+	waitForKey();
+	lucina.promotion(instancieur->getClasseP("Reine"));
+	waitForKey();
+	lucina.promotion(instancieur->getClasseD("Sainte Reine"));
+	waitForKey();
+	lucina.promotion(instancieur->getClasseD("Sainte Reine"));//N
+	waitForKey();
+	lucina.decheance();
+	waitForKey();
+	lucina.decheance();
+	waitForKey();
+	lucina.decheance();//N
+	waitForKey();
+
+
 	combat(&lucina,&raven);
 
 	
@@ -102,13 +121,13 @@ int main(void){
 		marchand->afficherMenu(&lucina);
 		afficheur.afficherPerso(&lucina);
 		//std::this_thread::sleep_for(std::chrono::milliseconds(4000));
-		whaitForKey();
+		waitForKey();
 		lucina.promotion(instancieur->getClasseP("Reine"));
 		afficheur.afficherPerso(&lucina);
 		//TODO boucle de jeu + narration ?
 		//TODO marchand random
 		//TODO upgrade IA
-		whaitForKey();
+		waitForKey();
 		combat(&lucina,&malak);
 	}
 

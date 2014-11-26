@@ -19,6 +19,7 @@
 class Marchand {
 private:
 	std::vector<Arme*> armes;
+	void waitForKey();
 public:
 	//Marchand(Pool poolArme);
 	//Marchand();

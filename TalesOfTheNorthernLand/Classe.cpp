@@ -106,17 +106,26 @@
 		}
 		return regain;
 	}
-
+/*
 	void ClasseHeroique::promotion(Personnage *p, Classe* c){
 		p->setClasseParangon(c);
 		p->setClasseActuelle(p->getClasseParangon());
+	}
+*/
+	bool ClasseHeroique::promotion(Personnage *p, Classe* c){
+		bool t = false;
+		if(typeid(*c) == typeid(ClasseParangon)){
+			p->setClasseParangon(c);
+			p->setClasseActuelle(p->getClasseParangon());
+			t = true;
+		}
+		return t;
 	}
 
 	void ClasseHeroique::decheance(Personnage* p){
 		std::cout << "LOLWUT ? I know someone who will be find dead S00N !" << std::endl;//ne doit pas être utiliser
 		//ne doit pas être utiliser
 	}
-
 /********************************************************************************************************/
 /********************************************************************************************************/
 /********************************************************************************************************/
@@ -180,10 +189,20 @@
 		}
 		return regain;
 	}
-
+/*
 	void ClasseParangon::promotion(Personnage* p, Classe* c){
 		p->setClasseDivine(c);
 		p->setClasseActuelle(p->getClasseDivine());
+	}
+*/
+	bool ClasseParangon::promotion(Personnage* p, Classe* c){
+		bool t = false;
+		if(typeid(*c) == typeid(ClasseDivine)){
+			p->setClasseDivine(c);
+			p->setClasseActuelle(p->getClasseDivine());
+			t = true;
+		}
+		return t;
 	}
 
 	void ClasseParangon::decheance(Personnage* p){
@@ -240,9 +259,14 @@
 		}
 		return regain;
 	}
-
+/*
 	void ClasseDivine::promotion(Personnage* p, Classe* c){
 		std::cout << "LOLWUT ? I know someone who will be find dead S00N !" << std::endl;//ne doit pas être utiliser
+	}
+*/
+	bool ClasseDivine::promotion(Personnage* p, Classe* c){
+		//ne doit pas être utiliser
+		return false;
 	}
 
 	void ClasseDivine::decheance(Personnage* p){

@@ -7,7 +7,7 @@
 #include "Marchand.hpp"
 
 
-	void waitForKey(){
+	void Marchand::waitForKey(){
 		std::cout << "Press the ENTER key\n";
 		if (std::cin.get() == '\n'){
 		}else{

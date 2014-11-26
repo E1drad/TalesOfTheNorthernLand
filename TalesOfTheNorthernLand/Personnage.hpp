@@ -59,7 +59,7 @@ private :
 	void modificateurRace();
 	void modificateurClasse(Classe* classe);
 	void modificateurClasseDecheance(Classe* classe);
-	void whaitForKey();
+	void waitForKey();
 
 public :
 

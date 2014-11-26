@@ -39,8 +39,10 @@ public :
 	Branche* getBranche();
 	virtual int attaquer(int degat, int statAttaque) = 0;
 	virtual int mort(int statChance, int pvMax) = 0;
-	virtual void promotion(Personnage* p, Classe* c) = 0;
+	//virtual void promotion(Personnage* p, Classe* c) = 0;
 	virtual void decheance(Personnage* p) = 0;
+	virtual bool promotion(Personnage* p, Classe* c) = 0;
+	//virtual bool decheance(Personnage* p) = 0;
 };
 
 class ClasseHeroique : public Classe {
@@ -58,8 +60,10 @@ public:
 	int getniveauTechnique2();
 	int attaquer(int degat, int statAttaque);
 	int mort(int statChance, int pvMax);
-	void promotion(Personnage* p, Classe* c);
+	//void promotion(Personnage* p, Classe* c);
 	void decheance(Personnage* p);
+	bool promotion(Personnage* p, Classe* c);
+	//bool decheance(Personnage* p);
 };
 
 class ClasseParangon : public Classe {
@@ -77,8 +81,10 @@ public:
 	int getniveauTechnique2();
 	int attaquer(int degat, int statAttaque);
 	int mort(int statChance, int pvMax);
-	void promotion(Personnage* p, Classe* c);
+	//void promotion(Personnage* p, Classe* c);
 	void decheance(Personnage* p);
+	bool promotion(Personnage* p, Classe* c);
+	//bool decheance(Personnage* p);
 };
 
 class ClasseDivine : public Classe {
@@ -92,8 +98,10 @@ public:
 	int getniveauTechnique1();
 	int attaquer(int degat, int statAttaque);
 	int mort(int statChance, int pvMax);
-	void promotion(Personnage* p, Classe* c);
+	//void promotion(Personnage* p, Classe* c);
 	void decheance(Personnage* p);
+	bool promotion(Personnage* p, Classe* c);
+	//bool decheance(Personnage* p);
 };
 
 

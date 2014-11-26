@@ -115,7 +115,7 @@
 		}
 		std::cout << "Fin de votre tour !" << std::endl;
 		//std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-		whaitForKey();
+		waitForKey();
 	}
 
 	void Personnage::combatAutomatique(Personnage *cible){
@@ -397,9 +397,15 @@
 //TODO make a setter for classeP and classeD and classeH
 	void Personnage::promotion(Classe* classe){
 		std::cout << "Vous avez peut-être être promut !" << std::endl;
-		if(this->classeActuelle != this->classeDivine){
+		/*if(this->classeActuelle != this->classeDivine){
 			this->modificateurClasse(classe);
 			this->classeActuelle->promotion(this, classe);
+			//this->classeActuelle = classe;
+			this->updateStatistique();
+			std::cout << "Vous avez été promut a la classe de " << this->classeActuelle->getNomClasse()  << std::endl;
+		*/
+		if(this->classeActuelle->promotion(this, classe)){
+			this->modificateurClasse(classe);
 			//this->classeActuelle = classe;
 			this->updateStatistique();
 			std::cout << "Vous avez été promut a la classe de " << this->classeActuelle->getNomClasse()  << std::endl;
@@ -413,6 +419,7 @@
 			this->modificateurClasseDecheance(this->classeActuelle);
 			this->classeActuelle->decheance(this);
 			this->updateStatistique();
+			std::cout << "Vous avez été déchut a la classe de " << this->classeActuelle->getNomClasse()  << std::endl;
 		}else{
 			std::cout << "impossible de descendre plus bas que le statut de Heros." << std::endl;
 		}
@@ -454,7 +461,7 @@
 		return this->armeEquiper;
 	}
 
-	void Personnage::whaitForKey(){
+	void Personnage::waitForKey(){
 		std::cout << "Press the ENTER key\n";
 		if (std::cin.get() == '\n'){
 	    	//std::cout << "Good job.\n";
