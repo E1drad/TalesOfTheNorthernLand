@@ -80,7 +80,7 @@
 			try{
 				int cmd = std::stoi(cmd1);
 				cmd = cmd -1;//compensation de l'affichage
-				if(cmd > 0 && cmd < this->armes.size()){
+				if(cmd > -1 && cmd < this->armes.size()){
 					if(perso->possedeAssezArgent(this->armes.at(cmd)->getPrix())){
 						perso->modArgent( -this->armes.at(cmd)->getPrix());
 						perso->setArmeEquiper(this->armes.at(cmd));
@@ -88,7 +88,7 @@
 						waitForKey();
 						test = true;
 					}else{
-						std::cout << "Desole mais il semblerait que votre bourse ne pas assez remplit !" << std::endl;
+						std::cout << "Desole mais il semblerait que votre bourse ne pas assez remplit pour acheter " << this->armes.at(cmd)->getNomItem() << std::endl;
 						waitForKey();
 					}
 				}else if(cmd == -2){

@@ -119,23 +119,21 @@
 	}
 
 	void Personnage::combatAutomatique(Personnage *cible){
-		std::this_thread::sleep_for(std::chrono::milliseconds(500));
-		std::cout << "...";
-		std::this_thread::sleep_for(std::chrono::milliseconds(500));
-		std::cout << " ...";
-		std::this_thread::sleep_for(std::chrono::milliseconds(500));
-		std::cout << " ..." << std::endl;
-		if( this->statistique.at(1) < floor(0.3*this->statistique.at(2)) ){
-			if((this->statistique.at(1) < ceil(cible->getStatistiqueDerive().at(0)))){
+		//si pv < 35% pvMax
+		if( this->statistique.at(1) < floor(0.35*this->statistique.at(2)) ){
+			//si pv > 17% pvMax && pv < 75% des degat de la cible
+			if( this->statistique.at(1) > floor( 0.17*this->statistique.at(2) ) && this->statistique.at(1) < cible->getStatistiqueDerive().at(0)*0.75  ){
 				this->posture = new Defenseur(this->statistiqueDerive.at(5)-1);
 			}else{
 				this->posture = new Soigneur(this->statistiqueDerive.at(6)-1);
 			}
 			this->seSoigner();
 		}else{
-			if(this->statistiqueDerive.at(1) - cible->getStatistiqueDerive().at(2)){
+			//si precision - esquive (autrement dit le % de chance de toucher) est < 60
+			if( (this->statistiqueDerive.at(1) - cible->getStatistiqueDerive().at(2)) < 60 ){
 				this->posture = new Tacticien(this->statistiqueDerive.at(7)-1);
-			}else if((this->statistique.at(1) < ceil(cible->getStatistiqueDerive().at(0)))){
+			//si pv < degat de la cible OU si pv < 60%pvMax
+			}else if(  (this->statistique.at(1) < ceil(cible->getStatistiqueDerive().at(0))) || (this->statistique.at(1) < ceil(0.60*this->statistique.at(2))) ){
 				this->posture = new Defenseur(this->statistiqueDerive.at(5)-1);
 			}else{
 				this->posture = new Attaquant(this->statistiqueDerive.at(4)-1);
@@ -201,11 +199,12 @@
 	}
 
 	void Personnage::setArmeEquiper(Arme* a){//TODO need update controle classe
-		this->armeEquiper = a;
+		this->updateStatistique();
 		std::cout << this->nom << " viens de s'équiper avec " << a->getNomItem() << std::endl;
-		int deg = this->getStatistiqueDerive().at(0);
-		int pre = this->getStatistiqueDerive().at(1);
-		int cri = this->getStatistiqueDerive().at(3);
+		int deg = this->getStatistiqueDerive().at(0);//avant
+		int pre = this->getStatistiqueDerive().at(1);//avant
+		int cri = this->getStatistiqueDerive().at(3);//avant
+		this->armeEquiper = a;
 		this->updateStatistique();
 		std::cout << deg << "\t DEG  >> " <<this->getStatistiqueDerive().at(0) << std::endl;
 		std::cout << pre << "\t PRE  >> " <<this->getStatistiqueDerive().at(1) << std::endl;
