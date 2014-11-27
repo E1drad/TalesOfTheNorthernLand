@@ -47,12 +47,21 @@
 				switch (cmd){
 				case 1:
 					this->achat(perso);
+					std::cin.clear();
+					std::cin.ignore(999,'\n');
+					waitForKey();
 					break;
 				case 2:
 					this->ameliorer(perso);
+					std::cin.clear();
+					std::cin.ignore(999,'\n');
+					waitForKey();
 					break;
 				case 3:
 					test = true;
+					std::cin.clear();
+					std::cin.ignore(999,'\n');
+					waitForKey();
 					break;
 				default :
 					std::cout << "entrer 1 et 3 merci !" << std::endl;
@@ -85,15 +94,12 @@
 						perso->modArgent( -this->armes.at(cmd)->getPrix());
 						perso->setArmeEquiper(this->armes.at(cmd));
 						std::cout << "Merci pour l'achat et bon voyage !" << std::endl;
-						waitForKey();
 						test = true;
 					}else{
 						std::cout << "Desole mais il semblerait que votre bourse ne pas assez remplit pour acheter " << this->armes.at(cmd)->getNomItem() << std::endl;
-						waitForKey();
 					}
 				}else if(cmd == -2){
 					std::cout << "Revenez bientôt et avec plus d'Iverios !" << std::endl;
-					waitForKey();
 					test = true;
 				}else{
 					std::cout << "entrer un nombre 1 et " << this->armes.size() << " merci !" << std::endl;

@@ -304,9 +304,9 @@
 			statDefense = (this->armeEquiper->getEstMagique())? 9 : 8;
 			degat = this->classeActuelle->attaquer(this->statistiqueDerive.at(0), this->statistique.at(statAttaque) );
 			degat = degat - cible->getStatistique().at(statDefense);
+			std::cout << degat << " degats !" << std::endl;
 			degat = this->posture->attaquer(degat);
 			degat = this->critique(degat, cible);
-			std::cout << degat << " degats !" << std::endl;
 			std::cout << cible->getNom() << " subit " << degat << " degats" << std::endl;
 			cible->prendreDegat(degat);
 		}else{
@@ -397,16 +397,8 @@
 //TODO make a setter for classeP and classeD and classeH
 	void Personnage::promotion(Classe* classe){
 		std::cout << "Vous avez peut-être être promut !" << std::endl;
-		/*if(this->classeActuelle != this->classeDivine){
-			this->modificateurClasse(classe);
-			this->classeActuelle->promotion(this, classe);
-			//this->classeActuelle = classe;
-			this->updateStatistique();
-			std::cout << "Vous avez été promut a la classe de " << this->classeActuelle->getNomClasse()  << std::endl;
-		*/
 		if(this->classeActuelle->promotion(this, classe)){
 			this->modificateurClasse(classe);
-			//this->classeActuelle = classe;
 			this->updateStatistique();
 			std::cout << "Vous avez été promut a la classe de " << this->classeActuelle->getNomClasse()  << std::endl;
 		}else{

@@ -33,6 +33,9 @@ public:
 	Attaquant(int niveau);
 	~Attaquant();
 	int attaquer(int degat);
+	int subirDegat(int degat);
+	int soigner(int soin);
+	int toucher(int toucher);
 
 };
 class Defenseur : public Posture {
@@ -40,6 +43,7 @@ private:
 public:
 	Defenseur(int niveau);
 	~Defenseur();
+	int attaquer(int degat);
 	int subirDegat(int degat);
 
 };
@@ -49,6 +53,8 @@ private:
 public:
 	Soigneur(int niveau);
 	~Soigneur();
+	int attaquer(int degat);
+	int subirDegat(int degat);
 	int soigner(int soin);
 };
 
@@ -57,6 +63,7 @@ private:
 public:
 	Tacticien(int niveau);
 	~Tacticien();
+	int attaquer(int degat);
 	int toucher(int toucher);
 };
 
