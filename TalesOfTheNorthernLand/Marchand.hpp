@@ -11,9 +11,13 @@
 #include "Armes.hpp"
 #include <string>
 #include <iostream>
-#include "SixPool.hpp"
 #include <vector>
 #include "Afficheur.hpp"
+#include <random>
+
+//std::random_device rd;//nouvelle methode !
+//std::mt19937 rng(rd());//nouvelle methode !
+//rng();//nouvelle methode !
 
 
 class Marchand {
@@ -30,6 +34,8 @@ public:
 	void achat(Personnage *perso);
 	void ameliorer(Personnage *perso);
 	Arme* getArme(std::string nomArme);
+	int min(int a, int b);
+	bool contains(std::vector<Arme*> vec, Arme* arme);
 
 };
 

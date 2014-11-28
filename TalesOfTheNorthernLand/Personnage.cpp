@@ -185,7 +185,7 @@
 
 	bool Personnage::seSoigner(){
 		if(this->statistique.at(1) < this->statistique.at(2)){
-			int soin = ceil( this->statistique.at(2) * (sin(rng1())/5 + 0.15 ) );//TODO A MODIFIER
+			int soin = ceil( this->statistique.at(2) * (sin(rng1())/6 + 0.15 ) );//TODO A MODIFIER
 			std::cout << this->nom << " se soin de " << soin << " points "<< std::endl;
 			soin = this->posture->soigner(soin);
 			if( (this->statistique.at(1) + soin) <= this->statistique.at(2)){

@@ -15,6 +15,7 @@
 	}
 
 	Instancieur::~Instancieur(){
+
 	}
 
 	std::vector<Arme*> Instancieur::getArmes(){

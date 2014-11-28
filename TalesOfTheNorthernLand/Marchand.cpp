@@ -7,6 +7,27 @@
 #include "Marchand.hpp"
 
 
+std::random_device rd4;//nouvelle methode !
+std::mt19937 rng4(rd4());//nouvelle methode !
+
+	int Marchand::min(int a, int b){
+		if(a>b){
+			return b;
+		}else{
+			return a;
+		}
+	}
+
+	bool Marchand::contains(std::vector<Arme*> vec, Arme* arme){
+		bool test = false;
+		for(unsigned int i = 0; i <vec.size(); ++i){
+			if(vec.at(i) == arme){
+				test = true;
+			}
+		}
+		return test;
+	}
+
 	void Marchand::waitForKey(){
 		std::cout << "Press the ENTER key\n";
 		if (std::cin.get() == '\n'){
@@ -17,7 +38,30 @@
 	}
 
 	Marchand::Marchand(std::vector<Arme*> vecInsatancieur){
-		this->armes = vecInsatancieur;
+		//this->armes = vecInsatancieur;
+		unsigned int sizetemp = rng4() % 6 + 4;
+		unsigned int size = min(sizetemp, vecInsatancieur.size());
+		unsigned int j = rng4() % (size +1);
+		for(unsigned int i = 0; i < size; ++i){
+			//pour varier les armes.
+			if(this->contains(this->armes, vecInsatancieur.at(j))){
+				j = rng4() % (size +1);
+				if(this->contains(this->armes, vecInsatancieur.at(j))){
+					j = rng4() % (size +1);
+					if(this->contains(this->armes, vecInsatancieur.at(j))){
+						j = rng4() % (size +1);
+						this->armes.push_back( vecInsatancieur.at(j) );
+					}else{
+						this->armes.push_back( vecInsatancieur.at(j) );
+					}
+				}else{
+					this->armes.push_back( vecInsatancieur.at(j) );
+				}
+			}else{
+				this->armes.push_back( vecInsatancieur.at(j) );
+			}
+			j = rng4() % (size +1);
+		}
 	}
 
 
@@ -93,6 +137,7 @@
 					if(perso->possedeAssezArgent(this->armes.at(cmd)->getPrix())){
 						perso->modArgent( -this->armes.at(cmd)->getPrix());
 						perso->setArmeEquiper(this->armes.at(cmd));
+						this->armes.erase(this->armes.begin()+cmd);
 						std::cout << "Merci pour l'achat et bon voyage !" << std::endl;
 						test = true;
 					}else{
@@ -107,10 +152,12 @@
 			}catch (std::invalid_argument){
 				cmd1 = "000";
 				std::system("clear");
-				std::cout << "Veuiller enter un nombre compris entre 1 et et " << this->armes.size() << std::endl;
+				std::cout << "Veuiller enter un nombre compris entre 1 et " << this->armes.size() << " ou -1 pour quitter" << std::endl;
 				for(unsigned int i = 0; i < this->armes.size(); ++i){
 					std::cout << i+1; this->armes.at(i)->afficher();
 				}
+				std::cout << "-1/ Pour quitter" << std::endl;
+				std::cout << perso->getArgent() << " Iverios" << std::endl;
 			}
 		}//while
 	}

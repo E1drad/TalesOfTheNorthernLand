@@ -39,21 +39,23 @@ void testState(Personnage *persoJoueur, Instancieur* instancieur, Afficheur* aff
 int main(void){
 	Afficheur afficheur;
 	Instancieur* instancieur = new Instancieur();
-	Marchand* marchand = new Marchand(instancieur->getArmes());
+	Marchand* marchand1 = new Marchand(instancieur->getArmes());
+	Marchand* marchand2 = new Marchand(instancieur->getArmes());
+	Marchand* marchand3 = new Marchand(instancieur->getArmes());
 
 	std::vector<int> stat;
 	vectorAdd10Int(stat,0,40,40,6,6,7,7,7,9,9);
 
 	Personnage lucina(stat, std::string("Lucina"), instancieur->getClasseH("Pretresse"),  instancieur->getRace("elfe"), true, 1);
 	afficheur.afficherPerso(&lucina);
-	lucina.setArmeEquiper(marchand->getArme("Graviter"));
+	lucina.setArmeEquiper(instancieur->getArme("Graviter"));
 	waitForKey();
 	afficheur.afficherPerso(&lucina);
 
 	Personnage raven(stat, std::string("Raven"), instancieur->getClasseH("Archer"),  instancieur->getRace("genasi"), false, 2);
-	raven.setArmeEquiper(marchand->getArme("Lance"));
+	raven.setArmeEquiper(instancieur->getArme("Lance"));
 	Personnage malak(stat, std::string("Malak"), instancieur->getClasseH("Archer"),  instancieur->getRace("genasi"), false, 2);
-	malak.setArmeEquiper(marchand->getArme("Epee longue"));
+	malak.setArmeEquiper(instancieur->getArme("Epee longue"));
 	std::system("clear");
 
 	test(&lucina, instancieur, &afficheur);
@@ -61,7 +63,10 @@ int main(void){
 	combat(&lucina,&raven);
 
 	if(!lucina.estMort()){
-		marchand->afficherMenu(&lucina);
+		marchand1->afficherMenu(&lucina);
+		marchand2->afficherMenu(&lucina);
+		marchand3->afficherMenu(&lucina);
+
 		afficheur.afficherPerso(&lucina);
 		waitForKey();
 		lucina.promotion(instancieur->getClasseP("Reine"));
@@ -77,7 +82,10 @@ int main(void){
 	std::string h;
 	std::cin >> h;
 	std::cout << std::endl << std::endl;
-	delete marchand;
+	delete marchand1;
+	delete marchand2;
+	delete marchand3;
+
 	delete instancieur;
 	return 0;
 }
@@ -112,11 +120,12 @@ void test(Personnage *persoJoueur, Instancieur* instancieur,  Afficheur* affiche
 				test = true;
 				break;
 			case 2:
-				testState(persoJoueur, instancieur, afficheur);
-				//testCombatRaven
+				testState(persoJoueur, instancieur, afficheur);//TEST STATE
+				std::system("clear");
+				//combat(persoJoueur,&raven);//testCombatRaven
 				//testMarchand
-				//testPromotion
-				//testcombatMalak
+				//persoJoueur->promotion(instancieur->getClasseP("Reine"));//testPromotion
+				//combat(persoJoueur,&malak);//testcombatMalak
 				test = true;
 				break;
 			default :
