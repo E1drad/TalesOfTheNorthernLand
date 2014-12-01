@@ -39,6 +39,7 @@ public:
 	ClasseHeroique* getClasseH(std::string nomClasse);
 	ClasseParangon* getClasseP(std::string nomClasse);
 	ClasseDivine* getClasseD(std::string nomClasse);
+	std::vector<ClasseHeroique*> getClasseHBranche(std::string nomBranche);
 };
 
 #endif /* INSTANCIEUR_HPP_ */

@@ -117,12 +117,12 @@
         std::vector<int> sStatSainteReine;
         vectorAdd10Int(sStatSainteReine,0,18,18,8,8,6,7,15,8,8);
         ClasseDivine *sainteReine = new ClasseDivine(std::string("Sainte Reine"), sStatSainteReine, getBranche("Clerger"), demiDieu, 5);
-        this->classesD.push_back(sainteReine);
+        classesD.push_back(sainteReine);
 
         std::vector<int> sStatSainte;
         vectorAdd10Int(sStatSainte,0,25,25,4,4,6,5,12,10,10);
         ClasseDivine *sainte = new ClasseDivine(std::string("Sainte"), sStatSainte, getBranche("Clerger"), volonter, 5);
-        this->classesD.push_back(sainte);
+        classesD.push_back(sainte);
 
     }
 
@@ -208,6 +208,19 @@
 			i = i +1;
 		}
 		return classe;
+	}
+
+	std::vector<ClasseHeroique*> Instancieur::getClasseHBranche(std::string nomBranche){
+		unsigned int i = 0;
+		bool test = false;
+		std::vector<ClasseHeroique*> retour;
+		while(i <classesH.size() || !test){
+			if(classesH.at(i)->getBranche()->getNomBranche() == nomBranche){
+				retour.push_back(classesH.at(i));
+			}
+			i = i +1;
+		}
+		return retour;
 	}
 
 
