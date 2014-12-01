@@ -1,0 +1,139 @@
+\hypertarget{classClasse}{\section{Référence de la classe Classe}
+\label{classClasse}\index{Classe@{Classe}}
+}
+Graphe d'héritage de Classe\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classClasse}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClasse_a4fca4248505bd69ce2177ef2bdf351e9}{Classe} (std\-::string n\-C, std\-::vector$<$ int $>$ m\-S, \hyperlink{classBranche}{Branche} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classClasse}{Classe} (classe abstaite) \end{DoxyCompactList}\item 
+\hypertarget{classClasse_ad98e937acba69b9cfdbf7542c6a1a524}{virtual \hyperlink{classClasse_ad98e937acba69b9cfdbf7542c6a1a524}{$\sim$\-Classe} ()=0}\label{classClasse_ad98e937acba69b9cfdbf7542c6a1a524}
+
+\begin{DoxyCompactList}\small\item\em Destructeur de \hyperlink{classClasse}{Classe}. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{classClasse_a8dfd239db27c6256d2fa36f3e38d66e6}{getmodificateur\-Statistique} ()
+\begin{DoxyCompactList}\small\item\em getter de modificateur\-Statistique \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classClasse_a3a4ebe85619fe02a302bb8f45b81bc87}{get\-Nom\-Classe} ()
+\begin{DoxyCompactList}\small\item\em getter du nom de la classe \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classClasse_a01e03d9170bbbf11e3392fe20d41e9a7}{getmodificateur\-Statistique\-String} ()
+\begin{DoxyCompactList}\small\item\em retour le vector sous la forme d'une string \end{DoxyCompactList}\item 
+\hyperlink{classBranche}{Branche} $\ast$ \hyperlink{classClasse_a1152773b9bd3130aef2fcbde7275021f}{get\-Branche} ()
+\begin{DoxyCompactList}\small\item\em getter de la branche \end{DoxyCompactList}\item 
+\hypertarget{classClasse_a95c668a4fc6e46680547ec3329729083}{virtual int {\bfseries attaquer} (int degat, int stat\-Attaque)=0}\label{classClasse_a95c668a4fc6e46680547ec3329729083}
+
+\item 
+\hypertarget{classClasse_a51971136feda1d0ce4c084ebec33733d}{virtual int {\bfseries mort} (int stat\-Chance, int pv\-Max)=0}\label{classClasse_a51971136feda1d0ce4c084ebec33733d}
+
+\item 
+\hypertarget{classClasse_a1d87c06c24ad823261303f8aacac4ab9}{virtual void {\bfseries decheance} (\hyperlink{classPersonnage}{Personnage} $\ast$p)=0}\label{classClasse_a1d87c06c24ad823261303f8aacac4ab9}
+
+\item 
+\hypertarget{classClasse_a9cff806b6527767f4bbae6446b7088e7}{virtual bool {\bfseries promotion} (\hyperlink{classPersonnage}{Personnage} $\ast$p, \hyperlink{classClasse}{Classe} $\ast$c)=0}\label{classClasse_a9cff806b6527767f4bbae6446b7088e7}
+
+\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classClasse_afc4e22634de754a77a7faab629bd55b2}{std\-::string {\bfseries nom\-Classe}}\label{classClasse_afc4e22634de754a77a7faab629bd55b2}
+
+\item 
+\hypertarget{classClasse_a4cc191827d081f1fc4ac12b3ff0193e0}{std\-::vector$<$ int $>$ {\bfseries modificateur\-Statistique}}\label{classClasse_a4cc191827d081f1fc4ac12b3ff0193e0}
+
+\item 
+\hypertarget{classClasse_aa483c3c732adc751b28d0a4d8e52265a}{\hyperlink{classBranche}{Branche} $\ast$ {\bfseries branche}}\label{classClasse_aa483c3c732adc751b28d0a4d8e52265a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classClasse_a4fca4248505bd69ce2177ef2bdf351e9}{\index{Classe@{Classe}!Classe@{Classe}}
+\index{Classe@{Classe}!Classe@{Classe}}
+\subsubsection[{Classe}]{\setlength{\rightskip}{0pt plus 5cm}Classe\-::\-Classe (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{n\-C, }
+\item[{std\-::vector$<$ int $>$}]{m\-S, }
+\item[{{\bf Branche} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}}\label{classClasse_a4fca4248505bd69ce2177ef2bdf351e9}
+
+
+Constructeur de \hyperlink{classClasse}{Classe} (classe abstaite) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n\-C} & std\-::string le nom de la classe \\
+\hline
+{\em m\-S} & std\-::vector$<$int$>$ les modificateurs de la classe \\
+\hline
+{\em b} & Branche$\ast$ sa branche \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classClasse_a1152773b9bd3130aef2fcbde7275021f}{\index{Classe@{Classe}!get\-Branche@{get\-Branche}}
+\index{get\-Branche@{get\-Branche}!Classe@{Classe}}
+\subsubsection[{get\-Branche}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Branche} $\ast$ Classe\-::get\-Branche (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasse_a1152773b9bd3130aef2fcbde7275021f}
+
+
+getter de la branche 
+
+\begin{DoxyReturn}{Renvoie}
+branche Branche$\ast$ la branche de la classe 
+\end{DoxyReturn}
+\hypertarget{classClasse_a8dfd239db27c6256d2fa36f3e38d66e6}{\index{Classe@{Classe}!getmodificateur\-Statistique@{getmodificateur\-Statistique}}
+\index{getmodificateur\-Statistique@{getmodificateur\-Statistique}!Classe@{Classe}}
+\subsubsection[{getmodificateur\-Statistique}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ int $>$ Classe\-::getmodificateur\-Statistique (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasse_a8dfd239db27c6256d2fa36f3e38d66e6}
+
+
+getter de modificateur\-Statistique 
+
+\begin{DoxyReturn}{Renvoie}
+modificateur\-Statistique std\-::vector$<$int$>$ le vector de stat 
+\end{DoxyReturn}
+\hypertarget{classClasse_a01e03d9170bbbf11e3392fe20d41e9a7}{\index{Classe@{Classe}!getmodificateur\-Statistique\-String@{getmodificateur\-Statistique\-String}}
+\index{getmodificateur\-Statistique\-String@{getmodificateur\-Statistique\-String}!Classe@{Classe}}
+\subsubsection[{getmodificateur\-Statistique\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Classe\-::getmodificateur\-Statistique\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasse_a01e03d9170bbbf11e3392fe20d41e9a7}
+
+
+retour le vector sous la forme d'une string 
+
+\begin{DoxyReturn}{Renvoie}
+vector std\-::string 
+\end{DoxyReturn}
+\hypertarget{classClasse_a3a4ebe85619fe02a302bb8f45b81bc87}{\index{Classe@{Classe}!get\-Nom\-Classe@{get\-Nom\-Classe}}
+\index{get\-Nom\-Classe@{get\-Nom\-Classe}!Classe@{Classe}}
+\subsubsection[{get\-Nom\-Classe}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Classe\-::get\-Nom\-Classe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasse_a3a4ebe85619fe02a302bb8f45b81bc87}
+
+
+getter du nom de la classe 
+
+\begin{DoxyReturn}{Renvoie}
+modificateur\-Statistique std\-::string le nom de la classe 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Classe.\-hpp\item 
+Classe.\-cpp\end{DoxyCompactItemize}

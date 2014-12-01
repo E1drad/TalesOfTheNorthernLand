@@ -9,7 +9,12 @@
 
 std::random_device rd4;//nouvelle methode !
 std::mt19937 rng4(rd4());//nouvelle methode !
-
+	/**
+	 * \brief	Revoi la plus petite des deux valeures.
+	 * \param a le premier entier.
+	 * \param b le second argument.
+	 * \return  a ou b.
+	 */
 	int Marchand::min(int a, int b){
 		if(a>b){
 			return b;
@@ -18,6 +23,12 @@ std::mt19937 rng4(rd4());//nouvelle methode !
 		}
 	}
 
+	/**
+	 * \brief	Test si l'arme est poséder par le marchand.
+	 * \param vec le vecteur d'arme du amrchand.
+	 * \param l'arme à tester.
+	 * \return  vrais si le marchad possède l'arme.
+	 */
 	bool Marchand::contains(std::vector<Arme*> vec, Arme* arme){
 		bool test = false;
 		for(unsigned int i = 0; i <vec.size(); ++i){
@@ -28,6 +39,9 @@ std::mt19937 rng4(rd4());//nouvelle methode !
 		return test;
 	}
 
+	/**
+	* \brief	procedure atandant que l'utilisateur apuie sur une touche.
+	*/
 	void Marchand::waitForKey(){
 		std::cout << "Press the ENTER key\n";
 		if (std::cin.get() == '\n'){
@@ -37,6 +51,11 @@ std::mt19937 rng4(rd4());//nouvelle methode !
 		}
 	}
 
+	/**
+	* \brief	Le constructeur du marchand.
+	* \details	fait de l'aleatoire pour l'ajout des armes pour varier son inventaire
+	* \param vecInsatancieur les armes du machand.
+	*/
 	Marchand::Marchand(std::vector<Arme*> vecInsatancieur){
 		//this->armes = vecInsatancieur;
 		unsigned int sizetemp = rng4() % 6 + 4;
@@ -64,16 +83,27 @@ std::mt19937 rng4(rd4());//nouvelle methode !
 		}
 	}
 
-
+	/**
+	 * \brief	Le destructeur du marchand.
+	 */
 	Marchand::~Marchand(){
 
 	}
 
+	/**
+	 * \brief	fait le commerce avec le marchand.
+	 * \details	appelle la methode affichermenu
+	 * \param perso Personnage* le pigeon qui achete.
+	 */
 	void Marchand::marcher(Personnage *perso){
 		afficherMenu(perso);
 	}
 
 
+	/**
+	 * \brief	afficher le menu et appelle les methodes d'achat ou de upgrade d'arme
+	 * \param perso Personnage* le pigeon qui achete.
+	 */
 	void Marchand::afficherMenu(Personnage *perso){
 		Afficheur *aff = new Afficheur();
 		std::string cmd1;
@@ -117,7 +147,10 @@ std::mt19937 rng4(rd4());//nouvelle methode !
 		}//while
 	}
 
-
+	/**
+	 * \brief	affiche l'inventaire du marchand et determine si le joueur peut acheter.
+	 * \param perso Personnage* le pigeon qui achete.
+	 */
 	void Marchand::achat(Personnage *perso){
 		std::string cmd1;
 		cmd1 = "000";
@@ -162,6 +195,12 @@ std::mt19937 rng4(rd4());//nouvelle methode !
 		}//while
 	}
 
+
+	/**
+	 * \brief retour une arme si elle est presente dans l'inventaire du marchand.
+	 * \param nomArme std::string le nom de l'arme que l'on recherche
+	 * \return Arme* l'arme ou un nullptr
+	 */
 	Arme* Marchand::getArme(std::string nomArme){
 		unsigned int i = 0;
 		bool test = false;
@@ -176,6 +215,10 @@ std::mt19937 rng4(rd4());//nouvelle methode !
 		return arme;
 	}
 
+	/**
+	 * \brief Afficher le menu d'amelioration et effectuer les ameliorations.
+	 * \param perso Personnage* le perso qui va avoir une arme ameliorer
+	 */
 	void Marchand::ameliorer(Personnage *perso){
 		std::string cmd1;
 		cmd1 = "000";

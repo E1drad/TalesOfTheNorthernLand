@@ -1,0 +1,190 @@
+\hypertarget{classClasseDivine}{\section{Référence de la classe Classe\-Divine}
+\label{classClasseDivine}\index{Classe\-Divine@{Classe\-Divine}}
+}
+Graphe d'héritage de Classe\-Divine\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classClasseDivine}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClasseDivine_a1c6c42d3c8f3d92e6d0ded16fe7b82ad}{Classe\-Divine} (std\-::string n\-C, std\-::vector$<$ int $>$ ms, \hyperlink{classBranche}{Branche} $\ast$b, \hyperlink{classTechnique}{Technique} $\ast$t1, int n\-T1)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classClasseDivine}{Classe\-Divine} herite de \hyperlink{classClasse}{Classe}. \end{DoxyCompactList}\item 
+\hypertarget{classClasseDivine_abfdf4a1e3c75e2ff45d9a4558b27a003}{\hyperlink{classClasseDivine_abfdf4a1e3c75e2ff45d9a4558b27a003}{$\sim$\-Classe\-Divine} ()}\label{classClasseDivine_abfdf4a1e3c75e2ff45d9a4558b27a003}
+
+\begin{DoxyCompactList}\small\item\em Destructeur de \hyperlink{classClasseDivine}{Classe\-Divine}. \end{DoxyCompactList}\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classClasseDivine_ad5bf8bbab68ba8b0dc5c61f97b0f0190}{get\-Technique1} ()
+\begin{DoxyCompactList}\small\item\em getter de la 1er technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseDivine_a6d2e2f72884c04cb90582879665e8dc2}{getniveau\-Technique1} ()
+\begin{DoxyCompactList}\small\item\em getter du niveau pour la 1er technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseDivine_a91cef59fd50031801e64ceffa6b979ab}{attaquer} (int degat, int stat\-Attaque)
+\begin{DoxyCompactList}\small\item\em methode d'attaque (change en fonction de la classe) \end{DoxyCompactList}\item 
+int \hyperlink{classClasseDivine_af8a138f468768c9415325f4090cc24ab}{mort} (int stat\-Chance, int pv\-Max)
+\begin{DoxyCompactList}\small\item\em determine si le perso peux regagner miraculeusement des pv(change en fonction de la classe) \end{DoxyCompactList}\item 
+void \hyperlink{classClasseDivine_afe770976dc99f0d7b9a7ad53f4523741}{decheance} (\hyperlink{classPersonnage}{Personnage} $\ast$p)
+\begin{DoxyCompactList}\small\item\em methode de \char`\"{}transition vers le bas\char`\"{} \end{DoxyCompactList}\item 
+bool \hyperlink{classClasseDivine_aa0b67e83394449bf4eb49d2cba44ba19}{promotion} (\hyperlink{classPersonnage}{Personnage} $\ast$p, \hyperlink{classClasse}{Classe} $\ast$c)
+\begin{DoxyCompactList}\small\item\em methode de \char`\"{}transition vers le haut\char`\"{} en Divin elle retour T\-O\-U\-J\-O\-U\-R\-S faux \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classClasseDivine_a1c6c42d3c8f3d92e6d0ded16fe7b82ad}{\index{Classe\-Divine@{Classe\-Divine}!Classe\-Divine@{Classe\-Divine}}
+\index{Classe\-Divine@{Classe\-Divine}!ClasseDivine@{Classe\-Divine}}
+\subsubsection[{Classe\-Divine}]{\setlength{\rightskip}{0pt plus 5cm}Classe\-Divine\-::\-Classe\-Divine (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nc, }
+\item[{std\-::vector$<$ int $>$}]{ms, }
+\item[{{\bf Branche} $\ast$}]{b, }
+\item[{{\bf Technique} $\ast$}]{t1, }
+\item[{int}]{n\-T1}
+\end{DoxyParamCaption}
+)}}\label{classClasseDivine_a1c6c42d3c8f3d92e6d0ded16fe7b82ad}
+
+
+Constructeur de \hyperlink{classClasseDivine}{Classe\-Divine} herite de \hyperlink{classClasse}{Classe}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n\-C} & std\-::string le nom de la classe \\
+\hline
+{\em m\-S} & std\-::vector$<$int$>$ les modificateurs de la classe \\
+\hline
+{\em b} & Branche$\ast$ sa branche \\
+\hline
+{\em t1} & Technique$\ast$ technique 1 \\
+\hline
+{\em n\-T1} & int niveau technique 1 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classClasseDivine_a91cef59fd50031801e64ceffa6b979ab}{\index{Classe\-Divine@{Classe\-Divine}!attaquer@{attaquer}}
+\index{attaquer@{attaquer}!ClasseDivine@{Classe\-Divine}}
+\subsubsection[{attaquer}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Divine\-::attaquer (
+\begin{DoxyParamCaption}
+\item[{int}]{degat, }
+\item[{int}]{stat\-Attaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseDivine_a91cef59fd50031801e64ceffa6b979ab}
+
+
+methode d'attaque (change en fonction de la classe) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int degat \\
+\hline
+{\em stat\-Attaque} & int force ou intelligence \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseDivine_afe770976dc99f0d7b9a7ad53f4523741}{\index{Classe\-Divine@{Classe\-Divine}!decheance@{decheance}}
+\index{decheance@{decheance}!ClasseDivine@{Classe\-Divine}}
+\subsubsection[{decheance}]{\setlength{\rightskip}{0pt plus 5cm}void Classe\-Divine\-::decheance (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseDivine_afe770976dc99f0d7b9a7ad53f4523741}
+
+
+methode de \char`\"{}transition vers le bas\char`\"{} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Personnage$\ast$ le perso dechut \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseDivine_a6d2e2f72884c04cb90582879665e8dc2}{\index{Classe\-Divine@{Classe\-Divine}!getniveau\-Technique1@{getniveau\-Technique1}}
+\index{getniveau\-Technique1@{getniveau\-Technique1}!ClasseDivine@{Classe\-Divine}}
+\subsubsection[{getniveau\-Technique1}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Divine\-::getniveau\-Technique1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseDivine_a6d2e2f72884c04cb90582879665e8dc2}
+
+
+getter du niveau pour la 1er technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 1er technique 
+\end{DoxyReturn}
+\hypertarget{classClasseDivine_ad5bf8bbab68ba8b0dc5c61f97b0f0190}{\index{Classe\-Divine@{Classe\-Divine}!get\-Technique1@{get\-Technique1}}
+\index{get\-Technique1@{get\-Technique1}!ClasseDivine@{Classe\-Divine}}
+\subsubsection[{get\-Technique1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Technique} $\ast$ Classe\-Divine\-::get\-Technique1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseDivine_ad5bf8bbab68ba8b0dc5c61f97b0f0190}
+
+
+getter de la 1er technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 1er technique 
+\end{DoxyReturn}
+\hypertarget{classClasseDivine_af8a138f468768c9415325f4090cc24ab}{\index{Classe\-Divine@{Classe\-Divine}!mort@{mort}}
+\index{mort@{mort}!ClasseDivine@{Classe\-Divine}}
+\subsubsection[{mort}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Divine\-::mort (
+\begin{DoxyParamCaption}
+\item[{int}]{stat\-Chance, }
+\item[{int}]{pv\-Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseDivine_af8a138f468768c9415325f4090cc24ab}
+
+
+determine si le perso peux regagner miraculeusement des pv(change en fonction de la classe) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em stat\-Chance} & int chance du personnage \\
+\hline
+{\em pv\-Max} & int les pv\-Max du personnage \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseDivine_aa0b67e83394449bf4eb49d2cba44ba19}{\index{Classe\-Divine@{Classe\-Divine}!promotion@{promotion}}
+\index{promotion@{promotion}!ClasseDivine@{Classe\-Divine}}
+\subsubsection[{promotion}]{\setlength{\rightskip}{0pt plus 5cm}bool Classe\-Divine\-::promotion (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{p, }
+\item[{{\bf Classe} $\ast$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseDivine_aa0b67e83394449bf4eb49d2cba44ba19}
+
+
+methode de \char`\"{}transition vers le haut\char`\"{} en Divin elle retour T\-O\-U\-J\-O\-U\-R\-S faux 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Personnage$\ast$ le perso promu \\
+\hline
+{\em c} & Classe$\ast$ la nouvelle classe du perso \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool false resultat constant 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Classe.\-hpp\item 
+Classe.\-cpp\end{DoxyCompactItemize}

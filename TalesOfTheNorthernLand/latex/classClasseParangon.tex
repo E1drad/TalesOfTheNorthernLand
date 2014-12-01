@@ -1,0 +1,228 @@
+\hypertarget{classClasseParangon}{\section{Référence de la classe Classe\-Parangon}
+\label{classClasseParangon}\index{Classe\-Parangon@{Classe\-Parangon}}
+}
+Graphe d'héritage de Classe\-Parangon\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classClasseParangon}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClasseParangon_a565c2ce61e6902eb9001c04cb9f22ba5}{Classe\-Parangon} (std\-::string n\-C, std\-::vector$<$ int $>$ ms, \hyperlink{classBranche}{Branche} $\ast$b, \hyperlink{classTechnique}{Technique} $\ast$t1, \hyperlink{classTechnique}{Technique} $\ast$t2, int n\-T1, int n\-T2)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classClasseParangon}{Classe\-Parangon} herite de \hyperlink{classClasse}{Classe}. \end{DoxyCompactList}\item 
+\hypertarget{classClasseParangon_a0bdb8c5ad6c852a02b4d56d6dad7b166}{\hyperlink{classClasseParangon_a0bdb8c5ad6c852a02b4d56d6dad7b166}{$\sim$\-Classe\-Parangon} ()}\label{classClasseParangon_a0bdb8c5ad6c852a02b4d56d6dad7b166}
+
+\begin{DoxyCompactList}\small\item\em Destructeur de \hyperlink{classClasseParangon}{Classe\-Parangon}. \end{DoxyCompactList}\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classClasseParangon_a8999426adeecdc3dcf6b9e25c51d1f57}{get\-Technique1} ()
+\begin{DoxyCompactList}\small\item\em getter de la 1er technique \end{DoxyCompactList}\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classClasseParangon_aeac8f67dd301f1474f0064b270b24bde}{get\-Technique2} ()
+\begin{DoxyCompactList}\small\item\em getter de la 2eme technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseParangon_abd79d2b688d94086db792d3977fb7203}{getniveau\-Technique1} ()
+\begin{DoxyCompactList}\small\item\em getter du niveau pour la 1er technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseParangon_a1964f83ec53a8304300ee9e657e599bc}{getniveau\-Technique2} ()
+\begin{DoxyCompactList}\small\item\em getter du niveau pour la 2em technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseParangon_a8c571e469b800a9f7e9e90194a98b7d7}{attaquer} (int degat, int stat\-Attaque)
+\begin{DoxyCompactList}\small\item\em methode d'attaque (change en fonction de la classe) \end{DoxyCompactList}\item 
+int \hyperlink{classClasseParangon_ac371eb1d2784d30e27f46b375e0fcf39}{mort} (int stat\-Chance, int pv\-Max)
+\begin{DoxyCompactList}\small\item\em determine si le perso peux regagner miraculeusement des pv(change en fonction de la classe) \end{DoxyCompactList}\item 
+void \hyperlink{classClasseParangon_ac05f4893aa56ca3e9178f6c2f2f4132b}{decheance} (\hyperlink{classPersonnage}{Personnage} $\ast$p)
+\begin{DoxyCompactList}\small\item\em methode de \char`\"{}transition vers le bas\char`\"{} \end{DoxyCompactList}\item 
+bool \hyperlink{classClasseParangon_abd07f6317ed62a5065fb7aa103387e6b}{promotion} (\hyperlink{classPersonnage}{Personnage} $\ast$p, \hyperlink{classClasse}{Classe} $\ast$c)
+\begin{DoxyCompactList}\small\item\em methode de \char`\"{}transition vers le haut\char`\"{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classClasseParangon_a565c2ce61e6902eb9001c04cb9f22ba5}{\index{Classe\-Parangon@{Classe\-Parangon}!Classe\-Parangon@{Classe\-Parangon}}
+\index{Classe\-Parangon@{Classe\-Parangon}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{Classe\-Parangon}]{\setlength{\rightskip}{0pt plus 5cm}Classe\-Parangon\-::\-Classe\-Parangon (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nc, }
+\item[{std\-::vector$<$ int $>$}]{ms, }
+\item[{{\bf Branche} $\ast$}]{b, }
+\item[{{\bf Technique} $\ast$}]{t1, }
+\item[{{\bf Technique} $\ast$}]{t2, }
+\item[{int}]{n\-T1, }
+\item[{int}]{n\-T2}
+\end{DoxyParamCaption}
+)}}\label{classClasseParangon_a565c2ce61e6902eb9001c04cb9f22ba5}
+
+
+Constructeur de \hyperlink{classClasseParangon}{Classe\-Parangon} herite de \hyperlink{classClasse}{Classe}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n\-C} & std\-::string le nom de la classe \\
+\hline
+{\em m\-S} & std\-::vector$<$int$>$ les modificateurs de la classe \\
+\hline
+{\em b} & Branche$\ast$ sa branche \\
+\hline
+{\em t1} & Technique$\ast$ technique 1 \\
+\hline
+{\em t2} & Technique$\ast$ technique 2 \\
+\hline
+{\em n\-T1} & int niveau technique 1 \\
+\hline
+{\em n\-T2} & int niveau technique 2 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classClasseParangon_a8c571e469b800a9f7e9e90194a98b7d7}{\index{Classe\-Parangon@{Classe\-Parangon}!attaquer@{attaquer}}
+\index{attaquer@{attaquer}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{attaquer}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Parangon\-::attaquer (
+\begin{DoxyParamCaption}
+\item[{int}]{degat, }
+\item[{int}]{stat\-Attaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseParangon_a8c571e469b800a9f7e9e90194a98b7d7}
+
+
+methode d'attaque (change en fonction de la classe) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int degat \\
+\hline
+{\em stat\-Attaque} & int force ou intelligence \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseParangon_ac05f4893aa56ca3e9178f6c2f2f4132b}{\index{Classe\-Parangon@{Classe\-Parangon}!decheance@{decheance}}
+\index{decheance@{decheance}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{decheance}]{\setlength{\rightskip}{0pt plus 5cm}void Classe\-Parangon\-::decheance (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseParangon_ac05f4893aa56ca3e9178f6c2f2f4132b}
+
+
+methode de \char`\"{}transition vers le bas\char`\"{} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Personnage$\ast$ le perso dechut \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseParangon_abd79d2b688d94086db792d3977fb7203}{\index{Classe\-Parangon@{Classe\-Parangon}!getniveau\-Technique1@{getniveau\-Technique1}}
+\index{getniveau\-Technique1@{getniveau\-Technique1}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{getniveau\-Technique1}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Parangon\-::getniveau\-Technique1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseParangon_abd79d2b688d94086db792d3977fb7203}
+
+
+getter du niveau pour la 1er technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 1er technique 
+\end{DoxyReturn}
+\hypertarget{classClasseParangon_a1964f83ec53a8304300ee9e657e599bc}{\index{Classe\-Parangon@{Classe\-Parangon}!getniveau\-Technique2@{getniveau\-Technique2}}
+\index{getniveau\-Technique2@{getniveau\-Technique2}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{getniveau\-Technique2}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Parangon\-::getniveau\-Technique2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseParangon_a1964f83ec53a8304300ee9e657e599bc}
+
+
+getter du niveau pour la 2em technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 2eme technique 
+\end{DoxyReturn}
+\hypertarget{classClasseParangon_a8999426adeecdc3dcf6b9e25c51d1f57}{\index{Classe\-Parangon@{Classe\-Parangon}!get\-Technique1@{get\-Technique1}}
+\index{get\-Technique1@{get\-Technique1}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{get\-Technique1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Technique} $\ast$ Classe\-Parangon\-::get\-Technique1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseParangon_a8999426adeecdc3dcf6b9e25c51d1f57}
+
+
+getter de la 1er technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 1er technique 
+\end{DoxyReturn}
+\hypertarget{classClasseParangon_aeac8f67dd301f1474f0064b270b24bde}{\index{Classe\-Parangon@{Classe\-Parangon}!get\-Technique2@{get\-Technique2}}
+\index{get\-Technique2@{get\-Technique2}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{get\-Technique2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Technique} $\ast$ Classe\-Parangon\-::get\-Technique2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseParangon_aeac8f67dd301f1474f0064b270b24bde}
+
+
+getter de la 2eme technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 2eme technique 
+\end{DoxyReturn}
+\hypertarget{classClasseParangon_ac371eb1d2784d30e27f46b375e0fcf39}{\index{Classe\-Parangon@{Classe\-Parangon}!mort@{mort}}
+\index{mort@{mort}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{mort}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Parangon\-::mort (
+\begin{DoxyParamCaption}
+\item[{int}]{stat\-Chance, }
+\item[{int}]{pv\-Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseParangon_ac371eb1d2784d30e27f46b375e0fcf39}
+
+
+determine si le perso peux regagner miraculeusement des pv(change en fonction de la classe) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em stat\-Chance} & int chance du personnage \\
+\hline
+{\em pv\-Max} & int les pv\-Max du personnage \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseParangon_abd07f6317ed62a5065fb7aa103387e6b}{\index{Classe\-Parangon@{Classe\-Parangon}!promotion@{promotion}}
+\index{promotion@{promotion}!ClasseParangon@{Classe\-Parangon}}
+\subsubsection[{promotion}]{\setlength{\rightskip}{0pt plus 5cm}bool Classe\-Parangon\-::promotion (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{p, }
+\item[{{\bf Classe} $\ast$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseParangon_abd07f6317ed62a5065fb7aa103387e6b}
+
+
+methode de \char`\"{}transition vers le haut\char`\"{} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Personnage$\ast$ le perso promu \\
+\hline
+{\em c} & Classe$\ast$ la nouvelle classe du perso (doit être Divine) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool true si classe divine sinon false 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Classe.\-hpp\item 
+Classe.\-cpp\end{DoxyCompactItemize}

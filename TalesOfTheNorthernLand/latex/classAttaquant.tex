@@ -1,0 +1,146 @@
+\hypertarget{classAttaquant}{\section{Référence de la classe Attaquant}
+\label{classAttaquant}\index{Attaquant@{Attaquant}}
+}
+Graphe d'héritage de Attaquant\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAttaquant}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAttaquant_a0bbfef912ef4d22dcbf823ef4447d732}{Attaquant} (int niveau)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classAttaquant}{Attaquant} herite de \hyperlink{classPosture}{Posture}. \end{DoxyCompactList}\item 
+\hypertarget{classAttaquant_a121cb6666153876071a1dfaf71eef265}{\hyperlink{classAttaquant_a121cb6666153876071a1dfaf71eef265}{$\sim$\-Attaquant} ()}\label{classAttaquant_a121cb6666153876071a1dfaf71eef265}
+
+\begin{DoxyCompactList}\small\item\em Destructeur de \hyperlink{classAttaquant}{Attaquant}. \end{DoxyCompactList}\item 
+int \hyperlink{classAttaquant_ad553f75cefdb44bf0703612940d597e4}{attaquer} (int degat)
+\begin{DoxyCompactList}\small\item\em comportement de base d'attaque d'\hyperlink{classAttaquant}{Attaquant} \end{DoxyCompactList}\item 
+int \hyperlink{classAttaquant_a3aeb7f6ca8b2397dd98bc52219aab836}{subir\-Degat} (int degat)
+\begin{DoxyCompactList}\small\item\em comportement de subir\-Degat en \hyperlink{classAttaquant}{Attaquant} \end{DoxyCompactList}\item 
+int \hyperlink{classAttaquant_a874dc43af414df3c3c183e452f29a12a}{soigner} (int soin)
+\begin{DoxyCompactList}\small\item\em comportement de se soigner en \hyperlink{classAttaquant}{Attaquant} \end{DoxyCompactList}\item 
+int \hyperlink{classAttaquant_adda67392faf5ffc39838a03168f1a591}{toucher} (int toucher)
+\begin{DoxyCompactList}\small\item\em comportement de toucher en \hyperlink{classAttaquant}{Attaquant} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classAttaquant_a0bbfef912ef4d22dcbf823ef4447d732}{\index{Attaquant@{Attaquant}!Attaquant@{Attaquant}}
+\index{Attaquant@{Attaquant}!Attaquant@{Attaquant}}
+\subsubsection[{Attaquant}]{\setlength{\rightskip}{0pt plus 5cm}Attaquant\-::\-Attaquant (
+\begin{DoxyParamCaption}
+\item[{int}]{niveau}
+\end{DoxyParamCaption}
+)}}\label{classAttaquant_a0bbfef912ef4d22dcbf823ef4447d732}
+
+
+Constructeur de \hyperlink{classAttaquant}{Attaquant} herite de \hyperlink{classPosture}{Posture}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em niveau} & int le niveau de la posture \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classAttaquant_ad553f75cefdb44bf0703612940d597e4}{\index{Attaquant@{Attaquant}!attaquer@{attaquer}}
+\index{attaquer@{attaquer}!Attaquant@{Attaquant}}
+\subsubsection[{attaquer}]{\setlength{\rightskip}{0pt plus 5cm}int Attaquant\-::attaquer (
+\begin{DoxyParamCaption}
+\item[{int}]{degat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAttaquant_ad553f75cefdb44bf0703612940d597e4}
+
+
+comportement de base d'attaque d'\hyperlink{classAttaquant}{Attaquant} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int les degats de base \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int les degats 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classPosture_ae26355a91999a62fc528a73021e76d1f}{Posture}.
+
+\hypertarget{classAttaquant_a874dc43af414df3c3c183e452f29a12a}{\index{Attaquant@{Attaquant}!soigner@{soigner}}
+\index{soigner@{soigner}!Attaquant@{Attaquant}}
+\subsubsection[{soigner}]{\setlength{\rightskip}{0pt plus 5cm}int Attaquant\-::soigner (
+\begin{DoxyParamCaption}
+\item[{int}]{soin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAttaquant_a874dc43af414df3c3c183e452f29a12a}
+
+
+comportement de se soigner en \hyperlink{classAttaquant}{Attaquant} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em soin} & int le nombre de pv soigner de base \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int les le nombre de pv soigner 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classPosture_ab47310e905a5f6de83c945920f7c38b1}{Posture}.
+
+\hypertarget{classAttaquant_a3aeb7f6ca8b2397dd98bc52219aab836}{\index{Attaquant@{Attaquant}!subir\-Degat@{subir\-Degat}}
+\index{subir\-Degat@{subir\-Degat}!Attaquant@{Attaquant}}
+\subsubsection[{subir\-Degat}]{\setlength{\rightskip}{0pt plus 5cm}int Attaquant\-::subir\-Degat (
+\begin{DoxyParamCaption}
+\item[{int}]{degat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAttaquant_a3aeb7f6ca8b2397dd98bc52219aab836}
+
+
+comportement de subir\-Degat en \hyperlink{classAttaquant}{Attaquant} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int les degats de base \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int les degats 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classPosture_a6c63571b8221847cf0abb1dce0ae1c5f}{Posture}.
+
+\hypertarget{classAttaquant_adda67392faf5ffc39838a03168f1a591}{\index{Attaquant@{Attaquant}!toucher@{toucher}}
+\index{toucher@{toucher}!Attaquant@{Attaquant}}
+\subsubsection[{toucher}]{\setlength{\rightskip}{0pt plus 5cm}int Attaquant\-::toucher (
+\begin{DoxyParamCaption}
+\item[{int}]{toucher}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAttaquant_adda67392faf5ffc39838a03168f1a591}
+
+
+comportement de toucher en \hyperlink{classAttaquant}{Attaquant} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int le pourcentage de chance toucher de base \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int les le pourcentage de chance toucher de base 
+\end{DoxyReturn}
+
+
+Réimplémentée à partir de \hyperlink{classPosture_a0988e92a33908186f74c44b54c1cb6db}{Posture}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Posture.\-hpp\item 
+Posture.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Tales Of The Northern Land:  Fichier source de Marchand.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tales Of The Northern Land
+   &#160;<span id="projectnumber">0.3</span>
+   </div>
+   <div id="projectbrief">UN RPG QUI BALANCE DU LEMURIEN ARC-EN-CIEL AVEC DES THIS-&gt;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Marchand_8hpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Marchand.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Marchand.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: 21 nov. 2014</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: Charles BEGAUDEAU</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef MARCHAND_HPP_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MARCHAND_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;Personnage.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Armes.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;Afficheur.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//std::random_device rd;//nouvelle methode !</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//std::mt19937 rng(rd());//nouvelle methode !</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//rng();//nouvelle methode !</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classMarchand.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMarchand.html">Marchand</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;Arme*&gt; armes;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> waitForKey();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//Marchand(Pool poolArme);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//Marchand();</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classMarchand.html#ad4ab208a21ab8adeb741f3f4d1bf3c5c">Marchand</a>(std::vector&lt;Arme*&gt; vecInsatancieur);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classMarchand.html#ab5294b5de6ce2bfff99f2b29d9a2f4ba">~Marchand</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMarchand.html#a6e8fbc688e23a97d761359cb36801564">marcher</a>(<a class="code" href="classPersonnage.html">Personnage</a> *perso);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMarchand.html#afec086e17a2df2c16f730a7b22c04fd9">afficherMenu</a>(<a class="code" href="classPersonnage.html">Personnage</a> *perso);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMarchand.html#afa159699ab3a8f374f67775f3f0f2d56">achat</a>(<a class="code" href="classPersonnage.html">Personnage</a> *perso);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMarchand.html#a0346e8673ad63cc9ff3d49e805c25645">ameliorer</a>(<a class="code" href="classPersonnage.html">Personnage</a> *perso);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classArme.html">Arme</a>* <a class="code" href="classMarchand.html#ab91a5c2933a62a05d2c0a4926fcaadd0">getArme</a>(std::string nomArme);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMarchand.html#aa3167b6744857b841091896e8e791383">min</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classMarchand.html#a939b005d84cce6fd81adaa037025eb51">contains</a>(std::vector&lt;Arme*&gt; vec, <a class="code" href="classArme.html">Arme</a>* arme);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MARCHAND_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classPersonnage_html"><div class="ttname"><a href="classPersonnage.html">Personnage</a></div><div class="ttdef"><b>Definition:</b> Personnage.hpp:30</div></div>
+<div class="ttc" id="classMarchand_html_ab5294b5de6ce2bfff99f2b29d9a2f4ba"><div class="ttname"><a href="classMarchand.html#ab5294b5de6ce2bfff99f2b29d9a2f4ba">Marchand::~Marchand</a></div><div class="ttdeci">~Marchand()</div><div class="ttdoc">Le destructeur du marchand. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:89</div></div>
+<div class="ttc" id="classMarchand_html_ab91a5c2933a62a05d2c0a4926fcaadd0"><div class="ttname"><a href="classMarchand.html#ab91a5c2933a62a05d2c0a4926fcaadd0">Marchand::getArme</a></div><div class="ttdeci">Arme * getArme(std::string nomArme)</div><div class="ttdoc">retour une arme si elle est presente dans l&#39;inventaire du marchand. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:204</div></div>
+<div class="ttc" id="classMarchand_html"><div class="ttname"><a href="classMarchand.html">Marchand</a></div><div class="ttdef"><b>Definition:</b> Marchand.hpp:23</div></div>
+<div class="ttc" id="classMarchand_html_ad4ab208a21ab8adeb741f3f4d1bf3c5c"><div class="ttname"><a href="classMarchand.html#ad4ab208a21ab8adeb741f3f4d1bf3c5c">Marchand::Marchand</a></div><div class="ttdeci">Marchand(std::vector&lt; Arme * &gt; vecInsatancieur)</div><div class="ttdoc">Le constructeur du marchand. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:59</div></div>
+<div class="ttc" id="classMarchand_html_a0346e8673ad63cc9ff3d49e805c25645"><div class="ttname"><a href="classMarchand.html#a0346e8673ad63cc9ff3d49e805c25645">Marchand::ameliorer</a></div><div class="ttdeci">void ameliorer(Personnage *perso)</div><div class="ttdoc">Afficher le menu d&#39;amelioration et effectuer les ameliorations. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:222</div></div>
+<div class="ttc" id="classMarchand_html_afec086e17a2df2c16f730a7b22c04fd9"><div class="ttname"><a href="classMarchand.html#afec086e17a2df2c16f730a7b22c04fd9">Marchand::afficherMenu</a></div><div class="ttdeci">void afficherMenu(Personnage *perso)</div><div class="ttdoc">afficher le menu et appelle les methodes d&#39;achat ou de upgrade d&#39;arme </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:107</div></div>
+<div class="ttc" id="classArme_html"><div class="ttname"><a href="classArme.html">Arme</a></div><div class="ttdef"><b>Definition:</b> Armes.hpp:14</div></div>
+<div class="ttc" id="classMarchand_html_afa159699ab3a8f374f67775f3f0f2d56"><div class="ttname"><a href="classMarchand.html#afa159699ab3a8f374f67775f3f0f2d56">Marchand::achat</a></div><div class="ttdeci">void achat(Personnage *perso)</div><div class="ttdoc">affiche l&#39;inventaire du marchand et determine si le joueur peut acheter. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:154</div></div>
+<div class="ttc" id="classMarchand_html_a939b005d84cce6fd81adaa037025eb51"><div class="ttname"><a href="classMarchand.html#a939b005d84cce6fd81adaa037025eb51">Marchand::contains</a></div><div class="ttdeci">bool contains(std::vector&lt; Arme * &gt; vec, Arme *arme)</div><div class="ttdoc">Test si l&#39;arme est poséder par le marchand. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:32</div></div>
+<div class="ttc" id="classMarchand_html_a6e8fbc688e23a97d761359cb36801564"><div class="ttname"><a href="classMarchand.html#a6e8fbc688e23a97d761359cb36801564">Marchand::marcher</a></div><div class="ttdeci">void marcher(Personnage *perso)</div><div class="ttdoc">fait le commerce avec le marchand. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:98</div></div>
+<div class="ttc" id="classMarchand_html_aa3167b6744857b841091896e8e791383"><div class="ttname"><a href="classMarchand.html#aa3167b6744857b841091896e8e791383">Marchand::min</a></div><div class="ttdeci">int min(int a, int b)</div><div class="ttdoc">Revoi la plus petite des deux valeures. </div><div class="ttdef"><b>Definition:</b> Marchand.cpp:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>Marchand.hpp</b></li>
+    <li class="footer">Généré le Lundi 1 Décembre 2014 19:08:12 pour Tales Of The Northern Land par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

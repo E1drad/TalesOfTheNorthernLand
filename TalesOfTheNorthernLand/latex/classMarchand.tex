@@ -1,0 +1,180 @@
+\hypertarget{classMarchand}{\section{Référence de la classe Marchand}
+\label{classMarchand}\index{Marchand@{Marchand}}
+}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMarchand_ad4ab208a21ab8adeb741f3f4d1bf3c5c}{Marchand} (std\-::vector$<$ \hyperlink{classArme}{Arme} $\ast$ $>$ vec\-Insatancieur)
+\begin{DoxyCompactList}\small\item\em Le constructeur du marchand. \end{DoxyCompactList}\item 
+\hypertarget{classMarchand_ab5294b5de6ce2bfff99f2b29d9a2f4ba}{\hyperlink{classMarchand_ab5294b5de6ce2bfff99f2b29d9a2f4ba}{$\sim$\-Marchand} ()}\label{classMarchand_ab5294b5de6ce2bfff99f2b29d9a2f4ba}
+
+\begin{DoxyCompactList}\small\item\em Le destructeur du marchand. \end{DoxyCompactList}\item 
+void \hyperlink{classMarchand_a6e8fbc688e23a97d761359cb36801564}{marcher} (\hyperlink{classPersonnage}{Personnage} $\ast$perso)
+\begin{DoxyCompactList}\small\item\em fait le commerce avec le marchand. \end{DoxyCompactList}\item 
+void \hyperlink{classMarchand_afec086e17a2df2c16f730a7b22c04fd9}{afficher\-Menu} (\hyperlink{classPersonnage}{Personnage} $\ast$perso)
+\begin{DoxyCompactList}\small\item\em afficher le menu et appelle les methodes d'achat ou de upgrade d'arme \end{DoxyCompactList}\item 
+void \hyperlink{classMarchand_afa159699ab3a8f374f67775f3f0f2d56}{achat} (\hyperlink{classPersonnage}{Personnage} $\ast$perso)
+\begin{DoxyCompactList}\small\item\em affiche l'inventaire du marchand et determine si le joueur peut acheter. \end{DoxyCompactList}\item 
+void \hyperlink{classMarchand_a0346e8673ad63cc9ff3d49e805c25645}{ameliorer} (\hyperlink{classPersonnage}{Personnage} $\ast$perso)
+\begin{DoxyCompactList}\small\item\em Afficher le menu d'amelioration et effectuer les ameliorations. \end{DoxyCompactList}\item 
+\hyperlink{classArme}{Arme} $\ast$ \hyperlink{classMarchand_ab91a5c2933a62a05d2c0a4926fcaadd0}{get\-Arme} (std\-::string nom\-Arme)
+\begin{DoxyCompactList}\small\item\em retour une arme si elle est presente dans l'inventaire du marchand. \end{DoxyCompactList}\item 
+int \hyperlink{classMarchand_aa3167b6744857b841091896e8e791383}{min} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Revoi la plus petite des deux valeures. \end{DoxyCompactList}\item 
+bool \hyperlink{classMarchand_a939b005d84cce6fd81adaa037025eb51}{contains} (std\-::vector$<$ \hyperlink{classArme}{Arme} $\ast$ $>$ vec, \hyperlink{classArme}{Arme} $\ast$arme)
+\begin{DoxyCompactList}\small\item\em Test si l'arme est poséder par le marchand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classMarchand_ad4ab208a21ab8adeb741f3f4d1bf3c5c}{\index{Marchand@{Marchand}!Marchand@{Marchand}}
+\index{Marchand@{Marchand}!Marchand@{Marchand}}
+\subsubsection[{Marchand}]{\setlength{\rightskip}{0pt plus 5cm}Marchand\-::\-Marchand (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Arme} $\ast$ $>$}]{vec\-Insatancieur}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_ad4ab208a21ab8adeb741f3f4d1bf3c5c}
+
+
+Le constructeur du marchand. 
+
+fait de l'aleatoire pour l'ajout des armes pour varier son inventaire 
+\begin{DoxyParams}{Paramètres}
+{\em vec\-Insatancieur} & les armes du machand. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classMarchand_afa159699ab3a8f374f67775f3f0f2d56}{\index{Marchand@{Marchand}!achat@{achat}}
+\index{achat@{achat}!Marchand@{Marchand}}
+\subsubsection[{achat}]{\setlength{\rightskip}{0pt plus 5cm}void Marchand\-::achat (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{perso}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_afa159699ab3a8f374f67775f3f0f2d56}
+
+
+affiche l'inventaire du marchand et determine si le joueur peut acheter. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em perso} & Personnage$\ast$ le pigeon qui achete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMarchand_afec086e17a2df2c16f730a7b22c04fd9}{\index{Marchand@{Marchand}!afficher\-Menu@{afficher\-Menu}}
+\index{afficher\-Menu@{afficher\-Menu}!Marchand@{Marchand}}
+\subsubsection[{afficher\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Marchand\-::afficher\-Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{perso}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_afec086e17a2df2c16f730a7b22c04fd9}
+
+
+afficher le menu et appelle les methodes d'achat ou de upgrade d'arme 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em perso} & Personnage$\ast$ le pigeon qui achete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMarchand_a0346e8673ad63cc9ff3d49e805c25645}{\index{Marchand@{Marchand}!ameliorer@{ameliorer}}
+\index{ameliorer@{ameliorer}!Marchand@{Marchand}}
+\subsubsection[{ameliorer}]{\setlength{\rightskip}{0pt plus 5cm}void Marchand\-::ameliorer (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{perso}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_a0346e8673ad63cc9ff3d49e805c25645}
+
+
+Afficher le menu d'amelioration et effectuer les ameliorations. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em perso} & Personnage$\ast$ le perso qui va avoir une arme ameliorer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMarchand_a939b005d84cce6fd81adaa037025eb51}{\index{Marchand@{Marchand}!contains@{contains}}
+\index{contains@{contains}!Marchand@{Marchand}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Marchand\-::contains (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Arme} $\ast$ $>$}]{vec, }
+\item[{{\bf Arme} $\ast$}]{arme}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_a939b005d84cce6fd81adaa037025eb51}
+
+
+Test si l'arme est poséder par le marchand. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em vec} & le vecteur d'arme du amrchand. \\
+\hline
+{\em l'arme} & à tester. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrais si le marchad possède l'arme. 
+\end{DoxyReturn}
+\hypertarget{classMarchand_ab91a5c2933a62a05d2c0a4926fcaadd0}{\index{Marchand@{Marchand}!get\-Arme@{get\-Arme}}
+\index{get\-Arme@{get\-Arme}!Marchand@{Marchand}}
+\subsubsection[{get\-Arme}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arme} $\ast$ Marchand\-::get\-Arme (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Arme}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_ab91a5c2933a62a05d2c0a4926fcaadd0}
+
+
+retour une arme si elle est presente dans l'inventaire du marchand. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Arme} & std\-::string le nom de l'arme que l'on recherche \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Arme$\ast$ l'arme ou un nullptr 
+\end{DoxyReturn}
+\hypertarget{classMarchand_a6e8fbc688e23a97d761359cb36801564}{\index{Marchand@{Marchand}!marcher@{marcher}}
+\index{marcher@{marcher}!Marchand@{Marchand}}
+\subsubsection[{marcher}]{\setlength{\rightskip}{0pt plus 5cm}void Marchand\-::marcher (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{perso}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_a6e8fbc688e23a97d761359cb36801564}
+
+
+fait le commerce avec le marchand. 
+
+appelle la methode affichermenu 
+\begin{DoxyParams}{Paramètres}
+{\em perso} & Personnage$\ast$ le pigeon qui achete. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMarchand_aa3167b6744857b841091896e8e791383}{\index{Marchand@{Marchand}!min@{min}}
+\index{min@{min}!Marchand@{Marchand}}
+\subsubsection[{min}]{\setlength{\rightskip}{0pt plus 5cm}int Marchand\-::min (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}}\label{classMarchand_aa3167b6744857b841091896e8e791383}
+
+
+Revoi la plus petite des deux valeures. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & le premier entier. \\
+\hline
+{\em b} & le second argument. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a ou b. 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Marchand.\-hpp\item 
+Marchand.\-cpp\end{DoxyCompactItemize}

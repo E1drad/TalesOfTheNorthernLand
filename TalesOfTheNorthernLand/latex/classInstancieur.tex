@@ -1,0 +1,168 @@
+\hypertarget{classInstancieur}{\section{Référence de la classe Instancieur}
+\label{classInstancieur}\index{Instancieur@{Instancieur}}
+}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classInstancieur_ac5eee975392cb87bfabc5b4df6ebc077}{\hyperlink{classInstancieur_ac5eee975392cb87bfabc5b4df6ebc077}{Instancieur} ()}\label{classInstancieur_ac5eee975392cb87bfabc5b4df6ebc077}
+
+\begin{DoxyCompactList}\small\item\em Le constructeur. Constructeur de l'instancieur qui vas faire appele à plusieurs fonction créant ainsi les objets. \end{DoxyCompactList}\item 
+\hypertarget{classInstancieur_aa09eb45321ccae26204e4a75964c8bfa}{\hyperlink{classInstancieur_aa09eb45321ccae26204e4a75964c8bfa}{$\sim$\-Instancieur} ()}\label{classInstancieur_aa09eb45321ccae26204e4a75964c8bfa}
+
+\begin{DoxyCompactList}\small\item\em Le destructeur. Destructeur de l'objet s'occupant de vider et supprimer tout les pointeurs dans les vecteurs. \end{DoxyCompactList}\item 
+\hypertarget{classInstancieur_a3d3e3a304329112d4092678bd81755bc}{void {\bfseries vector\-Add10\-Int} (std\-::vector$<$ int $>$ \&Vec, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j)}\label{classInstancieur_a3d3e3a304329112d4092678bd81755bc}
+
+\item 
+\hypertarget{classInstancieur_af2506c3c13d9b69dd7abbaa033f53223}{std\-::vector$<$ \hyperlink{classArme}{Arme} $\ast$ $>$ {\bfseries get\-Armes} ()}\label{classInstancieur_af2506c3c13d9b69dd7abbaa033f53223}
+
+\item 
+\hypertarget{classInstancieur_acfc970b91c26ac5c29320f9d5ca73ee4}{void \hyperlink{classInstancieur_acfc970b91c26ac5c29320f9d5ca73ee4}{make\-Armes} ()}\label{classInstancieur_acfc970b91c26ac5c29320f9d5ca73ee4}
+
+\begin{DoxyCompactList}\small\item\em Procédure de création d'arme. Cette procédure crée en prmier lieu plusieurs objets de type arme puis les met dans le vector aproprier. \end{DoxyCompactList}\item 
+\hypertarget{classInstancieur_a2c67514e27d7d051a19950aae5b09380}{void \hyperlink{classInstancieur_a2c67514e27d7d051a19950aae5b09380}{make\-Branches} ()}\label{classInstancieur_a2c67514e27d7d051a19950aae5b09380}
+
+\begin{DoxyCompactList}\small\item\em Procédure de création de branche. Cette procédure fonctione exactement comme la porcédure \hyperlink{classInstancieur_acfc970b91c26ac5c29320f9d5ca73ee4}{make\-Armes()}. \end{DoxyCompactList}\item 
+\hypertarget{classInstancieur_ab7990c0c53c0068a693da185c6db5a24}{void \hyperlink{classInstancieur_ab7990c0c53c0068a693da185c6db5a24}{make\-Races} ()}\label{classInstancieur_ab7990c0c53c0068a693da185c6db5a24}
+
+\begin{DoxyCompactList}\small\item\em Procédure de création de races. Cette procédure fonctione exactement comme la porcédure \hyperlink{classInstancieur_acfc970b91c26ac5c29320f9d5ca73ee4}{make\-Armes()}. \end{DoxyCompactList}\item 
+\hypertarget{classInstancieur_a741b7c3351b81bee26a09d7edceeae6f}{void \hyperlink{classInstancieur_a741b7c3351b81bee26a09d7edceeae6f}{make\-Classes} ()}\label{classInstancieur_a741b7c3351b81bee26a09d7edceeae6f}
+
+\begin{DoxyCompactList}\small\item\em Procédure de création de classes. Cette procédure fonctione exactement comme la porcédure \hyperlink{classInstancieur_acfc970b91c26ac5c29320f9d5ca73ee4}{make\-Armes()}. \end{DoxyCompactList}\item 
+\hyperlink{classArme}{Arme} $\ast$ \hyperlink{classInstancieur_a26963863eb1cd9f6a59c0b23dce288dd}{get\-Arme} (std\-::string nom\-Arme)
+\begin{DoxyCompactList}\small\item\em Geter d'arme. parcours toutes les armes jusqu'as trouver celle voulue. \end{DoxyCompactList}\item 
+\hyperlink{classBranche}{Branche} $\ast$ \hyperlink{classInstancieur_a1890b3ca394bc59c59ea07663bcc3a6d}{get\-Branche} (std\-::string nom\-Branche)
+\begin{DoxyCompactList}\small\item\em Geter de branche. Voir get\-Arme. \end{DoxyCompactList}\item 
+\hyperlink{classRace}{Race} $\ast$ \hyperlink{classInstancieur_a8fb2fe3684962eee073a99fd3dade04a}{get\-Race} (std\-::string nom\-Race)
+\begin{DoxyCompactList}\small\item\em Geter de race. Voir get\-Arme. \end{DoxyCompactList}\item 
+\hyperlink{classClasseHeroique}{Classe\-Heroique} $\ast$ \hyperlink{classInstancieur_aa1482aabc634adf6c964ab47c765e99e}{get\-Classe\-H} (std\-::string nom\-Classe)
+\begin{DoxyCompactList}\small\item\em Geter de classe héroique. Voir get\-Arme. \end{DoxyCompactList}\item 
+\hyperlink{classClasseParangon}{Classe\-Parangon} $\ast$ \hyperlink{classInstancieur_a438622a251deaf080808b472f16d4cba}{get\-Classe\-P} (std\-::string nom\-Classe)
+\begin{DoxyCompactList}\small\item\em Geter de classe paragonique. Voir get\-Arme. \end{DoxyCompactList}\item 
+\hyperlink{classClasseDivine}{Classe\-Divine} $\ast$ \hyperlink{classInstancieur_a49c846b763677d79dbc882df834e5a42}{get\-Classe\-D} (std\-::string nom\-Classe)
+\begin{DoxyCompactList}\small\item\em Geter de classe divine. Voir get\-Arme. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classClasseHeroique}{Classe\-Heroique} $\ast$ $>$ \hyperlink{classInstancieur_ad886d78eaf48dfd0906eb3118b0214ea}{get\-Classe\-H\-Branche} (std\-::string nom\-Branche)
+\begin{DoxyCompactList}\small\item\em Geter ded classed héroique d'une branche donnée. Voir get\-Arme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classInstancieur_a26963863eb1cd9f6a59c0b23dce288dd}{\index{Instancieur@{Instancieur}!get\-Arme@{get\-Arme}}
+\index{get\-Arme@{get\-Arme}!Instancieur@{Instancieur}}
+\subsubsection[{get\-Arme}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arme} $\ast$ Instancieur\-::get\-Arme (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Arme}
+\end{DoxyParamCaption}
+)}}\label{classInstancieur_a26963863eb1cd9f6a59c0b23dce288dd}
+
+
+Geter d'arme. parcours toutes les armes jusqu'as trouver celle voulue. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Arme} & Le nom de l'arme rechercher \\
+\hline
+\end{DoxyParams}
+\hypertarget{classInstancieur_a1890b3ca394bc59c59ea07663bcc3a6d}{\index{Instancieur@{Instancieur}!get\-Branche@{get\-Branche}}
+\index{get\-Branche@{get\-Branche}!Instancieur@{Instancieur}}
+\subsubsection[{get\-Branche}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Branche} $\ast$ Instancieur\-::get\-Branche (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Branche}
+\end{DoxyParamCaption}
+)}}\label{classInstancieur_a1890b3ca394bc59c59ea07663bcc3a6d}
+
+
+Geter de branche. Voir get\-Arme. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Branche} & Le nom de la branche rechercher \\
+\hline
+\end{DoxyParams}
+\hypertarget{classInstancieur_a49c846b763677d79dbc882df834e5a42}{\index{Instancieur@{Instancieur}!get\-Classe\-D@{get\-Classe\-D}}
+\index{get\-Classe\-D@{get\-Classe\-D}!Instancieur@{Instancieur}}
+\subsubsection[{get\-Classe\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Classe\-Divine} $\ast$ Instancieur\-::get\-Classe\-D (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Classe}
+\end{DoxyParamCaption}
+)}}\label{classInstancieur_a49c846b763677d79dbc882df834e5a42}
+
+
+Geter de classe divine. Voir get\-Arme. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Classe} & Le nom de la classe rechercher \\
+\hline
+\end{DoxyParams}
+\hypertarget{classInstancieur_aa1482aabc634adf6c964ab47c765e99e}{\index{Instancieur@{Instancieur}!get\-Classe\-H@{get\-Classe\-H}}
+\index{get\-Classe\-H@{get\-Classe\-H}!Instancieur@{Instancieur}}
+\subsubsection[{get\-Classe\-H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Classe\-Heroique} $\ast$ Instancieur\-::get\-Classe\-H (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Classe}
+\end{DoxyParamCaption}
+)}}\label{classInstancieur_aa1482aabc634adf6c964ab47c765e99e}
+
+
+Geter de classe héroique. Voir get\-Arme. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Classe} & Le nom de la classe rechercher \\
+\hline
+\end{DoxyParams}
+\hypertarget{classInstancieur_ad886d78eaf48dfd0906eb3118b0214ea}{\index{Instancieur@{Instancieur}!get\-Classe\-H\-Branche@{get\-Classe\-H\-Branche}}
+\index{get\-Classe\-H\-Branche@{get\-Classe\-H\-Branche}!Instancieur@{Instancieur}}
+\subsubsection[{get\-Classe\-H\-Branche}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Classe\-Heroique} $\ast$ $>$ Instancieur\-::get\-Classe\-H\-Branche (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Branche}
+\end{DoxyParamCaption}
+)}}\label{classInstancieur_ad886d78eaf48dfd0906eb3118b0214ea}
+
+
+Geter ded classed héroique d'une branche donnée. Voir get\-Arme. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Branche} & Le nom de la branche concerner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un vecteur contenant les classes. 
+\end{DoxyReturn}
+\hypertarget{classInstancieur_a438622a251deaf080808b472f16d4cba}{\index{Instancieur@{Instancieur}!get\-Classe\-P@{get\-Classe\-P}}
+\index{get\-Classe\-P@{get\-Classe\-P}!Instancieur@{Instancieur}}
+\subsubsection[{get\-Classe\-P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Classe\-Parangon} $\ast$ Instancieur\-::get\-Classe\-P (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Classe}
+\end{DoxyParamCaption}
+)}}\label{classInstancieur_a438622a251deaf080808b472f16d4cba}
+
+
+Geter de classe paragonique. Voir get\-Arme. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Classe} & Le nom de la classe rechercher \\
+\hline
+\end{DoxyParams}
+\hypertarget{classInstancieur_a8fb2fe3684962eee073a99fd3dade04a}{\index{Instancieur@{Instancieur}!get\-Race@{get\-Race}}
+\index{get\-Race@{get\-Race}!Instancieur@{Instancieur}}
+\subsubsection[{get\-Race}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Race} $\ast$ Instancieur\-::get\-Race (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nom\-Race}
+\end{DoxyParamCaption}
+)}}\label{classInstancieur_a8fb2fe3684962eee073a99fd3dade04a}
+
+
+Geter de race. Voir get\-Arme. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\-Race} & Le nom de la race rechercher \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Instancieur.\-hpp\item 
+Instancieur.\-cpp\end{DoxyCompactItemize}

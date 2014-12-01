@@ -1,0 +1,653 @@
+\hypertarget{classPersonnage}{\section{Référence de la classe Personnage}
+\label{classPersonnage}\index{Personnage@{Personnage}}
+}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPersonnage_af67a53c849a176a4dd642bb6b634833e}{Personnage} (std\-::vector$<$ int $>$ s, std\-::string n, \hyperlink{classClasseHeroique}{Classe\-Heroique} $\ast$c, \hyperlink{classRace}{Race} $\ast$r, bool est\-Femme, int niveau)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classPersonnage}{Personnage}. \end{DoxyCompactList}\item 
+\hyperlink{classPersonnage_a05bdf2a469885bb1fbb6c2e8f98972ab}{$\sim$\-Personnage} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de personnage. \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_ac1a65837596032eba2af5a4b9309b114}{action\-Combat} (\hyperlink{classPersonnage}{Personnage} $\ast$cible)
+\begin{DoxyCompactList}\small\item\em Menu d'action du joueur. \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a56baf3c31093afa4f232c6ca0d434d6c}{combat\-Automatique} (\hyperlink{classPersonnage}{Personnage} $\ast$cible)
+\begin{DoxyCompactList}\small\item\em la methode de gestion prise de decision pour l'I\-A \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_ae9f35f04c2e15c98d97db9675d531d46}{change\-Posture} ()
+\begin{DoxyCompactList}\small\item\em Menu de changement de posture. \end{DoxyCompactList}\item 
+bool \hyperlink{classPersonnage_a2c731ad41a9d720df7d818a6705a3f3c}{se\-Soigner} ()
+\begin{DoxyCompactList}\small\item\em permet de se soigner \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a524d0e177e9dfd472189ef60bb9f7828}{set\-Arme\-Equiper} (\hyperlink{classArme}{Arme} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Change l'arme du personnage. \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a356317bcbf60de8f579a7816d3112f19}{set\-Classe\-Actuelle} (\hyperlink{classClasse}{Classe} $\ast$classe)
+\begin{DoxyCompactList}\small\item\em setter de classe\-Actuelle \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a77a2868f0ebe1747adb0395ad8c49d4e}{set\-Classe\-Parangon} (\hyperlink{classClasse}{Classe} $\ast$classe)
+\begin{DoxyCompactList}\small\item\em setter de classe\-Parangon \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a2c9b4bdc2a17ee4b53ba1df442948adb}{set\-Classe\-Divine} (\hyperlink{classClasse}{Classe} $\ast$classe)
+\begin{DoxyCompactList}\small\item\em setter de classe\-Divine \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a89bee8eb8c2c0e6b7b47f78a93c6d96a}{monter\-Niveau} ()
+\begin{DoxyCompactList}\small\item\em S000000000\-N !!! \end{DoxyCompactList}\item 
+int \hyperlink{classPersonnage_a2724dcc386b3858caec89c0a76977d11}{update\-Degat} ()
+\begin{DoxyCompactList}\small\item\em calcul les degats \end{DoxyCompactList}\item 
+int \hyperlink{classPersonnage_abfe657430f5cf3c4d88e66fba39f574b}{update\-Precision} ()
+\begin{DoxyCompactList}\small\item\em calcul la precision \end{DoxyCompactList}\item 
+int \hyperlink{classPersonnage_ab96e4988ee1e14a3e5e728305142b087}{update\-Critique} ()
+\begin{DoxyCompactList}\small\item\em calcul la valeur de critique \end{DoxyCompactList}\item 
+int \hyperlink{classPersonnage_a07c30a08ae68fd69e19bb536853d9fd5}{update\-Esquive} ()
+\begin{DoxyCompactList}\small\item\em calcul l'esquive \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_af735b2cf101b1cabbbd14cc24b6a935d}{update\-Niveau} ()
+\begin{DoxyCompactList}\small\item\em calcul l'experience et appelle la methode de monter de niveau \end{DoxyCompactList}\item 
+\hypertarget{classPersonnage_a1498effa56d179e4f98b2715201f6260}{void \hyperlink{classPersonnage_a1498effa56d179e4f98b2715201f6260}{update\-P\-V} ()}\label{classPersonnage_a1498effa56d179e4f98b2715201f6260}
+
+\begin{DoxyCompactList}\small\item\em verifie que les pv sont inferieurs au pv\-Max \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_ac0c4df6c3f5858a254ffe2687447e9da}{prendre\-Degat} (int degat)
+\begin{DoxyCompactList}\small\item\em Affiche et retire les pv perdut après mis a jour via la posture. \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a1d43355b9b9aade85f3bb5ffec06b840}{attaquer} (\hyperlink{classPersonnage}{Personnage} $\ast$cible)
+\begin{DoxyCompactList}\small\item\em determine si le personnage touche puis calcule les degats \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a37a51c8be3bd343234f4ef009239f8ee}{mourant} ()
+\begin{DoxyCompactList}\small\item\em determine la mort du perso en fonction de sa classe \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a8944e1085ad9872619b66d484dd1b1f9}{mod\-Stat} (int stat, int modificateur)
+\begin{DoxyCompactList}\small\item\em modifie une stat a une position donner d'une valeur donner puis met a jour les statistique deriver \end{DoxyCompactList}\item 
+\hyperlink{classRace}{Race} $\ast$ \hyperlink{classPersonnage_afbe2ae0138f81a92e24db419bcbea9d5}{get\-Race} ()
+\begin{DoxyCompactList}\small\item\em getter de Race$\ast$ \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classPersonnage_ac0fbc92a7e930ae26148e5e5247e1494}{get\-Nom} ()
+\begin{DoxyCompactList}\small\item\em getter de Nom \end{DoxyCompactList}\item 
+\hyperlink{classClasse}{Classe} $\ast$ \hyperlink{classPersonnage_aa306767186f6003aadf90a6e213334e7}{get\-Classe\-Actuelle} ()
+\begin{DoxyCompactList}\small\item\em getter de Classe\-Actuelle$\ast$ \end{DoxyCompactList}\item 
+bool \hyperlink{classPersonnage_abb94f081188ed8db8a359c71cb1fad15}{get\-Est\-Femme} ()
+\begin{DoxyCompactList}\small\item\em getter de est\-Femme \end{DoxyCompactList}\item 
+\hypertarget{classPersonnage_a7bddda23478b2aa48404790dde0aeefb}{void \hyperlink{classPersonnage_a7bddda23478b2aa48404790dde0aeefb}{update\-Statistique} ()}\label{classPersonnage_a7bddda23478b2aa48404790dde0aeefb}
+
+\begin{DoxyCompactList}\small\item\em appelle les autres methodes d'update \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{classPersonnage_aa3e7743cb3b74039adcdea14f44c6352}{get\-Statistique} ()
+\begin{DoxyCompactList}\small\item\em getter de statistique \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{classPersonnage_a5bf62bc5df34f14f3c0c9717b61498d5}{get\-Statistique\-Derive} ()
+\begin{DoxyCompactList}\small\item\em getter de statistique\-Derive retour les statistique\-Derive Après avoir fait une mise a jour \end{DoxyCompactList}\item 
+\hyperlink{classClasse}{Classe} $\ast$ \hyperlink{classPersonnage_ae9d4cf3dc0c47e5652df837c7839efd8}{get\-Classe\-Heroique} ()
+\begin{DoxyCompactList}\small\item\em getter de classe\-Heroique$\ast$ \end{DoxyCompactList}\item 
+\hyperlink{classClasse}{Classe} $\ast$ \hyperlink{classPersonnage_ad63aa2e6903143a494c72298c90eb7ba}{get\-Classe\-Parangon} ()
+\begin{DoxyCompactList}\small\item\em getter de classe\-Parangon$\ast$ \end{DoxyCompactList}\item 
+\hyperlink{classClasse}{Classe} $\ast$ \hyperlink{classPersonnage_af072c7506dc955ba44abbacf29c7a4bf}{get\-Classe\-Divine} ()
+\begin{DoxyCompactList}\small\item\em getter de classe\-Divine$\ast$ \end{DoxyCompactList}\item 
+\hypertarget{classPersonnage_ab3747da2ed7044c6bd2b62fd439d6ad0}{void \hyperlink{classPersonnage_ab3747da2ed7044c6bd2b62fd439d6ad0}{afficher\-Stat} ()}\label{classPersonnage_ab3747da2ed7044c6bd2b62fd439d6ad0}
+
+\begin{DoxyCompactList}\small\item\em afficher les statistiques puis les statistiques derivées du perso \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_abc49c5153087cee2e1302e73fb198272}{promotion} (\hyperlink{classClasse}{Classe} $\ast$classe)
+\begin{DoxyCompactList}\small\item\em effectue un changement d'etat \char`\"{}vers le haut\char`\"{} si les conditions sont valide \end{DoxyCompactList}\item 
+\hypertarget{classPersonnage_abcf2887d6670a7d0486bf08eb0b32304}{void \hyperlink{classPersonnage_abcf2887d6670a7d0486bf08eb0b32304}{decheance} ()}\label{classPersonnage_abcf2887d6670a7d0486bf08eb0b32304}
+
+\begin{DoxyCompactList}\small\item\em effectue un changement d'etat \char`\"{}vers le bas\char`\"{} si on est pas en Heroique \end{DoxyCompactList}\item 
+int \hyperlink{classPersonnage_a0024a1f71a6f0c252be639463ac39c7c}{critique} (int degat, \hyperlink{classPersonnage}{Personnage} $\ast$cible)
+\begin{DoxyCompactList}\small\item\em Determine si le coups est un coups critique. \end{DoxyCompactList}\item 
+bool \hyperlink{classPersonnage_ad44fed592109b5804b1246f3d6a186f3}{est\-Mort} ()
+\begin{DoxyCompactList}\small\item\em indique si le perso est mort ie pv negatif ou nul \end{DoxyCompactList}\item 
+void \hyperlink{classPersonnage_a25b1a649e9322aac97ec55630959c8cc}{mod\-Argent} (int argent)
+\begin{DoxyCompactList}\small\item\em modifie l'argent selon un entier donner en param \end{DoxyCompactList}\item 
+bool \hyperlink{classPersonnage_a9cfba1f94fc07bc9f42fc50901e143f9}{possede\-Assez\-Argent} (int argent)
+\begin{DoxyCompactList}\small\item\em indique si le perso a assez d'argent \end{DoxyCompactList}\item 
+int \hyperlink{classPersonnage_ab2396463311e9585a42f050273df7751}{get\-Argent} ()
+\begin{DoxyCompactList}\small\item\em getter d'argent \end{DoxyCompactList}\item 
+\hyperlink{classArme}{Arme} $\ast$ \hyperlink{classPersonnage_ae6268f94bc88685bfab88f15ba3ec9f1}{get\-Arme\-Actuelle} ()
+\begin{DoxyCompactList}\small\item\em getter de l'arme actuelle du perso \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classPersonnage_af67a53c849a176a4dd642bb6b634833e}{\index{Personnage@{Personnage}!Personnage@{Personnage}}
+\index{Personnage@{Personnage}!Personnage@{Personnage}}
+\subsubsection[{Personnage}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-::\-Personnage (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$}]{s, }
+\item[{std\-::string}]{n, }
+\item[{{\bf Classe\-Heroique} $\ast$}]{c, }
+\item[{{\bf Race} $\ast$}]{r, }
+\item[{bool}]{est\-Femme, }
+\item[{int}]{niveau}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_af67a53c849a176a4dd642bb6b634833e}
+
+
+Constructeur de \hyperlink{classPersonnage}{Personnage}. 
+
+Sers a crée un personnage via les paramètres decrit ci desous, à initialiser ses statistiques ainsi que sa classe\-Actuelle et initialiser sa posture a \hyperlink{classDefenseur}{Defenseur} 
+\begin{DoxyParams}{Paramètres}
+{\em s} & vector$<$int$>$ Le vector de stat de base du perso \\
+\hline
+{\em n} & string Le nom du personnage \\
+\hline
+{\em c} & Classe\-Heroique$\ast$ Le pointeur vers la classe heroique(ne peut pas être modifier) \\
+\hline
+{\em r} & Race$\ast$ La pointeur vers la race du personnage \\
+\hline
+{\em est\-Femme} & bool vrai si le personnage est une femme \\
+\hline
+{\em niveau} & int indique le niveau du personnage(normale 1 au debut) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a05bdf2a469885bb1fbb6c2e8f98972ab}{\index{Personnage@{Personnage}!$\sim$\-Personnage@{$\sim$\-Personnage}}
+\index{$\sim$\-Personnage@{$\sim$\-Personnage}!Personnage@{Personnage}}
+\subsubsection[{$\sim$\-Personnage}]{\setlength{\rightskip}{0pt plus 5cm}Personnage\-::$\sim$\-Personnage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a05bdf2a469885bb1fbb6c2e8f98972ab}
+
+
+Destructeur de personnage. 
+
+remet tout les pointeurs a nullptr car les objets doivent être detruit dans l'instancieur 
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classPersonnage_ac1a65837596032eba2af5a4b9309b114}{\index{Personnage@{Personnage}!action\-Combat@{action\-Combat}}
+\index{action\-Combat@{action\-Combat}!Personnage@{Personnage}}
+\subsubsection[{action\-Combat}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::action\-Combat (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{cible}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ac1a65837596032eba2af5a4b9309b114}
+
+
+Menu d'action du joueur. 
+
+affiche le menu et en fonction d'une entré clavier appelle une methode specifique 1 pour attaquer, 2 pour se soigner, 3 pour changer de posture 
+\begin{DoxyParams}{Paramètres}
+{\em cible} & Personnage$\ast$ notre ennemie actuelle \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a1d43355b9b9aade85f3bb5ffec06b840}{\index{Personnage@{Personnage}!attaquer@{attaquer}}
+\index{attaquer@{attaquer}!Personnage@{Personnage}}
+\subsubsection[{attaquer}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::attaquer (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{cible}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a1d43355b9b9aade85f3bb5ffec06b840}
+
+
+determine si le personnage touche puis calcule les degats 
+
+les calculs se fait viens du rng 
+\begin{DoxyParams}{Paramètres}
+{\em cible} & Personnage$\ast$ l'ennemie actuelle \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_ae9f35f04c2e15c98d97db9675d531d46}{\index{Personnage@{Personnage}!change\-Posture@{change\-Posture}}
+\index{change\-Posture@{change\-Posture}!Personnage@{Personnage}}
+\subsubsection[{change\-Posture}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::change\-Posture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ae9f35f04c2e15c98d97db9675d531d46}
+
+
+Menu de changement de posture. 
+
+affiche le menu et en fonction d'une entré clavier crée une nouvelle posture \begin{DoxyRefDesc}{Bogue}
+\item[\hyperlink{bug__bug000002}{Bogue}]need un delete de la posture ? \end{DoxyRefDesc}
+\hypertarget{classPersonnage_a56baf3c31093afa4f232c6ca0d434d6c}{\index{Personnage@{Personnage}!combat\-Automatique@{combat\-Automatique}}
+\index{combat\-Automatique@{combat\-Automatique}!Personnage@{Personnage}}
+\subsubsection[{combat\-Automatique}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::combat\-Automatique (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{cible}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a56baf3c31093afa4f232c6ca0d434d6c}
+
+
+la methode de gestion prise de decision pour l'I\-A 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cible} & Personnage$\ast$ l'ennemie actuelle de l'I\-A (à l'heure actuelle le joueur) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a0024a1f71a6f0c252be639463ac39c7c}{\index{Personnage@{Personnage}!critique@{critique}}
+\index{critique@{critique}!Personnage@{Personnage}}
+\subsubsection[{critique}]{\setlength{\rightskip}{0pt plus 5cm}int Personnage\-::critique (
+\begin{DoxyParamCaption}
+\item[{int}]{degat, }
+\item[{{\bf Personnage} $\ast$}]{cible}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a0024a1f71a6f0c252be639463ac39c7c}
+
+
+Determine si le coups est un coups critique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int les degat avant le calcule du critique \\
+\hline
+{\em cible} & Personnage$\ast$ notre cible actuelle \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_ad44fed592109b5804b1246f3d6a186f3}{\index{Personnage@{Personnage}!est\-Mort@{est\-Mort}}
+\index{est\-Mort@{est\-Mort}!Personnage@{Personnage}}
+\subsubsection[{est\-Mort}]{\setlength{\rightskip}{0pt plus 5cm}bool Personnage\-::est\-Mort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ad44fed592109b5804b1246f3d6a186f3}
+
+
+indique si le perso est mort ie pv negatif ou nul 
+
+\begin{DoxyReturn}{Renvoie}
+vrai si les pv sont negatif ou nul 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ab2396463311e9585a42f050273df7751}{\index{Personnage@{Personnage}!get\-Argent@{get\-Argent}}
+\index{get\-Argent@{get\-Argent}!Personnage@{Personnage}}
+\subsubsection[{get\-Argent}]{\setlength{\rightskip}{0pt plus 5cm}int Personnage\-::get\-Argent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ab2396463311e9585a42f050273df7751}
+
+
+getter d'argent 
+
+\begin{DoxyReturn}{Renvoie}
+argent int l'argent du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ae6268f94bc88685bfab88f15ba3ec9f1}{\index{Personnage@{Personnage}!get\-Arme\-Actuelle@{get\-Arme\-Actuelle}}
+\index{get\-Arme\-Actuelle@{get\-Arme\-Actuelle}!Personnage@{Personnage}}
+\subsubsection[{get\-Arme\-Actuelle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arme} $\ast$ Personnage\-::get\-Arme\-Actuelle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ae6268f94bc88685bfab88f15ba3ec9f1}
+
+
+getter de l'arme actuelle du perso 
+
+\begin{DoxyReturn}{Renvoie}
+arme\-Equiper Arme$\ast$ 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_aa306767186f6003aadf90a6e213334e7}{\index{Personnage@{Personnage}!get\-Classe\-Actuelle@{get\-Classe\-Actuelle}}
+\index{get\-Classe\-Actuelle@{get\-Classe\-Actuelle}!Personnage@{Personnage}}
+\subsubsection[{get\-Classe\-Actuelle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Classe} $\ast$ Personnage\-::get\-Classe\-Actuelle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_aa306767186f6003aadf90a6e213334e7}
+
+
+getter de Classe\-Actuelle$\ast$ 
+
+\begin{DoxyReturn}{Renvoie}
+Classe\-Actuelle$\ast$ le pointeur de classe actuelle du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_af072c7506dc955ba44abbacf29c7a4bf}{\index{Personnage@{Personnage}!get\-Classe\-Divine@{get\-Classe\-Divine}}
+\index{get\-Classe\-Divine@{get\-Classe\-Divine}!Personnage@{Personnage}}
+\subsubsection[{get\-Classe\-Divine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Classe} $\ast$ Personnage\-::get\-Classe\-Divine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_af072c7506dc955ba44abbacf29c7a4bf}
+
+
+getter de classe\-Divine$\ast$ 
+
+\begin{DoxyReturn}{Renvoie}
+classe\-Divine$\ast$ le pointeur de classe Divine du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ae9d4cf3dc0c47e5652df837c7839efd8}{\index{Personnage@{Personnage}!get\-Classe\-Heroique@{get\-Classe\-Heroique}}
+\index{get\-Classe\-Heroique@{get\-Classe\-Heroique}!Personnage@{Personnage}}
+\subsubsection[{get\-Classe\-Heroique}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Classe} $\ast$ Personnage\-::get\-Classe\-Heroique (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ae9d4cf3dc0c47e5652df837c7839efd8}
+
+
+getter de classe\-Heroique$\ast$ 
+
+\begin{DoxyReturn}{Renvoie}
+classe\-Heroique$\ast$ le pointeur de classe Heroique du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ad63aa2e6903143a494c72298c90eb7ba}{\index{Personnage@{Personnage}!get\-Classe\-Parangon@{get\-Classe\-Parangon}}
+\index{get\-Classe\-Parangon@{get\-Classe\-Parangon}!Personnage@{Personnage}}
+\subsubsection[{get\-Classe\-Parangon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Classe} $\ast$ Personnage\-::get\-Classe\-Parangon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ad63aa2e6903143a494c72298c90eb7ba}
+
+
+getter de classe\-Parangon$\ast$ 
+
+\begin{DoxyReturn}{Renvoie}
+classe\-Parangon$\ast$ le pointeur de classe Parangon du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_abb94f081188ed8db8a359c71cb1fad15}{\index{Personnage@{Personnage}!get\-Est\-Femme@{get\-Est\-Femme}}
+\index{get\-Est\-Femme@{get\-Est\-Femme}!Personnage@{Personnage}}
+\subsubsection[{get\-Est\-Femme}]{\setlength{\rightskip}{0pt plus 5cm}bool Personnage\-::get\-Est\-Femme (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_abb94f081188ed8db8a359c71cb1fad15}
+
+
+getter de est\-Femme 
+
+\begin{DoxyReturn}{Renvoie}
+est\-Femme vrai si le perso est une femme 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ac0fbc92a7e930ae26148e5e5247e1494}{\index{Personnage@{Personnage}!get\-Nom@{get\-Nom}}
+\index{get\-Nom@{get\-Nom}!Personnage@{Personnage}}
+\subsubsection[{get\-Nom}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Personnage\-::get\-Nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ac0fbc92a7e930ae26148e5e5247e1494}
+
+
+getter de Nom 
+
+\begin{DoxyReturn}{Renvoie}
+Nom le string de nom du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_afbe2ae0138f81a92e24db419bcbea9d5}{\index{Personnage@{Personnage}!get\-Race@{get\-Race}}
+\index{get\-Race@{get\-Race}!Personnage@{Personnage}}
+\subsubsection[{get\-Race}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Race} $\ast$ Personnage\-::get\-Race (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_afbe2ae0138f81a92e24db419bcbea9d5}
+
+
+getter de Race$\ast$ 
+
+\begin{DoxyReturn}{Renvoie}
+Race$\ast$ le pointeur de race du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_aa3e7743cb3b74039adcdea14f44c6352}{\index{Personnage@{Personnage}!get\-Statistique@{get\-Statistique}}
+\index{get\-Statistique@{get\-Statistique}!Personnage@{Personnage}}
+\subsubsection[{get\-Statistique}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ int $>$ Personnage\-::get\-Statistique (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_aa3e7743cb3b74039adcdea14f44c6352}
+
+
+getter de statistique 
+
+\begin{DoxyReturn}{Renvoie}
+statistique le vector$<$int$>$ de statistique 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_a5bf62bc5df34f14f3c0c9717b61498d5}{\index{Personnage@{Personnage}!get\-Statistique\-Derive@{get\-Statistique\-Derive}}
+\index{get\-Statistique\-Derive@{get\-Statistique\-Derive}!Personnage@{Personnage}}
+\subsubsection[{get\-Statistique\-Derive}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ int $>$ Personnage\-::get\-Statistique\-Derive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a5bf62bc5df34f14f3c0c9717b61498d5}
+
+
+getter de statistique\-Derive retour les statistique\-Derive Après avoir fait une mise a jour 
+
+\begin{DoxyReturn}{Renvoie}
+statistique derive le vector$<$int$>$ de statistique derive 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_a25b1a649e9322aac97ec55630959c8cc}{\index{Personnage@{Personnage}!mod\-Argent@{mod\-Argent}}
+\index{mod\-Argent@{mod\-Argent}!Personnage@{Personnage}}
+\subsubsection[{mod\-Argent}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::mod\-Argent (
+\begin{DoxyParamCaption}
+\item[{int}]{argent}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a25b1a649e9322aac97ec55630959c8cc}
+
+
+modifie l'argent selon un entier donner en param 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em argent} & int le nombre de Pesos que l'on veut ajoute/enlever au perso \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a8944e1085ad9872619b66d484dd1b1f9}{\index{Personnage@{Personnage}!mod\-Stat@{mod\-Stat}}
+\index{mod\-Stat@{mod\-Stat}!Personnage@{Personnage}}
+\subsubsection[{mod\-Stat}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::mod\-Stat (
+\begin{DoxyParamCaption}
+\item[{int}]{stat, }
+\item[{int}]{modificateur}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a8944e1085ad9872619b66d484dd1b1f9}
+
+
+modifie une stat a une position donner d'une valeur donner puis met a jour les statistique deriver 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em stat} & int la position dans le vector de stat \\
+\hline
+{\em modificateur} & int le modificateur de stat \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a89bee8eb8c2c0e6b7b47f78a93c6d96a}{\index{Personnage@{Personnage}!monter\-Niveau@{monter\-Niveau}}
+\index{monter\-Niveau@{monter\-Niveau}!Personnage@{Personnage}}
+\subsubsection[{monter\-Niveau}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::monter\-Niveau (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a89bee8eb8c2c0e6b7b47f78a93c6d96a}
+
+
+S000000000\-N !!! 
+
+S000000000\-N !!! 
+\begin{DoxyParams}{Paramètres}
+{\em S000000000\-N} & !!! \\
+\hline
+{\em S000000000\-N} & !!! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+S000000000\-N !!! 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_a37a51c8be3bd343234f4ef009239f8ee}{\index{Personnage@{Personnage}!mourant@{mourant}}
+\index{mourant@{mourant}!Personnage@{Personnage}}
+\subsubsection[{mourant}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::mourant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a37a51c8be3bd343234f4ef009239f8ee}
+
+
+determine la mort du perso en fonction de sa classe 
+
+si le perso reussi un jet de dé il peut recupérer des points de vie et eviter la mort \hypertarget{classPersonnage_a9cfba1f94fc07bc9f42fc50901e143f9}{\index{Personnage@{Personnage}!possede\-Assez\-Argent@{possede\-Assez\-Argent}}
+\index{possede\-Assez\-Argent@{possede\-Assez\-Argent}!Personnage@{Personnage}}
+\subsubsection[{possede\-Assez\-Argent}]{\setlength{\rightskip}{0pt plus 5cm}bool Personnage\-::possede\-Assez\-Argent (
+\begin{DoxyParamCaption}
+\item[{int}]{argent}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a9cfba1f94fc07bc9f42fc50901e143f9}
+
+
+indique si le perso a assez d'argent 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em argent} & int le nombre de Pesos que le perso doit avoir pour faire qqch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrai l'argent du perso est superieur ou egale a la valeur en parametre 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_ac0c4df6c3f5858a254ffe2687447e9da}{\index{Personnage@{Personnage}!prendre\-Degat@{prendre\-Degat}}
+\index{prendre\-Degat@{prendre\-Degat}!Personnage@{Personnage}}
+\subsubsection[{prendre\-Degat}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::prendre\-Degat (
+\begin{DoxyParamCaption}
+\item[{int}]{degat}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ac0c4df6c3f5858a254ffe2687447e9da}
+
+
+Affiche et retire les pv perdut après mis a jour via la posture. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int les degat que l'on va subir avant mis a jour via la posture \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_abc49c5153087cee2e1302e73fb198272}{\index{Personnage@{Personnage}!promotion@{promotion}}
+\index{promotion@{promotion}!Personnage@{Personnage}}
+\subsubsection[{promotion}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::promotion (
+\begin{DoxyParamCaption}
+\item[{{\bf Classe} $\ast$}]{classe}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_abc49c5153087cee2e1302e73fb198272}
+
+
+effectue un changement d'etat \char`\"{}vers le haut\char`\"{} si les conditions sont valide 
+
+La classe doit être \char`\"{}d'etat\char`\"{} superieur sinon il ne se passe rien (mis a part le message d'erreur inaproprier) 
+\begin{DoxyParams}{Paramètres}
+{\em classe} & Classe$\ast$ la classe vers laquelle on veut allé \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a2c731ad41a9d720df7d818a6705a3f3c}{\index{Personnage@{Personnage}!se\-Soigner@{se\-Soigner}}
+\index{se\-Soigner@{se\-Soigner}!Personnage@{Personnage}}
+\subsubsection[{se\-Soigner}]{\setlength{\rightskip}{0pt plus 5cm}bool Personnage\-::se\-Soigner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a2c731ad41a9d720df7d818a6705a3f3c}
+
+
+permet de se soigner 
+
+redonne des points de vies si les pv sont inferieurs au pv\-Max \begin{DoxyReturn}{Renvoie}
+Un {\itshape booleen} qui est vrai si on pouvait gagner des points des vie 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_a524d0e177e9dfd472189ef60bb9f7828}{\index{Personnage@{Personnage}!set\-Arme\-Equiper@{set\-Arme\-Equiper}}
+\index{set\-Arme\-Equiper@{set\-Arme\-Equiper}!Personnage@{Personnage}}
+\subsubsection[{set\-Arme\-Equiper}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::set\-Arme\-Equiper (
+\begin{DoxyParamCaption}
+\item[{{\bf Arme} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a524d0e177e9dfd472189ef60bb9f7828}
+
+
+Change l'arme du personnage. 
+
+change l'arme, met a jour les statitisques derivés et affiche la difference avant/après \hypertarget{classPersonnage_a356317bcbf60de8f579a7816d3112f19}{\index{Personnage@{Personnage}!set\-Classe\-Actuelle@{set\-Classe\-Actuelle}}
+\index{set\-Classe\-Actuelle@{set\-Classe\-Actuelle}!Personnage@{Personnage}}
+\subsubsection[{set\-Classe\-Actuelle}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::set\-Classe\-Actuelle (
+\begin{DoxyParamCaption}
+\item[{{\bf Classe} $\ast$}]{classe}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a356317bcbf60de8f579a7816d3112f19}
+
+
+setter de classe\-Actuelle 
+
+est utile pour les Classes lors des promotions/decheance 
+\begin{DoxyParams}{Paramètres}
+{\em classe} & Classe$\ast$ notre nouvelle classe actuelle \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a2c9b4bdc2a17ee4b53ba1df442948adb}{\index{Personnage@{Personnage}!set\-Classe\-Divine@{set\-Classe\-Divine}}
+\index{set\-Classe\-Divine@{set\-Classe\-Divine}!Personnage@{Personnage}}
+\subsubsection[{set\-Classe\-Divine}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::set\-Classe\-Divine (
+\begin{DoxyParamCaption}
+\item[{{\bf Classe} $\ast$}]{classe}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a2c9b4bdc2a17ee4b53ba1df442948adb}
+
+
+setter de classe\-Divine 
+
+est utile pour les Classes lors des promotions/decheance 
+\begin{DoxyParams}{Paramètres}
+{\em classe} & Classe$\ast$ notre nouvelle classe\-Divine \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_a77a2868f0ebe1747adb0395ad8c49d4e}{\index{Personnage@{Personnage}!set\-Classe\-Parangon@{set\-Classe\-Parangon}}
+\index{set\-Classe\-Parangon@{set\-Classe\-Parangon}!Personnage@{Personnage}}
+\subsubsection[{set\-Classe\-Parangon}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::set\-Classe\-Parangon (
+\begin{DoxyParamCaption}
+\item[{{\bf Classe} $\ast$}]{classe}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a77a2868f0ebe1747adb0395ad8c49d4e}
+
+
+setter de classe\-Parangon 
+
+est utile pour les Classes lors des promotions/decheance 
+\begin{DoxyParams}{Paramètres}
+{\em classe} & Classe$\ast$ notre nouvelle classe\-Parangon \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPersonnage_ab96e4988ee1e14a3e5e728305142b087}{\index{Personnage@{Personnage}!update\-Critique@{update\-Critique}}
+\index{update\-Critique@{update\-Critique}!Personnage@{Personnage}}
+\subsubsection[{update\-Critique}]{\setlength{\rightskip}{0pt plus 5cm}int Personnage\-::update\-Critique (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_ab96e4988ee1e14a3e5e728305142b087}
+
+
+calcul la valeur de critique 
+
+\begin{DoxyReturn}{Renvoie}
+valeur {\itshape int} la valeur de critique du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_a2724dcc386b3858caec89c0a76977d11}{\index{Personnage@{Personnage}!update\-Degat@{update\-Degat}}
+\index{update\-Degat@{update\-Degat}!Personnage@{Personnage}}
+\subsubsection[{update\-Degat}]{\setlength{\rightskip}{0pt plus 5cm}int Personnage\-::update\-Degat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a2724dcc386b3858caec89c0a76977d11}
+
+
+calcul les degats 
+
+si il n'a pas d'arme degat = 0, si l'arme est magique le calcule ce fait avec l'intelligence sinon avec la force \begin{DoxyReturn}{Renvoie}
+valeur {\itshape int} les degats du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_a07c30a08ae68fd69e19bb536853d9fd5}{\index{Personnage@{Personnage}!update\-Esquive@{update\-Esquive}}
+\index{update\-Esquive@{update\-Esquive}!Personnage@{Personnage}}
+\subsubsection[{update\-Esquive}]{\setlength{\rightskip}{0pt plus 5cm}int Personnage\-::update\-Esquive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_a07c30a08ae68fd69e19bb536853d9fd5}
+
+
+calcul l'esquive 
+
+\begin{DoxyReturn}{Renvoie}
+valeur {\itshape int} l'equive du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_af735b2cf101b1cabbbd14cc24b6a935d}{\index{Personnage@{Personnage}!update\-Niveau@{update\-Niveau}}
+\index{update\-Niveau@{update\-Niveau}!Personnage@{Personnage}}
+\subsubsection[{update\-Niveau}]{\setlength{\rightskip}{0pt plus 5cm}void Personnage\-::update\-Niveau (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_af735b2cf101b1cabbbd14cc24b6a935d}
+
+
+calcul l'experience et appelle la methode de monter de niveau 
+
+\begin{DoxyReturn}{Renvoie}
+valeur {\itshape int} l'equive du perso 
+\end{DoxyReturn}
+\hypertarget{classPersonnage_abfe657430f5cf3c4d88e66fba39f574b}{\index{Personnage@{Personnage}!update\-Precision@{update\-Precision}}
+\index{update\-Precision@{update\-Precision}!Personnage@{Personnage}}
+\subsubsection[{update\-Precision}]{\setlength{\rightskip}{0pt plus 5cm}int Personnage\-::update\-Precision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPersonnage_abfe657430f5cf3c4d88e66fba39f574b}
+
+
+calcul la precision 
+
+\begin{DoxyReturn}{Renvoie}
+valeur {\itshape int} la precision du perso 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Personnage.\-hpp\item 
+Personnage.\-cpp\end{DoxyCompactItemize}

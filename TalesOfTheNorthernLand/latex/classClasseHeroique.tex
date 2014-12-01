@@ -1,0 +1,228 @@
+\hypertarget{classClasseHeroique}{\section{Référence de la classe Classe\-Heroique}
+\label{classClasseHeroique}\index{Classe\-Heroique@{Classe\-Heroique}}
+}
+Graphe d'héritage de Classe\-Heroique\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classClasseHeroique}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClasseHeroique_a94be4fc3d32f2792f8c624ba8ec6911c}{Classe\-Heroique} (std\-::string n\-C, std\-::vector$<$ int $>$ ms, \hyperlink{classBranche}{Branche} $\ast$b, \hyperlink{classTechnique}{Technique} $\ast$t1, \hyperlink{classTechnique}{Technique} $\ast$t2, int n\-T1, int n\-T2)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classClasseHeroique}{Classe\-Heroique} herite de \hyperlink{classClasse}{Classe}. \end{DoxyCompactList}\item 
+\hypertarget{classClasseHeroique_ad48bcf5829fc43e313376813f32a4170}{\hyperlink{classClasseHeroique_ad48bcf5829fc43e313376813f32a4170}{$\sim$\-Classe\-Heroique} ()}\label{classClasseHeroique_ad48bcf5829fc43e313376813f32a4170}
+
+\begin{DoxyCompactList}\small\item\em Destructeur de \hyperlink{classClasseHeroique}{Classe\-Heroique}. \end{DoxyCompactList}\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classClasseHeroique_a4d08f6ae78e8248c438ab525e7834e17}{get\-Technique1} ()
+\begin{DoxyCompactList}\small\item\em getter de la 1er technique \end{DoxyCompactList}\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classClasseHeroique_aade6db9c42e96dc5f34c6263d6391208}{get\-Technique2} ()
+\begin{DoxyCompactList}\small\item\em getter de la 2eme technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseHeroique_a19f46bb0d05b35ce775680dcd0d3010b}{getniveau\-Technique1} ()
+\begin{DoxyCompactList}\small\item\em getter du niveau pour la 1er technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseHeroique_a61032db45e61f536821ae12e63922f5e}{getniveau\-Technique2} ()
+\begin{DoxyCompactList}\small\item\em getter du niveau pour la 2em technique \end{DoxyCompactList}\item 
+int \hyperlink{classClasseHeroique_a9811ee389e96597190e99cada8c241e7}{attaquer} (int degat, int stat\-Attaque)
+\begin{DoxyCompactList}\small\item\em methode d'attaque (change en fonction de la classe) \end{DoxyCompactList}\item 
+int \hyperlink{classClasseHeroique_a5bdbd46d2886a7e71eb1bff34ca5aa6c}{mort} (int stat\-Chance, int pv\-Max)
+\begin{DoxyCompactList}\small\item\em determine si le perso peux regagner miraculeusement des pv(change en fonction de la classe) \end{DoxyCompactList}\item 
+void \hyperlink{classClasseHeroique_a6aed4bac4cabc6eb09441ea1e2ef7b03}{decheance} (\hyperlink{classPersonnage}{Personnage} $\ast$p)
+\begin{DoxyCompactList}\small\item\em methode de \char`\"{}transition vers le bas\char`\"{} \end{DoxyCompactList}\item 
+bool \hyperlink{classClasseHeroique_a84e13c85352031c73d5dfbbd691bef30}{promotion} (\hyperlink{classPersonnage}{Personnage} $\ast$p, \hyperlink{classClasse}{Classe} $\ast$c)
+\begin{DoxyCompactList}\small\item\em methode de \char`\"{}transition vers le haut\char`\"{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classClasseHeroique_a94be4fc3d32f2792f8c624ba8ec6911c}{\index{Classe\-Heroique@{Classe\-Heroique}!Classe\-Heroique@{Classe\-Heroique}}
+\index{Classe\-Heroique@{Classe\-Heroique}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{Classe\-Heroique}]{\setlength{\rightskip}{0pt plus 5cm}Classe\-Heroique\-::\-Classe\-Heroique (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{nc, }
+\item[{std\-::vector$<$ int $>$}]{ms, }
+\item[{{\bf Branche} $\ast$}]{b, }
+\item[{{\bf Technique} $\ast$}]{t1, }
+\item[{{\bf Technique} $\ast$}]{t2, }
+\item[{int}]{n\-T1, }
+\item[{int}]{n\-T2}
+\end{DoxyParamCaption}
+)}}\label{classClasseHeroique_a94be4fc3d32f2792f8c624ba8ec6911c}
+
+
+Constructeur de \hyperlink{classClasseHeroique}{Classe\-Heroique} herite de \hyperlink{classClasse}{Classe}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n\-C} & std\-::string le nom de la classe \\
+\hline
+{\em m\-S} & std\-::vector$<$int$>$ les modificateurs de la classe \\
+\hline
+{\em b} & Branche$\ast$ sa branche \\
+\hline
+{\em t1} & Technique$\ast$ technique 1 \\
+\hline
+{\em t2} & Technique$\ast$ technique 2 \\
+\hline
+{\em n\-T1} & int niveau technique 1 \\
+\hline
+{\em n\-T2} & int niveau technique 2 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classClasseHeroique_a9811ee389e96597190e99cada8c241e7}{\index{Classe\-Heroique@{Classe\-Heroique}!attaquer@{attaquer}}
+\index{attaquer@{attaquer}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{attaquer}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Heroique\-::attaquer (
+\begin{DoxyParamCaption}
+\item[{int}]{degat, }
+\item[{int}]{stat\-Attaque}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseHeroique_a9811ee389e96597190e99cada8c241e7}
+
+
+methode d'attaque (change en fonction de la classe) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em degat} & int degat \\
+\hline
+{\em stat\-Attaque} & int force ou intelligence \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseHeroique_a6aed4bac4cabc6eb09441ea1e2ef7b03}{\index{Classe\-Heroique@{Classe\-Heroique}!decheance@{decheance}}
+\index{decheance@{decheance}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{decheance}]{\setlength{\rightskip}{0pt plus 5cm}void Classe\-Heroique\-::decheance (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseHeroique_a6aed4bac4cabc6eb09441ea1e2ef7b03}
+
+
+methode de \char`\"{}transition vers le bas\char`\"{} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Personnage$\ast$ le perso dechut ne doit pas être utiliser \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseHeroique_a19f46bb0d05b35ce775680dcd0d3010b}{\index{Classe\-Heroique@{Classe\-Heroique}!getniveau\-Technique1@{getniveau\-Technique1}}
+\index{getniveau\-Technique1@{getniveau\-Technique1}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{getniveau\-Technique1}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Heroique\-::getniveau\-Technique1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseHeroique_a19f46bb0d05b35ce775680dcd0d3010b}
+
+
+getter du niveau pour la 1er technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 1er technique 
+\end{DoxyReturn}
+\hypertarget{classClasseHeroique_a61032db45e61f536821ae12e63922f5e}{\index{Classe\-Heroique@{Classe\-Heroique}!getniveau\-Technique2@{getniveau\-Technique2}}
+\index{getniveau\-Technique2@{getniveau\-Technique2}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{getniveau\-Technique2}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Heroique\-::getniveau\-Technique2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseHeroique_a61032db45e61f536821ae12e63922f5e}
+
+
+getter du niveau pour la 2em technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 2eme technique 
+\end{DoxyReturn}
+\hypertarget{classClasseHeroique_a4d08f6ae78e8248c438ab525e7834e17}{\index{Classe\-Heroique@{Classe\-Heroique}!get\-Technique1@{get\-Technique1}}
+\index{get\-Technique1@{get\-Technique1}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{get\-Technique1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Technique} $\ast$ Classe\-Heroique\-::get\-Technique1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseHeroique_a4d08f6ae78e8248c438ab525e7834e17}
+
+
+getter de la 1er technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 1er technique 
+\end{DoxyReturn}
+\hypertarget{classClasseHeroique_aade6db9c42e96dc5f34c6263d6391208}{\index{Classe\-Heroique@{Classe\-Heroique}!get\-Technique2@{get\-Technique2}}
+\index{get\-Technique2@{get\-Technique2}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{get\-Technique2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Technique} $\ast$ Classe\-Heroique\-::get\-Technique2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClasseHeroique_aade6db9c42e96dc5f34c6263d6391208}
+
+
+getter de la 2eme technique 
+
+\begin{DoxyReturn}{Renvoie}
+technique $\ast$\-Technique la 2eme technique 
+\end{DoxyReturn}
+\hypertarget{classClasseHeroique_a5bdbd46d2886a7e71eb1bff34ca5aa6c}{\index{Classe\-Heroique@{Classe\-Heroique}!mort@{mort}}
+\index{mort@{mort}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{mort}]{\setlength{\rightskip}{0pt plus 5cm}int Classe\-Heroique\-::mort (
+\begin{DoxyParamCaption}
+\item[{int}]{stat\-Chance, }
+\item[{int}]{pv\-Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseHeroique_a5bdbd46d2886a7e71eb1bff34ca5aa6c}
+
+
+determine si le perso peux regagner miraculeusement des pv(change en fonction de la classe) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em stat\-Chance} & int chance du personnage \\
+\hline
+{\em pv\-Max} & int les pv\-Max du personnage \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+\hypertarget{classClasseHeroique_a84e13c85352031c73d5dfbbd691bef30}{\index{Classe\-Heroique@{Classe\-Heroique}!promotion@{promotion}}
+\index{promotion@{promotion}!ClasseHeroique@{Classe\-Heroique}}
+\subsubsection[{promotion}]{\setlength{\rightskip}{0pt plus 5cm}bool Classe\-Heroique\-::promotion (
+\begin{DoxyParamCaption}
+\item[{{\bf Personnage} $\ast$}]{p, }
+\item[{{\bf Classe} $\ast$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClasseHeroique_a84e13c85352031c73d5dfbbd691bef30}
+
+
+methode de \char`\"{}transition vers le haut\char`\"{} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & Personnage$\ast$ le perso promu \\
+\hline
+{\em c} & Classe$\ast$ la nouvelle classe du perso (doit être Parangon) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool true si classe Parangon sinon false 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{classClasse}{Classe}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\item 
+Classe.\-hpp\item 
+Classe.\-cpp\end{DoxyCompactItemize}

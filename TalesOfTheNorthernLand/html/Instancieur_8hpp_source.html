@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Tales Of The Northern Land:  Fichier source de Instancieur.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tales Of The Northern Land
+   &#160;<span id="projectnumber">0.3</span>
+   </div>
+   <div id="projectbrief">UN RPG QUI BALANCE DU LEMURIEN ARC-EN-CIEL AVEC DES THIS-&gt;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Instancieur_8hpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Instancieur.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Instancieur.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: 21 nov. 2014</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: Charles BEGAUDEAU</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef INSTANCIEUR_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INSTANCIEUR_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Armes.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Item.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;Branche.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;Classe.hpp&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"> #include &quot;Race.hpp&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classInstancieur.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInstancieur.html">Instancieur</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::vector&lt;Arme*&gt; armes;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::vector&lt;Branche*&gt; branches;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::vector&lt;Race*&gt; races;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::vector&lt;ClasseHeroique*&gt; classesH;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;ClasseParangon *&gt; classesP;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::vector&lt;ClasseDivine*&gt; classesD;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classInstancieur.html#ac5eee975392cb87bfabc5b4df6ebc077">Instancieur</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classInstancieur.html#aa09eb45321ccae26204e4a75964c8bfa">~Instancieur</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> vectorAdd10Int(std::vector&lt;int&gt; &amp;Vec, <span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> c, <span class="keywordtype">int</span> d, <span class="keywordtype">int</span> e, <span class="keywordtype">int</span> f, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::vector&lt;Arme*&gt; getArmes();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInstancieur.html#acfc970b91c26ac5c29320f9d5ca73ee4">makeArmes</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInstancieur.html#a2c67514e27d7d051a19950aae5b09380">makeBranches</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInstancieur.html#ab7990c0c53c0068a693da185c6db5a24">makeRaces</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInstancieur.html#a741b7c3351b81bee26a09d7edceeae6f">makeClasses</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classArme.html">Arme</a>* <a class="code" href="classInstancieur.html#a26963863eb1cd9f6a59c0b23dce288dd">getArme</a>(std::string nomArme);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classBranche.html">Branche</a>* <a class="code" href="classInstancieur.html#a1890b3ca394bc59c59ea07663bcc3a6d">getBranche</a>(std::string nomBranche);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classRace.html">Race</a>* <a class="code" href="classInstancieur.html#a8fb2fe3684962eee073a99fd3dade04a">getRace</a>(std::string nomRace);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classClasseHeroique.html">ClasseHeroique</a>* <a class="code" href="classInstancieur.html#aa1482aabc634adf6c964ab47c765e99e">getClasseH</a>(std::string nomClasse);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classClasseParangon.html">ClasseParangon</a>* <a class="code" href="classInstancieur.html#a438622a251deaf080808b472f16d4cba">getClasseP</a>(std::string nomClasse);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classClasseDivine.html">ClasseDivine</a>* <a class="code" href="classInstancieur.html#a49c846b763677d79dbc882df834e5a42">getClasseD</a>(std::string nomClasse);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt;ClasseHeroique*&gt; <a class="code" href="classInstancieur.html#ad886d78eaf48dfd0906eb3118b0214ea">getClasseHBranche</a>(std::string nomBranche);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INSTANCIEUR_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classInstancieur_html"><div class="ttname"><a href="classInstancieur.html">Instancieur</a></div><div class="ttdef"><b>Definition:</b> Instancieur.hpp:19</div></div>
+<div class="ttc" id="classInstancieur_html_a741b7c3351b81bee26a09d7edceeae6f"><div class="ttname"><a href="classInstancieur.html#a741b7c3351b81bee26a09d7edceeae6f">Instancieur::makeClasses</a></div><div class="ttdeci">void makeClasses()</div><div class="ttdoc">Procédure de création de classes. Cette procédure fonctione exactement comme la porcédure makeArmes()...</div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:162</div></div>
+<div class="ttc" id="classInstancieur_html_a1890b3ca394bc59c59ea07663bcc3a6d"><div class="ttname"><a href="classInstancieur.html#a1890b3ca394bc59c59ea07663bcc3a6d">Instancieur::getBranche</a></div><div class="ttdeci">Branche * getBranche(std::string nomBranche)</div><div class="ttdoc">Geter de branche. Voir getArme. </div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:229</div></div>
+<div class="ttc" id="classInstancieur_html_acfc970b91c26ac5c29320f9d5ca73ee4"><div class="ttname"><a href="classInstancieur.html#acfc970b91c26ac5c29320f9d5ca73ee4">Instancieur::makeArmes</a></div><div class="ttdeci">void makeArmes()</div><div class="ttdoc">Procédure de création d&#39;arme. Cette procédure crée en prmier lieu plusieurs objets de type arme puis ...</div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:87</div></div>
+<div class="ttc" id="classInstancieur_html_a26963863eb1cd9f6a59c0b23dce288dd"><div class="ttname"><a href="classInstancieur.html#a26963863eb1cd9f6a59c0b23dce288dd">Instancieur::getArme</a></div><div class="ttdeci">Arme * getArme(std::string nomArme)</div><div class="ttdoc">Geter d&#39;arme. parcours toutes les armes jusqu&#39;as trouver celle voulue. </div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:210</div></div>
+<div class="ttc" id="classClasseDivine_html"><div class="ttname"><a href="classClasseDivine.html">ClasseDivine</a></div><div class="ttdef"><b>Definition:</b> Classe.hpp:90</div></div>
+<div class="ttc" id="classInstancieur_html_aa1482aabc634adf6c964ab47c765e99e"><div class="ttname"><a href="classInstancieur.html#aa1482aabc634adf6c964ab47c765e99e">Instancieur::getClasseH</a></div><div class="ttdeci">ClasseHeroique * getClasseH(std::string nomClasse)</div><div class="ttdoc">Geter de classe héroique. Voir getArme. </div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:269</div></div>
+<div class="ttc" id="classInstancieur_html_ab7990c0c53c0068a693da185c6db5a24"><div class="ttname"><a href="classInstancieur.html#ab7990c0c53c0068a693da185c6db5a24">Instancieur::makeRaces</a></div><div class="ttdeci">void makeRaces()</div><div class="ttdoc">Procédure de création de races. Cette procédure fonctione exactement comme la porcédure makeArmes()...</div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:139</div></div>
+<div class="ttc" id="classInstancieur_html_a8fb2fe3684962eee073a99fd3dade04a"><div class="ttname"><a href="classInstancieur.html#a8fb2fe3684962eee073a99fd3dade04a">Instancieur::getRace</a></div><div class="ttdeci">Race * getRace(std::string nomRace)</div><div class="ttdoc">Geter de race. Voir getArme. </div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:249</div></div>
+<div class="ttc" id="classInstancieur_html_ad886d78eaf48dfd0906eb3118b0214ea"><div class="ttname"><a href="classInstancieur.html#ad886d78eaf48dfd0906eb3118b0214ea">Instancieur::getClasseHBranche</a></div><div class="ttdeci">std::vector&lt; ClasseHeroique * &gt; getClasseHBranche(std::string nomBranche)</div><div class="ttdoc">Geter ded classed héroique d&#39;une branche donnée. Voir getArme. </div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:330</div></div>
+<div class="ttc" id="classInstancieur_html_a438622a251deaf080808b472f16d4cba"><div class="ttname"><a href="classInstancieur.html#a438622a251deaf080808b472f16d4cba">Instancieur::getClasseP</a></div><div class="ttdeci">ClasseParangon * getClasseP(std::string nomClasse)</div><div class="ttdoc">Geter de classe paragonique. Voir getArme. </div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:289</div></div>
+<div class="ttc" id="classBranche_html"><div class="ttname"><a href="classBranche.html">Branche</a></div><div class="ttdef"><b>Definition:</b> Branche.hpp:14</div></div>
+<div class="ttc" id="classInstancieur_html_ac5eee975392cb87bfabc5b4df6ebc077"><div class="ttname"><a href="classInstancieur.html#ac5eee975392cb87bfabc5b4df6ebc077">Instancieur::Instancieur</a></div><div class="ttdeci">Instancieur()</div><div class="ttdoc">Le constructeur. Constructeur de l&#39;instancieur qui vas faire appele à plusieurs fonction créant ainsi...</div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:16</div></div>
+<div class="ttc" id="classInstancieur_html_aa09eb45321ccae26204e4a75964c8bfa"><div class="ttname"><a href="classInstancieur.html#aa09eb45321ccae26204e4a75964c8bfa">Instancieur::~Instancieur</a></div><div class="ttdeci">~Instancieur()</div><div class="ttdoc">Le destructeur. Destructeur de l&#39;objet s&#39;occupant de vider et supprimer tout les pointeurs dans les v...</div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:28</div></div>
+<div class="ttc" id="classArme_html"><div class="ttname"><a href="classArme.html">Arme</a></div><div class="ttdef"><b>Definition:</b> Armes.hpp:14</div></div>
+<div class="ttc" id="classInstancieur_html_a49c846b763677d79dbc882df834e5a42"><div class="ttname"><a href="classInstancieur.html#a49c846b763677d79dbc882df834e5a42">Instancieur::getClasseD</a></div><div class="ttdeci">ClasseDivine * getClasseD(std::string nomClasse)</div><div class="ttdoc">Geter de classe divine. Voir getArme. </div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:309</div></div>
+<div class="ttc" id="classRace_html"><div class="ttname"><a href="classRace.html">Race</a></div><div class="ttdef"><b>Definition:</b> Race.hpp:15</div></div>
+<div class="ttc" id="classInstancieur_html_a2c67514e27d7d051a19950aae5b09380"><div class="ttname"><a href="classInstancieur.html#a2c67514e27d7d051a19950aae5b09380">Instancieur::makeBranches</a></div><div class="ttdeci">void makeBranches()</div><div class="ttdoc">Procédure de création de branche. Cette procédure fonctione exactement comme la porcédure makeArmes()...</div><div class="ttdef"><b>Definition:</b> Instancieur.cpp:113</div></div>
+<div class="ttc" id="classClasseHeroique_html"><div class="ttname"><a href="classClasseHeroique.html">ClasseHeroique</a></div><div class="ttdef"><b>Definition:</b> Classe.hpp:48</div></div>
+<div class="ttc" id="classClasseParangon_html"><div class="ttname"><a href="classClasseParangon.html">ClasseParangon</a></div><div class="ttdef"><b>Definition:</b> Classe.hpp:69</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>Instancieur.hpp</b></li>
+    <li class="footer">Généré le Lundi 1 Décembre 2014 19:08:12 pour Tales Of The Northern Land par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
