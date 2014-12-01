@@ -9,18 +9,17 @@
 //class Arme : public Item
 
  	/**
- 	*\brief Le constructeur de l'arme.
- 	*	Constructeur de l'arme instanciant toutes
- 	*	ses caractéristiques.	
- 	*
- 	*	\param nomArme Le nom de l'arme.
- 	*	\param type ID du type de l'arme.
- 	*	\param puissance La puissance de l'arme.
- 	*	\param precision La precision de l'arme.
- 	*	\param critique Son pourcentage de critique.
- 	*	\param estMagique Si oui ou non elle est magique.
- 	*	\param prix Le prix de base de l'arme.
- 	*/
+ 	 *\brief Le constructeur de l'arme.
+ 	 *	Constructeur de l'arme instanciant toutes
+ 	 *	ses caractéristiques.
+ 	 *	\param nomArme Le nom de l'arme.
+ 	 *	\param type ID du type de l'arme.
+ 	 *	\param puissance La puissance de l'arme.
+ 	 *	\param precision La precision de l'arme.
+ 	 *	\param critique Son pourcentage de critique.
+ 	 *	\param estMagique Si oui ou non elle est magique.
+ 	 *	\param prix Le prix de base de l'arme.
+ 	 */
 	Arme::Arme(std::string nomArme, int type, int puissance, int precision, int critique, bool estMagique, int prix): Item::Item(nomArme){
 		this->critique = critique;
 		this->type = type;

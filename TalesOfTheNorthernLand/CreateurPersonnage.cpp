@@ -3,11 +3,16 @@
  *
  *  Created on: 10 oct. 2014
  *      Author: Charles BEGAUDEAU
+ *      DANS LA VERSION ACTUELLE IL N'EST PAS UTILISEE
  */
 
 #include "CreateurPersonnage.hpp"
 
 //class CreateurPersonnage
+
+	/**
+	 * \brief	Constructeur du createur de personnage
+	 */
 	CreateurPersonnage::CreateurPersonnage(){
 		nom = "";
 		classe = "";
@@ -16,6 +21,10 @@
 		joueur = nullptr;
 	}
 
+	/**
+	 * \brief	methode principale du createur de personnage
+	 * \param inst Instancieur pour avoir les données necessaire a la creation
+	 */
 	void CreateurPersonnage::creation(Instancieur inst){
 
 		std::vector<int> stat;
@@ -83,7 +92,9 @@
 
 	}
 
-
+	/**
+	 * \brief	methode de confirmation de la creation de personnage
+	 */
 	bool CreateurPersonnage::confiramation(){
 		char conf;
 		std::cin >> conf;
@@ -100,6 +111,9 @@
 		return false;
 	}
 
+	/**
+	 * \brief	methode d'affichage du texte de selection de branche
+	 */
 	void CreateurPersonnage::texteBranche(){
 		std::cout << "Bien maintenant il est temps de choisir une branche de classe pour " << nom << "." << std::endl;
 		std::cout << "Trois choix s'offre a vous :" << std::endl
@@ -109,11 +123,30 @@
 		std::cout << "\t1/ Pour être un menbre du clerger\n\t2/ Pour appartenir à l'ordre des guerriers\n\t3/ Pour pouvoir siègé à la loge des magiciens" << std::endl;
 	}
 
+	/**
+	 * \brief	methode d'affichage du texte de selection de classe
+	 * \bug pas fini :(
+	 */
 	void CreateurPersonnage::texteClasse(){
 		std::cout << "Bien maintenant il vous faut choisir une classe pour " << nom << "." << std::endl;
 		std::cout << "Voici les choix de votre branche :" << std::endl;
 	}
 
+
+	/**
+	 * \brief ajoute dix int au vector de stat
+	 * \param Vec std::vector<int> le vector dans le quel on ajoute
+	 * \param a int une des dix int ajouter (1er)
+	 * \param b int une des dix int ajouter (2eme)
+	 * \param c int une des dix int ajouter (3eme)
+	 * \param d int une des dix int ajouter (4eme)
+	 * \param e int une des dix int ajouter (5eme)
+	 * \param f int une des dix int ajouter (6eme)
+	 * \param g int une des dix int ajouter (7eme)
+	 * \param h int une des dix int ajouter (8eme)
+	 * \param i int une des dix int ajouter (9eme)
+	 * \param j int une des dix int ajouter (10eme)
+	 */
 	void CreateurPersonnage::vectorAdd10Int(std::vector<int> &Vec, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j){
 		Vec.push_back(a);  Vec.push_back(b);  Vec.push_back(c);  Vec.push_back(d);  Vec.push_back(e);
 		Vec.push_back(f);  Vec.push_back(g);  Vec.push_back(h);  Vec.push_back(i);  Vec.push_back(j);

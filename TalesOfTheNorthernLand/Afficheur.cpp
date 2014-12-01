@@ -8,16 +8,25 @@
 #include "Afficheur.hpp"
 
 
-
+	/**
+ 	 * \brief Constructeur
+ 	 */
 	Afficheur::Afficheur(){
 
 	}
 
+	/**
+	 * \brief Destructeur
+	 */
 	Afficheur::~Afficheur(){
 
 	}
-	/*
-	 * On limite la taille des noms de classe et de perso a 7 pour eviter un derp de l'affichage
+
+	/**
+	 * \brief afficher les statistiques de deux personnages
+	 * \details On limite la taille des noms de classe et de perso a 7 pour eviter un derp de l'affichage
+	 * \param Personnage* perso1 le perso afficher a gauche
+	 * \param Personnage* perso2 le perso afficher a droite
 	 */
 	void Afficheur::afficherPersos(Personnage *perso1,Personnage *perso2){
 		std::system("clear");
@@ -50,8 +59,10 @@
 		std::cout << perso1->getStatistiqueDerive().at(3) << "\t <<  CRIT >> \t" << perso2->getStatistiqueDerive().at(3) << std::endl;
 	}
 
-	/*
-	 * On limite la taille des noms de classe et de perso a 7 pour eviter un derp de l'affichage
+	/**
+	 * \brief afficher le statistique d'un personnage
+	 * \details On limite la taille des noms de classe et de perso a 7 pour eviter un derp de l'affichage
+	 * \param Personnage* perso1 le perso a afficher
 	 */
 	void Afficheur::afficherPerso(Personnage *perso1){
 		//std::system("clear");
