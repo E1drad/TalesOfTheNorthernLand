@@ -73,7 +73,7 @@
 			}
 		}
 
-		texteClasse(branche);
+		texteClasse();
 		unsigned int i = 0;
 		while(i < inst.getClasseHBranche(branche).size()){
 			std::cout << i+1 << "/ " << inst.getClasseHBranche(branche).at(1) << std::endl;

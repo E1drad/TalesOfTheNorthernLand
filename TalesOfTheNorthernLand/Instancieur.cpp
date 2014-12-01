@@ -7,6 +7,12 @@
 
 #include "Instancieur.hpp"
 
+ 	/**
+ 	*\brief Le constructeur.
+ 	*	Constructeur de l'instancieur qui vas faire
+ 	*	appele à plusieurs fonction créant ainsi les objets.
+ 	*/
+
 	Instancieur::Instancieur(){
         makeArmes();
         makeBranches();
@@ -14,8 +20,54 @@
         makeClasses();
 	}
 
+	/**
+ 	*\brief Le destructeur.
+ 	*	Destructeur de l'objet s'occupant de vider
+ 	*	et supprimer tout les pointeurs dans les vecteurs.
+ 	*/
 	Instancieur::~Instancieur(){
+		Arme* arme = nullptr;
+		Branche* branche = nullptr;
+		Race* race = nullptr;
+		ClasseHeroique* classeH = nullptr;
+		ClasseParangon* classeP = nullptr;
+		ClasseDivine* classeD = nullptr;
 
+		while(!armes.empty()){
+			arme = armes.back();
+			armes.pop_back();
+			delete arme;
+		}
+
+		while(!branches.empty()){
+			branche = branches.back();
+			branches.pop_back();
+			delete branche;
+		}
+
+		while(!races.empty()){
+			race = races.back();
+			races.pop_back();
+			delete race;
+		}
+
+		while(!classesH.empty()){
+			classeH = classesH.back();
+			classesH.pop_back();
+			delete classeH;
+		}
+
+		while(!classesP.empty()){
+			classeP = classesP.back();
+			classesP.pop_back();
+			delete classeP;
+		}
+
+		while(!classesH.empty()){
+			classeD = classesD.back();
+			classesD.pop_back();
+			delete classeD;
+		}
 	}
 
 	std::vector<Arme*> Instancieur::getArmes(){
@@ -27,6 +79,11 @@
         Vec.push_back(f);  Vec.push_back(g);  Vec.push_back(h);  Vec.push_back(i);  Vec.push_back(j);
     }
 
+	/**
+ 	*\brief Procédure de création d'arme.
+ 	*	Cette procédure crée en prmier lieu plusieurs objets
+ 	*	de type arme puis les met dans le vector aproprier.
+ 	*/
     void Instancieur::makeArmes(){
         Lance *lance1 = new Lance("Lance", 7, 75, 5, false, 80);
 		Epee *epee1 = new Epee("Epee longue", 6, 65, 5, false, 100);
@@ -48,7 +105,13 @@
 		this->armes.push_back(sort3);
     }
 
+	/**
+ 	*\brief Procédure de création de branche.
+ 	*	Cette procédure fonctione exactement comme
+ 	*	la porcédure makeArmes().
+ 	*/
     void Instancieur::makeBranches(){
+    	//création d'une branche.
         Branche *clerger = new Branche(std::string("Clerger"));
         clerger->vectorAdd6String("It too late for redemption, sinner!","Pick a god and prey"
                 ,"Be ready to meet your maker","Hope will never die","I challenge my fate"
@@ -68,7 +131,13 @@
         branches.push_back(mage);
     }
 
+	/**
+ 	*\brief Procédure de création de races.
+ 	*	Cette procédure fonctione exactement comme
+ 	*	la porcédure makeArmes().
+ 	*/
     void Instancieur::makeRaces(){
+    	//création d'une race
         std::vector<int> sStatElfe;
         vectorAdd10Int(sStatElfe,0,-2,-2,-1,1,3,3,1,0,1);
         std::string nomElfe = "elfe";
@@ -85,6 +154,11 @@
     /*
      * WARNING LES NOMS DE BRANCHE COMMENCE PAR UN MAJUSCULE ie getBranche("clerger") => std::out_of_range !!!
      */
+     /**
+ 	*\brief Procédure de création de classes.
+ 	*	Cette procédure fonctione exactement comme
+ 	*	la porcédure makeArmes().
+ 	*/
     void Instancieur::makeClasses(){
         std::vector<int> sStatArcher;
         vectorAdd10Int(sStatArcher,0,1,1,2,-2,4,2,1,1,-2);
@@ -126,6 +200,13 @@
 
     }
 
+	/**
+ 	*\brief Geter d'arme.
+ 	*	parcours toutes les armes jusqu'as trouver
+ 	*	celle voulue.
+ 	*  	\param nomArme Le nom de l'arme rechercher
+ 	*/
+
     Arme* Instancieur::getArme(std::string nomArme){
 		unsigned int i = 0;
 		bool test = false;
@@ -140,6 +221,11 @@
 		return arme;
 	}
 
+	/**
+ 	*\brief Geter de branche.
+ 	*	Voir getArme
+ 	*  	\param nomBranche Le nom de la branche rechercher
+ 	*/
 	Branche* Instancieur::getBranche(std::string nomBranche){
 		unsigned int i = 0;
 		bool test = false;
@@ -154,6 +240,12 @@
 		return branche;
 	}
 
+
+	/**
+ 	*\brief Geter de race.
+ 	*	Voir getArme
+ 	*  	\param nomRace Le nom de la race rechercher
+ 	*/
 	Race* Instancieur::getRace(std::string nomRace){
 		unsigned int i = 0;
 		bool test = false;
@@ -168,6 +260,12 @@
 		return race;
 	}
 
+
+	/**
+ 	*\brief Geter de classe héroique.
+ 	*	Voir getArme
+ 	*  	\param nomClasse Le nom de la classe rechercher
+ 	*/
 	ClasseHeroique* Instancieur::getClasseH(std::string nomClasse){
 		unsigned int i = 0;
 		bool test = false;
@@ -182,6 +280,12 @@
 		return classe;
 	}
 
+
+	/**
+ 	*\brief Geter de classe paragonique.
+ 	*	Voir getArme
+ 	*  	\param nomClasse Le nom de la classe rechercher
+ 	*/
 	ClasseParangon* Instancieur::getClasseP(std::string nomClasse){
 		unsigned int i = 0;
 		bool test = false;
@@ -196,6 +300,12 @@
 		return classe;
 	}
 
+
+	/**
+ 	*\brief Geter de classe divine.
+ 	*	Voir getArme
+ 	*  	\param nomClasse Le nom de la classe rechercher
+ 	*/
 	ClasseDivine* Instancieur::getClasseD(std::string nomClasse){
 		unsigned int i = 0;
 		bool test = false;
@@ -210,6 +320,13 @@
 		return classe;
 	}
 
+
+	/**
+ 	*\brief Geter ded classed héroique d'une branche donnée.
+ 	*	Voir getArme
+ 	*  	\param nomBranche Le nom de la branche concerner.
+ 	*	\return un vecteur contenant les classes.
+ 	*/
 	std::vector<ClasseHeroique*> Instancieur::getClasseHBranche(std::string nomBranche){
 		unsigned int i = 0;
 		bool test = false;

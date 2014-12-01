@@ -21,23 +21,54 @@
 	 * int esquive;		2 |	int critique;		3
 	 *///statistiqueDerive
 
+	/**
+	 * \brief	Ajoute les modificateurs de statistique raciaux au personnage
+	 * \details	Ajoute les modificateurs raciaux, cette methode
+	 *  est appeller lors dans le constructeur
+	 */
 	void Personnage::modificateurRace(){
 		for(unsigned int i = 0; i < this->statistique.size(); ++i){
 			this->statistique.at(i) = this->statistique.at(i) + this->race->getmodificateurStatistique().at(i);
 		}
 	}
+
+	/**
+	 * \brief	Ajoute les modificateurs de statistique de la classe
+	 * \details	Ajoute les modificateurs de la classe, cette methode
+	 *  est appeller lors de la promotion et dans le constructeur
+	 * \param	classe 		Classe* La classe dont on veut ajouter les modificateurs au personnage
+	 *
+	 */
 	void Personnage::modificateurClasse(Classe* classe){
 		for(unsigned int i = 0; i < this->statistique.size(); ++i){
 			this->statistique.at(i) = this->statistique.at(i) + classe->getmodificateurStatistique().at(i);
 		}
 	}
 
+	/**
+	 * \brief	Supprimer les modificateurs de statistique que l'on viens de quitter
+	 * \details	Est appellé lors de la decheance pour enlever les modificateurs de statistique
+	 * ajouter précédent via modificateurClasse
+	 * \param	classe 		Classe* La classe dont on veut enlever les modificateurs au personnage
+	 */
 	void Personnage::modificateurClasseDecheance(Classe* classe){
 		for(unsigned int i = 0; i < this->statistique.size(); ++i){
 			this->statistique.at(i) = this->statistique.at(i) - classe->getmodificateurStatistique().at(i);
 		}
 	}
 
+
+	/**
+	 * \brief	Constructeur de Personnage
+	 * \details	Sers a crée un personnage via les paramètres decrit ci desous, à initialiser ses statistiques
+	 * ainsi que sa classeActuelle et initialiser sa posture a Defenseur
+	 * \param	s			vector<int> Le vector de stat de base du perso
+	 * \param	n			string	Le nom du personnage
+	 * \param	c			ClasseHeroique*	Le pointeur vers la classe heroique(ne peut pas être modifier)
+	 * \param	r			Race* La pointeur vers la race du personnage
+	 * \param	estFemme	bool vrai si le personnage est une femme
+	 * \param	niveau		int  indique le niveau du personnage(normale 1 au debut)
+	 */
 	Personnage::Personnage(std::vector<int> s, std::string n, ClasseHeroique* c, Race* r, bool estFemme, int niveau){
 		this->nom = n;
 		this->race = r;
@@ -62,8 +93,15 @@
 		this->modificateurClasse(this->classeActuelle);
 		this->updateStatistique();
 		this->argent = 1000;
+		if(this->niveau > 20){
+			this->niveau = 20;
+		}
 	}
 
+	/**
+	 * \brief	Destructeur de personnage
+	 * \details		remet tout les pointeurs a nullptr car les objets doivent être detruit dans l'instancieur
+	 */
 	Personnage::~Personnage(){
 		std::cout << "Personnage is being deleted  ";
 		this->race = nullptr;
@@ -81,6 +119,13 @@
 		std::cout << " " << std::endl;
 	}
 
+
+	/**
+	 * \brief	Menu d'action du joueur
+	 * \details	affiche le menu et en fonction d'une entré clavier appelle une methode specifique
+	 * 1 pour attaquer, 2 pour se soigner, 3 pour changer de posture
+	 * \param	cible Personnage* notre ennemie actuelle
+	 */
 	void Personnage::actionCombat(Personnage *cible){
 		std::string cmd1;
 		cmd1 = "000";
@@ -118,6 +163,11 @@
 		waitForKey();
 	}
 
+
+	/**
+	 * \brief	la methode de gestion prise de decision pour l'IA
+	 * \param	cible Personnage* l'ennemie actuelle de l'IA (à l'heure actuelle le joueur)
+	 */
 	void Personnage::combatAutomatique(Personnage *cible){
 		//si pv < 35% pvMax
 		if( this->statistique.at(1) < floor(0.35*this->statistique.at(2)) ){
@@ -142,7 +192,11 @@
 		}
 	}
 
-
+	/**
+	 * \brief	Menu de changement de posture
+	 * \details	affiche le menu et en fonction d'une entré clavier crée une nouvelle posture
+	 * \bug need un delete de la posture ?
+	 */
 	void Personnage::changePosture(){
 		std::cout << "Qu'elle posture " << this->nom << " va prendre ?" << std::endl;
 		std::string cmd1;
@@ -183,6 +237,11 @@
 		}
 	}
 
+	/**
+	 * \brief	permet de se soigner
+	 * \details	redonne des points de vies si les pv sont inferieurs au pvMax
+	 * \return  Un \e booleen qui est vrai si on pouvait gagner des points des vie
+	 */
 	bool Personnage::seSoigner(){
 		if(this->statistique.at(1) < this->statistique.at(2)){
 			int soin = ceil( this->statistique.at(2) * (sin(rng1())/6 + 0.15 ) );//TODO A MODIFIER
@@ -198,6 +257,11 @@
 		return false;
 	}
 
+
+	/**
+	 * \brief	Change l'arme du personnage
+	 * \details	change l'arme, met a jour les statitisques derivés et affiche la difference avant/après
+	 */
 	void Personnage::setArmeEquiper(Arme* a){//TODO need update controle classe
 		this->updateStatistique();
 		std::cout << this->nom << " viens de s'équiper avec " << a->getNomItem() << std::endl;
@@ -211,22 +275,51 @@
 		std::cout << cri << "\t CRI  >> " <<this->getStatistiqueDerive().at(3) << std::endl;
 	}
 
+	/**
+	 * \brief setter de classeActuelle
+	 * \details est utile pour les Classes lors des promotions/decheance
+	 * \param	classe Classe* notre nouvelle classe actuelle
+	 */
 	void Personnage::setClasseActuelle(Classe* classe){
 		this->classeActuelle = classe;
 	}
 
+	/**
+	 * \brief setter de classeParangon
+	 * \details est utile pour les Classes lors des promotions/decheance
+	 * \param	classe Classe* notre nouvelle classeParangon
+	 */
 	void Personnage::setClasseParangon(Classe* classe){
 		this->classeParangon = classe;
 	}
 
+	/**
+	 * \brief setter de classeDivine
+	 * \details est utile pour les Classes lors des promotions/decheance
+	 * \param	classe Classe* notre nouvelle classeDivine
+	 */
 	void Personnage::setClasseDivine(Classe* classe){
 		this->classeDivine = classe;
 	}
 
+	/**
+	 * \brief	S000000000N !!!
+	 * \details	S000000000N !!!
+	 * \param	S000000000N !!!
+	 * \param	S000000000N !!!
+	 * \return	S000000000N !!!
+	 */
 	void Personnage::monterNiveau(){
-
+		this->niveau = this->niveau + 1;
+		std::cout << this->nom << " viens de passer au niveau " << this->niveau << std::endl;
 	}
 
+	/**
+	 * \brief	calcul les degats
+	 * \details	si il n'a pas d'arme degat = 0, si l'arme est magique le calcule
+	 * ce fait avec l'intelligence sinon avec la force
+	 * \return valeur \e int les degats du perso
+	 */
 	int Personnage::updateDegat(){
 		int valeur;
 		if(this->armeEquiper == nullptr){//rien ie 0
@@ -239,6 +332,10 @@
 		return valeur;
 	}
 
+	/**
+	 * \brief	calcul la precision
+	 * \return valeur \e int la precision du perso
+	 */
 	int Personnage::updatePrecision(){
 		int valeur = 2*this->statistique.at(5);
 		if( (this->armeEquiper != nullptr) ){//si diff de null
@@ -247,6 +344,10 @@
 		return valeur;
 	}
 
+	/**
+	 * \brief	calcul la valeur de critique
+	 * \return valeur \e int la valeur de critique du perso
+	 */
 	int Personnage::updateCritique(){
 		int valeur = 2*this->statistique.at(7);
 		if( (this->armeEquiper != nullptr) ){//si diff de null
@@ -255,16 +356,28 @@
 		return valeur;
 	}
 
+	/**
+	 * \brief	calcul l'esquive
+	 * \return valeur \e int l'equive du perso
+	 */
 	int Personnage::updateEsquive(){
 		return this->statistique.at(6) + this->statistique.at(6);
 	}
 
+
+	/**
+	 * \brief	verifie que les pv sont inferieurs au pvMax
+	 */
 	void Personnage::updatePV(){
 		if ( this->statistique.at(1) > this->statistique.at(2) ){
 			this->statistique.at(1) = this->statistique.at(2);
 		}
 	}
 
+	/**
+	 * \brief	calcul l'experience et appelle la methode de monter de niveau
+	 * \return valeur \e int l'equive du perso
+	 */
 	void Personnage::updateNiveau(){
 		if ( (this->statistique.at(0) > 99 ) && (this->niveau < 20) ){
 			this->statistique.at(0) = this->statistique.at(0) - 99;
@@ -274,6 +387,10 @@
 		}
 	}
 
+	/**
+	 * \brief	Affiche et retire les pv perdut après mis a jour via la posture
+	 * \param	degat int les degat que l'on va subir avant mis a jour via la posture
+	 */
 	void Personnage::prendreDegat(int degat){
 		degat = this->posture->subirDegat(degat);
 		if(degat >= 0){
@@ -285,6 +402,11 @@
 		}
 	}
 
+	/**
+	 * \brief	determine si le personnage touche puis calcule les degats
+	 * \details	les calculs se fait viens du rng
+	 * \param	cible Personnage* l'ennemie actuelle
+	 */
 	void Personnage::attaquer(Personnage *cible){
 		int jetDe;
 		int degat;
@@ -313,7 +435,10 @@
 			std::cout << " mais " << this->nom << " ne touche pas !" << std::endl;
 		}
 	}
-
+	/**
+	 * \brief	determine la mort du perso en fonction de sa classe
+	 * \details si le perso reussi un jet de dé il peut recupérer des points de vie et eviter la mort
+	 */
 	void Personnage::mourant(){
 		std::string genre = (this->estFemme)? "t'elle" : "t'il";
 		std::cout << this->nom << " est agonisant ! Va " << genre << " mourir ?" << std::endl;
@@ -332,27 +457,51 @@
 		}
 	}
 
+	/**
+	 * \brief	modifie une stat a une position donner d'une valeur donner puis met a jour les statistique deriver
+	 * \param	stat	int la position dans le vector de stat
+	 * \param	modificateur	int le modificateur de stat
+	 */
 	void Personnage::modStat(int stat, int modificateur){
 		this->statistique.at(stat) = this->statistique.at(stat) + modificateur;
 		this->updateStatistique();
 	}
 
+	/**
+	 * \brief getter de Race*
+	 * \return Race* le pointeur de race du perso
+	 */
 	Race* Personnage::getRace(){
 		return this->race;
 	}
 
+	/**
+	 * \brief getter de Nom
+	 * \return Nom le string de nom du perso
+	 */
 	std::string Personnage::getNom(){
 		return this->nom;
 	}
 
+	/**
+	 * \brief getter de ClasseActuelle*
+	 * \return ClasseActuelle* le pointeur de classe actuelle du perso
+	 */
 	Classe* Personnage::getClasseActuelle(){
 		return this->classeActuelle;
 	}
 
+	/**
+	 * \brief getter de estFemme
+	 * \return estFemme vrai si le perso est une femme
+	 */
 	bool Personnage::getEstFemme(){
 		return this->estFemme;
 	}
 
+	/**
+	 * \brief appelle les autres methodes d'update
+	 */
 	void Personnage::updateStatistique(){
 		this->statistiqueDerive.at(0) = this->updateDegat();
 		this->statistiqueDerive.at(1) = this->updatePrecision();
@@ -362,27 +511,51 @@
 		this->updatePV();
 	}
 
+	/**
+	 * \brief getter de statistique
+	 * \return statistique le vector<int> de statistique
+	 */
 	std::vector<int> Personnage::getStatistique(){
 		return this->statistique;
 	}
 
+	/**
+	 * \brief getter de statistiqueDerive retour les statistiqueDerive Après avoir fait une mise a jour
+	 * \return statistique derive le vector<int> de statistique derive
+	 */
 	std::vector<int>  Personnage::getStatistiqueDerive(){
 		this->updateStatistique();
 		return this->statistiqueDerive;
 	}
 
+	/**
+	 * \brief getter de classeHeroique*
+	 * \return classeHeroique* le pointeur de classe Heroique du perso
+	 */
 	Classe* Personnage::getClasseHeroique(){
 		return this->classeHeroique;
 	}
 
+	/**
+	 * \brief getter de classeParangon*
+	 * \return classeParangon* le pointeur de classe Parangon du perso
+	 */
 	Classe* Personnage::getClasseParangon(){
 		return this->classeParangon;
 	}
 
+	/**
+	 * \brief getter de classeDivine*
+	 * \return classeDivine* le pointeur de classe Divine du perso
+	 */
 	Classe* Personnage::getClasseDivine(){
 		return this->classeDivine;
 	}
 
+
+	/**
+	 * \brief afficher les statistiques puis les statistiques derivées du perso
+	 */
 	void Personnage::afficherStat(){
 		for(unsigned int i = 0; i <this->statistique.size(); ++i){
 			std::cout << this->statistique.at(i) << " ";
@@ -394,7 +567,13 @@
 		std::cout << "crit " << this->statistiqueDerive.at(3) << std::endl;
 
 	}
-//TODO make a setter for classeP and classeD and classeH
+
+	/**
+	 * \brief	effectue un changement d'etat "vers le haut" si les conditions sont valide
+	 * \details La classe doit être "d'etat" superieur sinon il ne se passe rien (mis a part le message d'erreur
+	 * inaproprier)
+	 * \param	classe Classe* la classe vers laquelle on veut allé
+	 */
 	void Personnage::promotion(Classe* classe){
 		std::cout << "Vous avez peut-être être promut !" << std::endl;
 		if(this->classeActuelle->promotion(this, classe)){
@@ -405,7 +584,10 @@
 			std::cout << "Vous êtes déjà une divinité que desirez-vous de plus ?" << std::endl;
 		}
 	}
-//TODO need to make something to do a instance of
+
+	/**
+	 * \brief	effectue un changement d'etat "vers le bas" si on est pas en Heroique
+	 */
 	void Personnage::decheance(){
 		if(this->classeActuelle != this->classeHeroique){
 			this->modificateurClasseDecheance(this->classeActuelle);
@@ -417,6 +599,11 @@
 		}
 	}
 
+	/**
+	 * \brief Determine si le coups est un coups critique
+	 * \param	degat int les degat avant le calcule du critique
+	 * \param	cible Personnage* notre cible actuelle
+	 */
 	int Personnage::critique(int degat, Personnage *cible){
 		int jetDe;
 		jetDe = (rng1() % 100) + 1;
@@ -427,15 +614,27 @@
 		return degat;
 	}
 
-
+	/**
+	 * \brief indique si le perso est mort ie pv negatif ou nul
+	 * \return vrai si les pv sont negatif ou nul
+	 */
 	bool Personnage::estMort(){
 		return this->statistique.at(1) <= 0;
 	}
 
+	/**
+	 * \brief modifie l'argent selon un entier donner en param
+	 * \param argent int le nombre de Pesos que l'on veut ajoute/enlever au perso
+	 */
 	void Personnage::modArgent(int argent){
 		this->argent = this->argent + argent;
 	}
 
+	/**
+	 * \brief indique si le perso a assez d'argent
+	 * \param argent int le nombre de Pesos que le perso doit avoir pour faire qqch
+	 * \return vrai l'argent du perso est superieur ou egale a la valeur en parametre
+	 */
 	bool Personnage::possedeAssezArgent(int argent){
 		bool test = false;
 		if(this->argent >= argent){
@@ -444,15 +643,26 @@
 		return test;
 	}
 
+	/**
+	 * \brief getter d'argent
+	 * \return argent int l'argent du perso
+	 */
 	int Personnage::getArgent(){
 		return this->argent;
 	}
 
-
+	/**
+	 * \brief getter de l'arme actuelle du perso
+	 * \return armeEquiper Arme*
+	 */
 	Arme* Personnage::getArmeActuelle(){
 		return this->armeEquiper;
 	}
 
+	/**
+	 * \brief detecter une enter clavier
+	 * \detail si l'entrer est \n elle ne fait rien sinon elle clear le std::cin
+	 */
 	void Personnage::waitForKey(){
 		std::cout << "Press the ENTER key\n";
 		if (std::cin.get() == '\n'){
