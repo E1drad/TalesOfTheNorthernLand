@@ -119,9 +119,9 @@
         branches.push_back(clerger);
 
         Branche *guerrier = new Branche(std::string("Guerrier"));
-        guerrier->vectorAdd6String("Stand up and fight","You will pay the iron price"
-                ,"Look like the champ gonna kill you","Just you and me!","Fear my wrath"
-                ,"Nice, i needed a skull for my wine");
+        guerrier->vectorAdd6String("Stand up and fight","You will pay the iron price !"
+                ,"Look like the champ gonna kill you !","Just you and me !","Fear my wrath !"
+                ,"Nice, i needed a skull for my wine !");
         branches.push_back(guerrier);
 
         Branche *mage = new Branche(std::string("Mage"));
